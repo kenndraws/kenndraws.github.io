@@ -6,8 +6,7 @@ html, body {
 body{
   display: grid;
   height: 100vh;
-  grid-template-columns: 25% 50% 25%;
-  grid-auto-rows: 100%;
+  justify-items: center;
 }
 .left{
   display: grid;
@@ -120,21 +119,25 @@ body{
   background: #D0D0D0;
   border-radius: 0px;
 }
-.cell:focus {     
+.cell:focus{     
   outline: none !important;
   background-color: #bfc8e3;
   border-radius: 0px;
 }
-.displayed{
+.displayed, input:disabled {
   /* background-color: #a3b1bf; */
-  background-color: white;
+  text-align: center !important;
+  font-size: 200% !important;
+  caret-color: transparent !important;
+  background-color: white !important;
   color: black !important;
+  border-radius: 0px !important;
 }
 .displayed:hover{
-  background-color: white;
+  background-color: white !important;
 }
 .displayed:focus{
-  background-color: white;
+  background-color: white !important;
 }
 .wrong{
   background-color: #ffc2c2 !important;
@@ -147,11 +150,11 @@ body{
 /* Rows */
 /* Cheating but this is easier */
 #cell-3-0, #cell-3-1, #cell-3-2, #cell-3-3, #cell-3-4, #cell-3-5, #cell-3-6, #cell-3-7, #cell-3-8 {
-  border-top: 3px solid black;
+  border-top: 3px solid black !important;
 }
 #cell-6-0, #cell-6-1, #cell-6-2, #cell-6-3, #cell-6-4, #cell-6-5, #cell-6-6, #cell-6-7, #cell-6-8 {
-  border-top: 3px solid black;
-}
+  border-top: 3px solid black !important;
+} 
 
 /* Columns */
 /* Cheating but this is easier */
