@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/print.css">
+    <link rel="icon" href="images/SudokuIcon300x300Transparent.png">
+
+    <script src="scripts/script.js"></script>
+    <!-- <script type="module" src="../scripts/sudoku.js"></script> -->
+    <title>Sudoku</title>
+</head>
+<body>
+    <div class="left">
+        <!-- <img src="../images/SudokuIcon.png" class="icon"/> -->
+    </div>
+    <div class="middle">
+        <div class="slidemenu">
+            <!-- Item 1 -->
+            <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked/>
+            <label for="slide-item-1" class="slide-item-1"><span>Easy</span></label>
+            
+            <!-- Item 2 -->
+            <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+            <label for="slide-item-2" class="slide-item-2"><span>Medium</span></label>
+            
+            <!-- Item 3 -->
+            <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
+            <label for="slide-item-3" class="slide-item-3"><span>Hard</span></label>
+            
+            <!-- Item 4 -->
+            <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
+            <label for="slide-item-4" class="slide-item-4"><span>Expert</span></label>
+            
+            <!-- Item 5 -->
+            <input type="radio" name="slideItem" id="slide-item-5" class="slide-toggle"/>
+            <label for="slide-item-5" class="slide-item-5"><span>Insane</span></label>
+            
+            <div class="clear"></div>
+            
+            <!-- Bar -->
+            <div class="slider">
+                <div class="bar"></div>
+            </div>
+            
+        </div>
+        <div id="Sudoku">
+        </div>
+        <span class="mistakes"><p>Mistakes: 0/5</p></span>
+    </div>
+    <div class="right">
+        <!-- <span></span><span></span>
+        <div class="Rule"> 
+            <h1>↺</h1>
+            <p>No repeates of numbers 1-9 in the same box, column, and row</p>
+        </div>
+        <div class="Rule">
+            <h1>⊘</h1>
+            <p>Can only make 3 mistakes!</p>
+        </div> -->
+    </div>
+</body>
+</html>
