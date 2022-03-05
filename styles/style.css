@@ -28,7 +28,7 @@ body{
 .middle{
   display: grid;
   height: 100%;
-  grid-auto-rows: 10% 85% 5%;
+  grid-auto-rows: 10% 3% 80%;
   justify-items: center;
   align-items: center;
 }
@@ -145,6 +145,15 @@ body{
 }
 .mistakes{
   margin-top: -2.5%;
+  width: 100%;
+}
+.mistakes #errors{
+  margin: 0 15px;
+  justify-self: start;
+}
+.mistakes #numsleft{
+  margin: 0 15px;
+  justify-self: end;
 }
 
 /* Rows */
