@@ -28,7 +28,7 @@ body{
 .middle{
   display: grid;
   height: 100%;
-  grid-auto-rows: 10% 3% 80%;
+  grid-auto-rows: 10% 5% 80%;
   justify-items: center;
   align-items: center;
 }
@@ -113,6 +113,7 @@ body{
   font-size: 200%;
   caret-color: transparent;
   color: gray !important;
+  border-radius: 0px;
 }
 .cell:hover{
   cursor: pointer;
@@ -144,7 +145,8 @@ body{
   color: #ff2c17 !important;
 }
 .mistakes{
-  margin-top: -2.5%;
+  display: grid;
+  grid-template-columns: 50% 50%;
   width: 100%;
 }
 .mistakes #errors{

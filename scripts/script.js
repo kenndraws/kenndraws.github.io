@@ -11,7 +11,7 @@ const levels = {
 }
 
 var mistakes = 0; //Number of incorrect inputs by user
-var mistakeLimit = 3; //Limit of incorrect inputs by user
+var mistakeLimit = 5; //Limit of incorrect inputs by user
 var levelSelected = levels.easy;
 
 //Used for Comparing Solved Cells
@@ -22,7 +22,7 @@ function addLevelEvents(){ //Adding Event Listeneres to Menu Options
     for(var i = 1; i < 6; i++){
         const levelSelector = document.getElementById("slide-item-" + i); //Get Menu Items By ID
         levelSelector.addEventListener("click", () => {
-            var lab  = document.querySelector(`label.${levelSelector.id} span`).innerText; //Get Level
+            var lab  = document.querySelector(`label.${levelSelector.id} span`).innerHTML; //Get Level
             switch(lab){ //Set Level
                 case("Easy"):
                 levelSelected = levels.easy;
@@ -68,8 +68,10 @@ function refreshTable(){ //Reset Sudoku Table
     displayedSudokuArray = []; 
     solvedSudokuArray = []; //Clear Solved
     mistakes = 0; //Set Mistakes to 0
+
     const m = document.querySelector(".mistakes"); 
-    m.innerHTML = `<p>Mistakes: ${mistakes}/${mistakeLimit}</p>`;
+    m.innerHTML = `<p id="errors">Mistakes: ${mistakes}/${mistakeLimit}</p>`;
+    m.innerHTML += `<p id="numsleft">1 2 3 4 5 6 7 8 9</p>`;
 
     sudoku.style.removeProperty('background');
     sudoku.style.removeProperty('background-size');
@@ -245,8 +247,6 @@ function checkInput(input, x, y){ //Checks if input is valid and correct
     else if(solvedSudokuArray[x][y] != input){ //If input is not the correct answer mark wrong
         cell.classList.add("wrong");
         mistakes++;
-        const m = document.querySelector(".mistakes"); 
-        m.innerHTML = `<p>Mistakes: ${mistakes}/${mistakeLimit}</p>`;
 
         if(mistakes == mistakeLimit){
             const sudoku = document.getElementById("Sudoku"); //Get Sudoku Element
@@ -260,6 +260,9 @@ function checkInput(input, x, y){ //Checks if input is valid and correct
         displayedSudokuArray[x][y] = input;
         checkGame();
     } 
+    const m = document.querySelector(".mistakes"); 
+    m.innerHTML = `<p id="errors">Mistakes: ${mistakes}/${mistakeLimit}</p>`;
+    m.innerHTML += `<p id="numsleft">${checkNumsLeft()}</p>`;
 }
 function checkGame(){ //Checks if sudoku is fully solved
     for(var i = 0; i < 9; i++){
@@ -274,6 +277,17 @@ function checkGame(){ //Checks if sudoku is fully solved
     sudoku.style.background = "url('images/CongratsSmall.gif')" //Put Congrats Animation Backgound
     sudoku.style.backgroundSize = "100%" //So it doesn't repeat
     gameOver(); //Clear The Board
+}
+function checkNumsLeft(){
+    var nums = "";
+    for(var i = 0; i < 9; i++){
+        var count = 0;
+        for(var j = 0; j < 9; j++){
+            count += displayedSudokuArray[j].filter(x => x == (i + 1)).length;
+        }
+        if(count != 9) nums += (i + 1) + " ";
+    }
+    return nums;
 }
 function gameOver(){ //If Mistake Limit Reached Game Over
     const sudoku = document.getElementById("Sudoku"); //Get Sudoku Container
