@@ -56,7 +56,6 @@ function addSudoku() {
 }
 function dynamicSizeSudoku(){
     const middle = document.querySelector(".middle"); 
-
     let height = middle.offsetHeight * 0.8;
 
     const sudoku = document.getElementById("Sudoku"); 
