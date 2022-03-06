@@ -57,20 +57,10 @@ function addSudoku() {
 function dynamicSizeSudoku(){
     const middle = document.querySelector(".middle"); 
 
-    var height = middle.offsetHeight;
-    var width = middle.offsetWidth;
-
-    if(width > height){
-        height = height * 0.8;
-        width = height;
-    }
-    else{
-        width = width * 0.8;
-        height = width;
-    }
+    var height = middle.offsetHeight * 0.8
     
     const sudoku = document.getElementById("Sudoku"); 
-    sudoku.style.width = `${width}px`;
+    sudoku.style.width = `${height}px`;
     sudoku.style.height = `${height}px`;
 }
 function refreshTable(){ //Reset Sudoku Table
