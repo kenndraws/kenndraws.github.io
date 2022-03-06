@@ -57,15 +57,15 @@ function addSudoku() {
 function dynamicSizeSudoku(){
     const middle = document.querySelector(".middle"); 
 
-    let height = middle.offsetHeight;
-    let width = middle.offsetWidth;
+    var height = middle.offsetHeight;
+    var width = middle.offsetWidth;
 
     if(width > height){
-        height *= 0.8;
+        height = height * 0.8;
         width = height;
     }
     else{
-        width *= 0.8;
+        width = width * 0.8;
         height = width;
     }
     
