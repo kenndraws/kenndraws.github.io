@@ -150,7 +150,7 @@ body{
   width: 100%;
 }
 .mistakes #errors{
-  color: red;
+  color: black;
   margin: 0 15px;
   justify-self: start;
 }
