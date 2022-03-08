@@ -212,7 +212,19 @@ function addElements(){
             var ID = "cell-" + i + "-" + j; // Creating Cell ID
             var value = displayedSudokuArray[i][j]; //Getting Value For Display
             if(value != 0) sudoku.innerHTML = sudoku.innerHTML +  `<input type="text" class="cell displayed" id=${ID} value=${value} disabled>`; //If it has a value don't allow editing
-            else sudoku.innerHTML = sudoku.innerHTML +  `<input type="text" value='' class="cell" id=${ID}>`; //If cell doesn't have value allow editing
+            else sudoku.innerHTML = sudoku.innerHTML +  
+            `<select type="text" value='' class="cell" id=${ID}>
+                <option value="" selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>`; //If cell doesn't have value allow editing
             
         }
     }

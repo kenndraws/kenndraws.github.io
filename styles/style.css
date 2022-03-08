@@ -110,7 +110,7 @@ body{
   border: 1px solid black;
   text-align: center;
   font-size: 3vh;
-  caret-color: transparent;
+  -webkit-appearance: none;
   color: gray !important;
   border-radius: 0px;
   margin: 0;
