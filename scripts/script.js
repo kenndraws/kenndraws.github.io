@@ -225,10 +225,8 @@ function addElements(){
                 <option value="8">8</option>
                 <option value="9">9</option>
             </select>`; //If cell doesn't have value allow editing
-            
         }
     }
-
     // get all children
     const childern = sudoku.childNodes;
     // iterate over all child nodes
