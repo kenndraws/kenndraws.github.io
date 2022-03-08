@@ -98,10 +98,18 @@ body{
 .cell{
   border: 1px solid black;
   text-align: center;
-  font-size: 200%;
+  font-size: 3vh;
   caret-color: transparent;
   color: gray !important;
   border-radius: 0px;
+}
+.displayed, input:disabled {
+  /* background-color: #a3b1bf; */
+  text-align: center !important;
+  caret-color: transparent !important;
+  background-color: white !important;
+  color: black !important;
+  border-radius: 0px !important;
 }
 .cell:hover{
   cursor: pointer;
@@ -112,15 +120,6 @@ body{
   outline: none !important;
   background-color: #bfc8e3;
   border-radius: 0px;
-}
-.displayed, input:disabled {
-  /* background-color: #a3b1bf; */
-  text-align: center !important;
-  font-size: 200% !important;
-  caret-color: transparent !important;
-  background-color: white !important;
-  color: black !important;
-  border-radius: 0px !important;
 }
 .displayed:hover{
   background-color: white !important;
