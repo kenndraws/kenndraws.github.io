@@ -115,6 +115,7 @@ body{
   border-radius: 0px;
   margin: 0;
   padding: 0;
+  opacity: 1;
 }
 .displayed, input[type="text"]:disabled {
   text-align: center !important;
@@ -122,6 +123,7 @@ body{
   background-color: white !important;
   color: black !important;
   border-radius: 0px !important;
+  opacity: 1;
 }
 .cell:hover{
   cursor: pointer;
