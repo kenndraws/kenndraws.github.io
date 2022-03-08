@@ -49,18 +49,9 @@ function addLevelEvents(){ //Adding Event Listeneres to Menu Options
     //console.log(getRandomInt(1,3));
 }
 function addSudoku() {
-    dynamicSizeSudoku();
     generateGrid(); //Create 9x9 Sudoku Grid
     hideCells(); //Hide cells based on level
     addElements(); //Add DOM Elements to Page
-}
-function dynamicSizeSudoku(){
-    const middle = document.querySelector(".middle"); 
-    let height = middle.offsetHeight * 0.8;
-
-    const sudoku = document.getElementById("Sudoku"); 
-    sudoku.style.width = `${height}px`;
-    sudoku.style.height = `${height}px`;
 }
 function refreshTable(){ //Reset Sudoku Table
     const sudoku = document.getElementById("Sudoku"); //Get Sudoku Container

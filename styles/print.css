@@ -3,5 +3,16 @@
     .left, .right, .mistakes{
         display: none;
     }
-  
+    .slidemenu{
+        position:absolute;
+        margin: auto;
+        top: 0; right: 0; left: 0;
+    }
+    #Sudoku{
+        position:absolute;
+        margin: auto;
+        top: 0; right: 0; bottom: 0; left: 0;
+        border: 5px solid #191919;
+        padding: 0;
+    }
   }
