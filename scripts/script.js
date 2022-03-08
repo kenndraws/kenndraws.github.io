@@ -46,7 +46,6 @@ function addLevelEvents(){ //Adding Event Listeneres to Menu Options
         });
     }
     refreshTable(); //Readd Sudoku Puzzle
-    //console.log(getRandomInt(1,3));
 }
 function addSudoku() {
     generateGrid(); //Create 9x9 Sudoku Grid
