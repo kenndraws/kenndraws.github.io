@@ -85,6 +85,8 @@ body{
 
 #Sudoku{
   display: grid;
+  row-gap: 0;
+  column-gap: 0;
   grid-template-columns: repeat(9,11.111%);
   grid-auto-rows: 11.111%;
   margin: 0;
@@ -98,7 +100,7 @@ body{
 .cell{
   border: 1px solid black;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2.5vw;
   caret-color: transparent;
   color: gray !important;
   border-radius: 0px;
