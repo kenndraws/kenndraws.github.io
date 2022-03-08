@@ -137,8 +137,9 @@ body{
   background-color: #bfc8e3;
   border-radius: 0px;
 }
-.cell > option {
+.cell > select {
   text-align: center;
+  text-align-last:center;
 }
 .displayed:hover{
   background-color: white !important;
