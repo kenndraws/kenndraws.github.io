@@ -98,7 +98,7 @@ body{
 .cell{
   border: 1px solid black;
   text-align: center;
-  font-size: 3vh;
+  font-size: 3vw;
   caret-color: transparent;
   color: gray !important;
   border-radius: 0px;
