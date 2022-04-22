@@ -26,7 +26,6 @@ function getBodies() {
             const body = bodies[id];
 
             var parent = ".Other";
-
             if (body.title === "Planet") parent = ".Planets";
             else if (body.title === "Moon") parent = ".Moons";
             else if (body.title === "Dwarf Planet") parent = ".Dwarfs";
@@ -36,15 +35,13 @@ function getBodies() {
             host.innerHTML += createBodyInfoElement(body);
         }
     });
-
-
 }
 
 function createBodyInfoElement(info) {
     return (
         `<div class="body-info">
             <div class="body-info-main">
-                <img src=${info.img} alt=${info.name} class="body-info-image" />
+                <img src=${info.img} alt=${info.name} onerror="this.onerror=null; this.src='./img/default.jpg'"class="body-info-image" />
                 <div class="body-info-text">
                     <h2>${info.title}</h2>
                     <h3>${info.name}</h3>
