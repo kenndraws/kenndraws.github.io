@@ -17,7 +17,7 @@ function getAPOD() {
 }
 function getBodies() {
     const getPromise = async () => {
-        const response = await fetch('https://kenndraws.github.io/Project-3/js/data.json');
+        const response = await fetch('./js/data.json');
         const res = await response.json();
         return res;
     }
