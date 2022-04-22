@@ -22,7 +22,7 @@ function getBodies() {
         return res;
     }
     getPromise().then(response => {
-        console.log(response);
+        console.log("JSON RESPONSE", response);
     });
 
     // if (body.bodyType === "Planet") parent = ".Planets";
