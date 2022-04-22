@@ -26,14 +26,14 @@ function getBodies() {
             const body = bodies[id];
 
             var parent = ".Other";
-            
+
             if (body.title === "Planet") parent = ".Planets";
             else if (body.title === "Moon") parent = ".Moons";
             else if (body.title === "Dwarf Planet") parent = ".Dwarfs";
             else if (body.title === "Asteroid") parent = ".Asteroids";
 
             const host = document.querySelector(parent);
-            host.innerHTML += createBodyInfoElement(info);
+            host.innerHTML += createBodyInfoElement(body);
         }
     });
 
