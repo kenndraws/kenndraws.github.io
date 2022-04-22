@@ -16,6 +16,14 @@ function getAPOD() {
     });
 }
 function getBodies() {
+    const getPromise = async () => {
+        const response = await fetch('https://kenndraws.github.io/Project-3/js/data.json');
+        const res = await response.json();
+        return res;
+    }
+    getPromise().then(response => {
+        console.log(response);
+    });
 
     // if (body.bodyType === "Planet") parent = ".Planets";
     // else if (body.bodyType === "Moon") parent = ".Moons";
