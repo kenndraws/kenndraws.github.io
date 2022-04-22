@@ -48,8 +48,8 @@ function createBodyInfoElement(info) {
                 <div class="body-info-text">
                     <h2>${info.title}</h2>
                     <h3>${info.name}</h3>
-                    <p><strong>${info.sciName}</strong> 
-                        <span> ${info.description}</span>
+                    <p><strong>${info.sciName},</strong> 
+                        <span> ${(info.description.length > 620 ? info.description.substring(0,616) + "..." : info.description)}</span>
                     </p>
                 </div>
             </div>
@@ -64,5 +64,5 @@ function createBodyInfoElement(info) {
         </div>`
     );
 }
-//getAPOD();
+getAPOD();
 getBodies();
