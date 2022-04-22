@@ -21,17 +21,23 @@ function getBodies() {
         const res = await response.json();
         return res;
     }
-    getPromise().then(response => {
-        console.log("JSON RESPONSE", response);
+    getPromise().then(bodies => {
+        for (const id in bodies) {
+            const body = bodies[id];
+
+            var parent = ".Other";
+            
+            if (body.title === "Planet") parent = ".Planets";
+            else if (body.title === "Moon") parent = ".Moons";
+            else if (body.title === "Dwarf Planet") parent = ".Dwarfs";
+            else if (body.title === "Asteroid") parent = ".Asteroids";
+
+            const host = document.querySelector(parent);
+            host.innerHTML += createBodyInfoElement(info);
+        }
     });
 
-    // if (body.bodyType === "Planet") parent = ".Planets";
-    // else if (body.bodyType === "Moon") parent = ".Moons";
-    // else if (body.bodyType === "Dwarf Planet") parent = ".Dwarfs";
-    // else if (body.bodyType === "Asteroid") parent = ".Asteroids";
 
-    // const host = document.querySelector(parent);
-    // host.innerHTML += createBodyInfoElement(info);
 }
 
 function createBodyInfoElement(info) {
