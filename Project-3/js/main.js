@@ -20,16 +20,20 @@ function displayMobileMenu() {
     displayed = !displayed;
 }
 
-function displayClickedMenu(){
+function displayClickedMenu() {
     const menu = document.querySelector("#Menu");
     Array.from(menu.children).filter(elem => elem.tagName === "INPUT").map(input => {
         isChecked(input);
         input.addEventListener("change", () => {
             isChecked(input);
+            console.log(document.querySelector("#menu-button").getComputedStyle);
+            
+            var mq = window.matchMedia("(max-width: 1200px)");
+            if (mq.matches) displayMobileMenu();
         });
     });
 
-    function isChecked(input){
+    function isChecked(input) {
         if (input.checked) {
             Array.from(document.querySelector("main").children).map(section => {
                 if (section.classList.contains(input.id)) section.style.display = "block";
