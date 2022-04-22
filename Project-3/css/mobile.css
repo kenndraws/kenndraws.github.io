@@ -73,6 +73,20 @@
     .body-info {
         width: 100% !important;
     }
+    
+    .welcome-title{
+        margin-top: 0px;
+    }
+    @keyframes slideUp {
+        from {
+          margin-top: 170px;
+          opacity: 0;
+        }
+        to {
+            margin-top: 0px;
+            opacity: 1;
+        }
+    }
 }
 
 @media (max-width: 600px) {
@@ -118,5 +132,22 @@
     }
     .body-info-icons > p{
         font-weight: 100;
+    }
+    .Home{
+        background-position: 0 100px;
+    }
+    .welcome-title .welcome {
+        font-size: 25px;
+    }
+    .welcome-title .description {
+        font-size: 12px;
+    }
+}
+@media (min-width: 2000px) {
+    .welcome-title .welcome {
+        font-size: 45px;
+    }
+    .welcome-title .description {
+        font-size: 20px;
     }
 }

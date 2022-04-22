@@ -15,20 +15,19 @@ header{
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
-header > div {
+header > section {
     display: flex;
     align-items: center;
 }
-header > div > img{
+header > section > img{
     height: 40px;
-    padding: 8px 0px 8px 15px;
-    filter: brightness(10);
+    padding: 0px 25px;
+    filter: invert();
 }
-header > div > #title{
+header > section > #title{
     color: white;
-    font-size: 15px;
-    padding: 0 15px;
-    margin: 0;
+    font-size: 20px;
+    margin: 0 0 0 -10px;
 }
 #Menu{
     display: flex;
@@ -84,3 +83,37 @@ main > section {
     box-sizing: border-box;
     padding: 75px 15px 15px 15px;
 }
+
+main > .Home{
+    background-image: url('./../img/earth-background.jpg');
+    background-size: 100vw auto;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: calc(100vh);
+}
+.welcome-title{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 1;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    animation: slideUp 1.2s ease-in-out;
+}
+.welcome-title p{
+    margin: 10px 0;
+}
+.welcome-title .welcome {
+    font-size: 30px;
+}
+
+@keyframes slideUp {
+    from {
+      margin-top: 170px;
+      opacity: 0;
+    }
+    to {
+        margin-top: 50px;
+        opacity: 1;
+    }
+  }

@@ -11,22 +11,22 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/info.css">
 
-    <link rel="icon" href="img/SudokuIcon300x300Transparent.png">
+    <link rel="icon" href="img/logo.png">
     <script src="js/main.js"></script>
-    <script src="js/api.js"></script>
+    <script src="js/bodies.js"></script>
 
-    <title>Responsive Webiste</title>
+    <title>Astronomy Info Project</title>
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="img/SudokuIcon300x300Transparent.png" alt="icon" />
-            <p id="title">Website</p>
-        </div>
-        <div id="menu-button">
+        <section>
+            <img src="img/logo.png" alt="icon" />
+            <p id="title">AIP</p>
+        </section>
+        <section id="menu-button">
             <input type="button" value="≡" onClick="displayMobileMenu()">
-        </div>
+        </section>
         <nav id="Menu">
             <input type="radio" name="option" id="Home" class="toggle" checked />
             <label for="Home"><span>Home</span></label>
@@ -43,16 +43,21 @@
             <input type="radio" name="option" id="Asteroids" class="toggle" />
             <label for="Asteroids"><span>Asteroids</span></label>
 
-            
+
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
-            <!-- <div class="background-slider">.</div> -->
+            <!-- <section class="background-slider">.</section> -->
         </nav>
     </header>
     <main role="main">
         <section class="Home">
-            <img src="" alt="APOD" class="photo-day" />
+            <section class="welcome-title">
+                <p class="welcome">Astronomy Info Project</p>
+                <p class="description">Learn about our Solar System</p>
+            </section>
+
+            <!-- <img src="" alt="APOD" class="photo-day" /> -->
         </section>
         <section class="Planets">
 
