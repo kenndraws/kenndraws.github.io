@@ -1,0 +1,86 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background: black;
+    
+    overflow-y: overlay;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+header > div {
+    display: flex;
+    align-items: center;
+}
+header > div > img{
+    height: 40px;
+    padding: 8px 0px 8px 15px;
+    filter: brightness(10);
+}
+header > div > #title{
+    color: white;
+    font-size: 15px;
+    padding: 0 15px;
+    margin: 0;
+}
+#Menu{
+    display: flex;
+    font-family: arial, sans-serif;
+    overflow: hidden;
+    margin: auto;
+    transition: all 200ms ease-in-out;
+}
+
+.toggle{
+    display: none;
+}
+#Menu label{
+    box-sizing: border-box;
+    color: var(--color-light-bg);
+    margin: 0;
+    font-size: 15px;
+    padding: 20px 40px;
+    z-index: 1;
+    float: left;
+    opacity: 0.5;
+    text-align: center;
+}
+#Menu label:hover{ 
+    cursor: pointer; 
+    
+    opacity: 0.7;
+}
+.background-slider{
+    width: 16.66%;
+    height: 1px;
+    font-size: 0;
+    padding: 0px 0;
+    background: white;
+    margin-top: 54px;
+    z-index: 0;
+}
+#Menu .toggle:checked + label{ 
+    color: var(--color-light-bg);
+    opacity: 1;
+}
+#Menu label, .background-slider { transition: all 200ms ease-in-out; }
+#Menu #Home:checked ~ .background-slider { margin-left: 0; }
+#Menu #Planets:checked ~ .background-slider { margin-left: 16.66% }
+#Menu #Moons:checked ~ .background-slider { margin-left: 33.33% }
+#Menu #Dwarfs:checked ~ .background-slider { margin-left: 49.99% }
+#Menu #Comets:checked ~ .background-slider { margin-left: 66.66% }
+#Menu #Asteroids:checked ~ .background-slider { margin-left: 83.33% }
+
+main > section {
+    display: none;
+    
+    box-sizing: border-box;
+    padding: 75px 15px 15px 15px;
+}
