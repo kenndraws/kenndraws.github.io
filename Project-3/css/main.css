@@ -112,7 +112,7 @@ main > .Home{
     gap: 50px;
 
     box-sizing: border-box;
-    padding: 150px 35px 35px 35px;
+    padding: 150px 50px 35px 50px;
 }
 .welcome-title{
     color: white;
@@ -154,7 +154,7 @@ main > .Home{
     margin: 0;
     margin-left: auto;
     /* background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2)); */
-    padding: 50px 25px;
+    padding: 50px 0;
 
     animation: slideLeft 1s .5s ease-in-out both;
 }
@@ -170,7 +170,7 @@ main > .Home{
 .solar-info{
     display: flex;
     color: white;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     
     animation: slideUp 1s 1s ease-in-out both;
@@ -269,15 +269,13 @@ main > .Home{
     align-items: center;
 }
 .info{
+    box-sizing: border-box;
     color: white;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: calc(50% - 20px) calc(50% - 20px);
     align-items: center;
     justify-items: center;
-}
-.info>*{
-    box-sizing: border-box;
-    padding: 0 50px;
+    gap: 40px;
 }
 .info img {
     width: 100%;
