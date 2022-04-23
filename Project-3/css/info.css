@@ -18,7 +18,6 @@
 }
 .body-info:hover{
     cursor: pointer;
-    background-color:#1c1c1c;
 }
 .body-info-main{
     display: grid;

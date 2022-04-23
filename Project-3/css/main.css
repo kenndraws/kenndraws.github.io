@@ -30,11 +30,13 @@ header > section > img{
     height: 40px;
     padding: 0px 25px;
     filter: invert();
+    opacity: 0.5;
 }
 header > section > #title{
     color: white;
     font-size: 20px;
     margin: 0 0 0 -10px;
+    opacity: 0.5;
 }
 #Menu{
     display: flex;
@@ -42,6 +44,7 @@ header > section > #title{
     overflow: hidden;
     margin: auto;
     transition: all 200ms ease-in-out;
+    position: relative;
 }
 
 .toggle{
@@ -66,7 +69,7 @@ header > section > #title{
 .background-slider{
     position: absolute;
     width: 16.66%;
-    height: 100%;
+    height: 1px;
     font-size: 0;
     padding: 0px 0;
     background: white;
@@ -82,8 +85,8 @@ header > section > #title{
 #Menu #Planets:checked ~ .background-slider { margin-left: 16.66% }
 #Menu #Moons:checked ~ .background-slider { margin-left: 33.33% }
 #Menu #Dwarfs:checked ~ .background-slider { margin-left: 49.99% }
-#Menu #Comets:checked ~ .background-slider { margin-left: 66.66% }
-#Menu #Asteroids:checked ~ .background-slider { margin-left: 83.33% }
+#Menu #Asteroids:checked ~ .background-slider { margin-left: 66.66% }
+#Menu #Other:checked ~ .background-slider { margin-left: 83.33% }
 
 main{
     min-height: calc(100vh - 146px);
@@ -122,6 +125,8 @@ main > .Home{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    animation: slideRight 1s ease-in-out both; 
 }
 .welcome-title p{
     margin: 10px 0;
@@ -135,12 +140,12 @@ main > .Home{
     width: fit-content;
     padding: 15px;
     font-size: 16px;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
 }
 .welcome-title .Learn:hover{
     cursor: pointer;
-}
-.paused {
-    animation-play-state: paused;
 }
 .about{
     color: white;
@@ -148,8 +153,10 @@ main > .Home{
     text-align: right;
     margin: 0;
     margin-left: auto;
-    background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2));
+    /* background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2)); */
     padding: 50px 25px;
+
+    animation: slideLeft 1s .5s ease-in-out both;
 }
 .about > .title{
     font-size: 80px;
@@ -165,6 +172,8 @@ main > .Home{
     color: white;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    
+    animation: slideUp 1s 1s ease-in-out both;
 }
 .solar-info-card {
     background: rgb(0, 123, 224);
@@ -244,14 +253,112 @@ main > .Home{
     overflow: scroll;
 }
 
+.media-info{
+    display: grid;
+    grid-auto-rows: auto;
+    align-items: center;
+}
+.media-info > section {
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+.APOD{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    color: white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;
+}
+.info>*{
+    box-sizing: border-box;
+    padding: 0 50px;
+}
+.info img {
+    width: 100%;
+}
+.text {
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-rows: 50%;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    transition: all 300ms ease-in-out;
+}
+.text >* {
+    justify-self: end;
+}
+.text section h2 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.text section h2 span {
+    color:rgb(0, 123, 224);
+    font-weight: 200;
+}
+.text section {
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    text-align: right;
+}
+.text section h3 {
+    font-size: 18px;
+    font-weight: 200;
+    margin: 5px 0;
+}
+.text p{
+    align-self: start;
+    text-align: right;
+}
 
-@keyframes slideUp {
+.MarsRover p, .MarsRover .text section{
+    text-align: left;
+}
+.MarsRover .text section{
+    justify-self: start;
+}
+.paused {
+    animation-play-state: paused !important;
+}
+.hidden{
+    display: none;
+}
+
+@keyframes slideRight {
     from {
-        top: 200px;
+        transform: translateX(-200px);
         opacity: 0;
     }
     to {
-        top: 0;
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
         opacity: 1;
     }
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/splash.css">
 
     <link rel="icon" href="img/logo.png">
     <script src="js/main.js"></script>
@@ -48,17 +49,22 @@
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
-            <!-- <section class="background-slider">.</section> -->
+            <section class="background-slider">.</section>
         </nav>
     </header>
     <main role="main">
-        <section class="Home paused">
-            <section class="welcome-title">
+        <section class="splash paused">
+            <section class="splash_logo paused">
+                <p>AIP</p>
+            </section>
+        </section>
+        <section class="Home">
+            <section class="welcome-title paused ">
                 <p class="welcome">Astronomy Info Project</p>
                 <p class="description">Learn about our Solar System</p>
-                <h2 class="Learn">Learn More</h2>
+                <a class="Learn" href="mailto:kenneth.gonzalez@uvu.com">Contact Us</a>
             </section>
-            <section class="about paused">
+            <section class="about paused ">
                 <p class="title">Our Solar System</p>
                 <p class="description">Our solar system consists of our star, the Sun,
                     and everything bound to it by gravity
@@ -68,24 +74,50 @@
                     orbiting other stars in the Milky Way.
                 </p>
             </section>
-            <section class="solar-info">
+            <section class="solar-info paused ">
                 <section class="solar-info-card">
                     <img src="img/solar-system.png" alt="icon" />
-                    <p class="amount">3.2K+</p>
-                    <p class="title">Solar Systems</p>
+                    <p class="amount">3200 +</p>
+                    <p class="title">Solar Systems<br />in the milky way</p>
                 </section>
                 <section class="solar-info-card">
                     <img src="img/sun.png" alt="icon" />
-                    <p class="amount">200B+</p>
-                    <p class="title">Suns</p>
+                    <p class="amount">200 B+</p>
+                    <p class="title">Suns<br />in the milky way</p>
                 </section>
                 <section class="solar-info-card">
                     <img src="img/galaxy.png" alt="icon" />
-                    <p class="amount">100B+</p>
-                    <p class="title">Galaxies</p>
+                    <p class="amount">100 B+</p>
+                    <p class="title">Galaxies<br />beyond the milky way</p>
                 </section>
             </section>
-            <section class="our-planets">
+            <section class="media-info">
+                <section class="APOD">
+
+                </section>
+                <section class="MarsRover">
+                    <section class="info">
+                        <section class="text">
+                            <section>
+                                <h2>Solar Eclipse on Mars <span>━</span></h2>
+                                <h3>Captured by Perseverance</h3>
+                                <h3 style="opacity: 0.5">Wed Apr 20 2022</h3>
+                            </section>
+                            <p>NASA's Perseverance Mars rover used its Mastcam-Z camera to
+                                shoot video of Phobos, one of Mars' two moons, eclipsing the Sun.
+                                It's the most zoomed-in, highest-frame-rate observation of a Phobos
+                                solar eclipse ever taken from the Martian surface.
+                                Credits: NASA/JPL-Caltech/ASU/MSSS/SSI</p>
+                        </section>
+                        <iframe width="80%" height="425" src="https://www.youtube.com/embed/aKK7vS2CHC8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </section>
+                </section>
+            </section>
+            <section class="our-planets hidden">
                 <p class="our-planets-title">Our Planets</p>
                 <section class="carousel">
                     <section class="planet obj-1" id>
@@ -122,7 +154,6 @@
                     </section>
                 </section>
             </section>
-            <!-- <img src="" alt="APOD" class="photo-day" /> -->
         </section>
         <section class="Planets">
         </section>
@@ -149,9 +180,9 @@
         </ul>
 
         <section class="footer_legal">
-            <p>&copy; 2019 Astronomy Info Project. 
-                <br/>All Rights Reserved.
-                <br/><span>Made by Kenneth Gonzalez</span>
+            <p>&copy; 2019 Astronomy Info Project.
+                <br />All Rights Reserved.
+                <br /><span>Made by Kenneth Gonzalez</span>
             </p>
         </section>
     </footer>

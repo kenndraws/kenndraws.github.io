@@ -10,10 +10,12 @@ function getAPOD() {
         const res = await response.json();
         return res;
     }
-    const data = getPromise().then(response => {
-        const photo_day = document.querySelector(".photo-day");
-        photo_day.src = response.url;
-        console.log(response.url);
+    const data = getPromise().then(response => {    
+        //Gettings {date, explanation, title, src}
+        const host = document.querySelector(".APOD");
+        const date = new Date(response.date).toString().split(" ").slice(0,4).join().replaceAll(",", " ")
+        host.innerHTML += createAPOD({date: date, explanation: response.explanation, src: response.url, title: response.title});
+        console.log(response);
     });
 }
 function getBodies() {
@@ -76,12 +78,32 @@ function createBodyInfoElement(info) {
     );
 }
 
+function createAPOD(info) {
+    //Returns a string with html representation of element structure
 
-window.addEventListener("DOMContentLoaded", main);
+    return (
+        `<section class="info">
+            <img src=${info.src} alt=${info.title} "class="photo-day"  onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" />
+            <section class="text">
+                <section>
+                    <h2><span>━</span> ${info.title}</h2>
+                    <h3>Astronomy Photo of the Day</h3>
+                    <h3 style="opacity: 0.5">${info.date}</h3>
+                </section>
+                <p>${(info.explanation.length > 620 ? info.explanation.substring(0, 616) + "..." : info.explanation)}</p>
+            </section>
+        </section>`
+    );
+}
+
+window.addEventListener('load', main);
 function main() {
-    //getAPOD();
+    getAPOD();
     getBodies();
-    setTimeout(function() {
-        document.querySelector(".paused").style.animationPlayState = "running";
+    setTimeout(function () {
+        Array.from(document.getElementsByClassName("paused")).forEach(element => {
+            element.classList.remove('paused');
+        });
     }, 500);
+
 }
