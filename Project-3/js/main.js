@@ -40,7 +40,7 @@ function displayClickedMenu() {
         //if input is checked display section corresponding to the button hide rest
         if (input.checked) { 
             Array.from(document.querySelector("main").children).forEach(section => {
-                if (section.classList.contains(input.id)) section.style.display = "block";
+                if (section.classList.contains(input.id)) section.style.display = "";
                 else section.style.display = "none";
             });
         }

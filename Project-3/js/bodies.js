@@ -19,7 +19,7 @@ function getAPOD() {
 function getBodies() {
     //Get data.json for information
     const getPromise = async () => {
-        const response = await fetch('./js/data.json');
+        const response = await fetch('https://kenndraws.github.io/Project-3/js/data.json');
         const res = await response.json();
         return res;
     }
@@ -55,12 +55,12 @@ function createBodyInfoElement(info) {
     return (
         `<section class="body-info">
             <section class="body-info-main">
-                <img src=${info.img} alt=${info.name} onerror="this.onerror=null; this.src='./img/default.jpg'"class="body-info-image" />
+                <img src=${info.img} alt=${info.name} "class="body-info-image"  onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" />
                 <section class="body-info-text">
                     <h2>${info.title}</h2>
                     <h3>${info.name}</h3>
                     <p><strong>${info.sciName},</strong> 
-                        <span> ${(info.description.length > 620 ? info.description.substring(0,616) + "..." : info.description)}</span>
+                        <span> ${(info.description.length > 620 ? info.description.substring(0, 616) + "..." : info.description)}</span>
                     </p>
                 </section>
             </section>
@@ -76,5 +76,12 @@ function createBodyInfoElement(info) {
     );
 }
 
-//getAPOD();
-getBodies();
+
+window.addEventListener("DOMContentLoaded", main);
+function main() {
+    //getAPOD();
+    getBodies();
+    setTimeout(function() {
+        document.querySelector(".paused").style.animationPlayState = "running";
+    }, 500);
+}

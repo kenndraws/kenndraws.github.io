@@ -5,6 +5,11 @@ html, body {
     background: black;
     
     overflow-y: overlay;
+    overflow-x: hidden;
+    
+}
+::-webkit-scrollbar{
+    background: transparent;
 }
 
 header{
@@ -14,6 +19,8 @@ header{
     align-items: center;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+
+    z-index: 2;
 }
 header > section {
     display: flex;
@@ -57,13 +64,14 @@ header > section > #title{
     opacity: 0.7;
 }
 .background-slider{
+    position: absolute;
     width: 16.66%;
-    height: 1px;
+    height: 100%;
     font-size: 0;
     padding: 0px 0;
     background: white;
     margin-top: 54px;
-    z-index: 0;
+    z-index: 2;
 }
 #Menu .toggle:checked + label{ 
     color: var(--color-light-bg);
@@ -78,10 +86,12 @@ header > section > #title{
 #Menu #Asteroids:checked ~ .background-slider { margin-left: 83.33% }
 
 main > section {
-    display: none;
+    display: block;
     
     box-sizing: border-box;
     padding: 75px 15px 15px 15px;
+
+    z-index: 0;
 }
 
 main > .Home{
@@ -90,15 +100,25 @@ main > .Home{
     background-repeat: no-repeat;
     width: 100vw;
     min-height: calc(100vh);
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    box-sizing: border-box;
+    padding: 150px 35px 35px 35px;
 }
 .welcome-title{
     color: white;
     text-align: center;
-    margin-top: 50px;
     opacity: 1;
-    font-family: 'Lato', sans-serif;
     font-family: 'Raleway', sans-serif;
-    animation: slideUp 1.2s ease-in-out;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .welcome-title p{
     margin: 10px 0;
@@ -106,14 +126,129 @@ main > .Home{
 .welcome-title .welcome {
     font-size: 30px;
 }
+.welcome-title .Learn {
+    background:rgb(0, 123, 224);
+    border-radius: 25px;
+    width: fit-content;
+    padding: 15px;
+    font-size: 16px;
+}
+.welcome-title .Learn:hover{
+    cursor: pointer;
+}
+.paused {
+    animation-play-state: paused;
+}
+.about{
+    color: white;
+    max-width: 600px;
+    text-align: right;
+    margin: 0;
+    margin-left: auto;
+    background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2));
+    padding: 50px 25px;
+}
+.about > .title{
+    font-size: 80px;
+    font-weight: 600;
+    margin: 0;
+}
+.about > .description{
+    font-size: 20px;
+}
+
+.solar-info{
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.solar-info-card {
+    background: rgb(0, 123, 224);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    margin: 15px 0;
+}
+.solar-info-card > img {
+    width: 75px;
+    height: auto;
+    filter: invert();
+    margin-bottom: 25px;
+}
+.solar-info-card > p {
+    margin: 0;
+}
+.solar-info-card > .amount{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.our-planets-title{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    margin: 10px 0;
+}
+.our-planets{
+    overflow: hidden;
+}
+.our-planets .planet{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    
+    margin: 55px 0;
+    flex: 0 0 auto;
+
+    transition: all 200ms ease-in-out;
+}
+.our-planets .planet:hover{
+    cursor: pointer;
+    width: 42%;
+    margin: 0 -1%;
+}
+.our-planets .planet img{
+    width: 100%;
+    z-index: 1;
+    border-radius: 25%;
+}
+.our-planets .planet p{
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 75px;
+    font-weight: 600;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+.carousel{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    gap: 16.66%; 
+
+    width: 100vw;
+    padding: 0 50px;
+    overflow: scroll;
+}
+
 
 @keyframes slideUp {
     from {
-      margin-top: 170px;
-      opacity: 0;
+        top: 200px;
+        opacity: 0;
     }
     to {
-        margin-top: 50px;
+        top: 0;
         opacity: 1;
     }
-  }
+}
