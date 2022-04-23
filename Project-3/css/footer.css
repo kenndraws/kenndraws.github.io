@@ -1,5 +1,6 @@
 .footer {
     box-sizing: border-box;
+    width: 100vw;
     display: flex;
     padding: 30px;
     color: white;
@@ -22,6 +23,7 @@
 .footer_links {
     display: flex;
     list-style: none;
+    margin: 0 !important;
 }
 .footer_links>* {
     flex: 1 50%;
@@ -33,8 +35,11 @@
 
 @media (max-width: 900px) {
     .footer{
-        display: block;
+        flex-direction: column;
         text-align: center;
+    }
+    .footer_links{
+        width: 100%;
     }
     .footer_legal {
         text-align: center;

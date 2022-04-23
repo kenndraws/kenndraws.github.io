@@ -85,6 +85,9 @@ header > section > #title{
 #Menu #Comets:checked ~ .background-slider { margin-left: 66.66% }
 #Menu #Asteroids:checked ~ .background-slider { margin-left: 83.33% }
 
+main{
+    min-height: calc(100vh - 146px);
+}
 main > section {
     display: block;
     
