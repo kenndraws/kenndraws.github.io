@@ -3961,7 +3961,7 @@
     },
     {
         "id": 220,
-        "img": "",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Shoemaker-Levy_9_on_1994-05-17.png/1920px-Shoemaker-Levy_9_on_1994-05-17.png",
         "title": "Comet",
         "name": "Shoemaker-Levy 9",
         "sciName": "Shoemaker-Levy 9",
@@ -3970,7 +3970,7 @@
         "isPlanet": false,
         "gravity": 0,
         "avgTemp": 0,
-        "description": "",
+        "description": "Comet Shoemaker–Levy 9 (formally designated D/1993 F2) broke apart in July 1992 and collided with Jupiter in July 1994, providing the first direct observation of an extraterrestrial collision of Solar System objects. This generated a large amount of coverage in the popular media, and the comet was closely observed by astronomers worldwide. The collision provided new information about Jupiter and highlighted its possible role in reducing space debris in the inner Solar System.",
         "mass": {
             "massValue": 0,
             "massExponent": 0
@@ -4357,7 +4357,7 @@
     },
     {
         "id": 242,
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Sun_in_white_light.jpg/500px-The_Sun_in_white_light.jpg",
+        "img": "https://supernova.eso.org/static/archives/exhibitionimages/screen/20141027-x2flare_8k.jpg",
         "title": "Star",
         "name": "Sun",
         "sciName": "Le Soleil",
@@ -5131,7 +5131,7 @@
     },
     {
         "id": 285,
-        "img": "",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Comet_2020_F3_%28NEOWISE%29_on_Jul_14_2020_aligned_to_stars.jpg/1280px-Comet_2020_F3_%28NEOWISE%29_on_Jul_14_2020_aligned_to_stars.jpg",
         "title": "Comet",
         "name": "C/2020 F3 (NEOWISE)",
         "sciName": "C/2020 F3 (NEOWISE)",
@@ -5140,7 +5140,7 @@
         "isPlanet": false,
         "gravity": 0,
         "avgTemp": 0,
-        "description": "",
+        "description": "C/2020 F3 (NEOWISE) or Comet NEOWISE is a long period comet with a near-parabolic orbit discovered on March 27, 2020, by astronomers during the NEOWISE mission of the Wide-field Infrared Survey Explorer (WISE) space telescope. At that time, it was an 18th-magnitude object, located 2 AU (300 million km; 190 million mi) away from the Sun and 1.7 AU (250 million km; 160 million mi) away from Earth.",
         "mass": {
             "massValue": 0,
             "massExponent": 0
