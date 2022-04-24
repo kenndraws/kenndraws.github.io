@@ -75,9 +75,6 @@ function createBodyInfoElement(info) {
     return (
         `<section class="body-info">
             <section class="body-info-main">
-                <img src=${info.img} alt='FILE_NOT_FOUND' "class="body-info-image"  
-                    onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" 
-                />
                 <section class="body-info-text">
                     <h2>${info.name}</h2>
                     <h3>${info.title}</h3>
@@ -85,6 +82,9 @@ function createBodyInfoElement(info) {
                         <span> ${(info.description.length > 620 ? info.description.substring(0, 616) + "..." : info.description)}</span>
                     </p>
                 </section>
+                <img src=${info.img} alt='FILE_NOT_FOUND' "class="body-info-image"  
+                    onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" 
+                />
             </section>
             <section class="body-info-icons">
                 ${(info.isPlanet ? `<p>Moons<br/>${info.moons}</p>` :
