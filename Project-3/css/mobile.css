@@ -1,32 +1,151 @@
-#menu-button {
-    margin-left: auto;
-    padding-right: 35px;
-    transition: all 200ms ease-in-out;
-}
+@media (min-width: 2000px) {
+    .welcome-title .welcome {
+        font-size: 45px;
+    }
 
-.button-slide {
-    padding-right: calc(50% + 15px) !important;
-}
-
-#menu-button input {
-    color: var(--color-light-bg);
-    font-size: 35px;
-    margin: 0;
-    z-index: 1;
-    background: none;
-    border: none;
-    outline: none;
-}
-
-@media screen and (min-width: 1200px) {
-    #menu-button {
-        display: none;
+    .welcome-title .description {
+        font-size: 20px;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media (min-width: 1200px) {
+    #menu-button {
+        display: none;
+    }
+
+    .welcome-title .welcome {
+        font-size: 30px;
+    }
+
+    .welcome-title .description {
+        font-size: 12px;
+    }
+
+    .text p {
+        align-self: start;
+        text-align: right;
+    }
+
+    .info .text section h2 {
+        font-size: 50px;
+    }
+
+    .Home {
+        padding: 100px 50px 50px 50px;
+    }
+
+    .body-info {
+        width: 100%;
+        min-height: 300px;
+        min-width: 300px;
+        grid-template-columns: auto 18%;
+        grid-template-rows: 100%;
+    }
+
+    .body-info-text h2 {
+        font-size: 25px;
+    }
+
+    .body-info-text h3 {
+        font-size: 17px;
+        font-weight: normal;
+    }
+
+    .body-info-image {
+        width: auto;
+    }
+
+    .body-info-main {
+        grid-template-columns: 35% auto;
+        justify-content: center;
+    }
+
+    .body-info-icons {
+        width: fit-content;
+        text-align: right;
+    }
+
+    .body-info-icons>p {
+        font-weight: 200;
+    }
+
+    .about>.title {
+        font-size: 80px;
+    }
+
+    .about>.description {
+        font-size: 20px;
+    }
+
+    .solar-info-card {
+        margin: 15px 0;
+    }
+
+    .APOD .info {
+        flex-direction: column-reverse;
+    }
+
+    #Menu label {
+        margin: 0;
+        opacity: 0.5;
+    }
+
+    #Menu label:hover {
+        opacity: 0.7;
+    }
+
+    #Menu .toggle:checked+#Menu label {
+        color: var(--color-light-bg);
+    }
+
+    .info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .body-info {
+        width: 100%;
+    }
+
+    .welcome-title {
+        margin-top: 0px;
+    }
+
+    @keyframes slideUp {
+        from {
+            margin-top: 170px;
+            opacity: 0;
+        }
+
+        to {
+            margin-top: 0px;
+            opacity: 1;
+        }
+    }
+
     .slide {
         right: 0 !important;
+    }
+
+    #menu-button {
+        margin-left: auto;
+        transition: all 200ms ease-in-out;
+    }
+
+    .button-slide {
+        padding-right: calc(50% + 15px) !important;
+    }
+
+    #menu-button input {
+        color: var(--color-light-bg);
+        font-size: 35px;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+        background: none;
+        border: none;
+        outline: none;
     }
 
     #Menu {
@@ -69,53 +188,51 @@
         font-size: 50px;
     }
 
-    .apod-info{
+    .info {
         width: 100%;
     }
-    .apod-text h2 {
+
+    .text section h2 {
         font-size: 30px;
     }
 
-    .apod-text h2 span {
+    .text section h2 span {
         font-size: 15px;
     }
-    .MarsRover .info iframe{
+
+    .MarsRover .info iframe {
         width: 100%;
     }
 }
 
-#menu-button input:hover {
-    cursor: pointer;
-}
-
-@media (max-width: 1200px) {
-    .body-info {
-        width: 100% !important;
+@media (max-width: 800px) {
+    .welcome-title .welcome {
+        font-size: 25px;
     }
 
-    .welcome-title {
-        margin-top: 0px;
+    .welcome-title .description {
+        font-size: 12px;
     }
 
-    @keyframes slideUp {
-        from {
-            margin-top: 170px;
-            opacity: 0;
-        }
+    .text p {
+        display: none;
+    }
 
-        to {
-            margin-top: 0px;
-            opacity: 1;
-        }
+    .info .text section h2 {
+        font-size: 40px;
+    }
+
+    .Home {
+        padding: 100px 35px 35px 35px;
     }
 }
 
 @media (max-width: 600px) {
     .body-info {
-        max-width: 100% !important;
-        height: fit-content !important;
-        grid-template-columns: 100% !important;
-        grid-template-rows: auto 25% !important;
+        max-width: 100%;
+        height: fit-content;
+        grid-template-columns: 100%;
+        grid-template-rows: auto 25%;
         margin: 15px 0 !important;
     }
 
@@ -128,12 +245,12 @@
         justify-self: center;
     }
 
-    .body-info-text>h2 {
-        font-size: 15px;
+    .body-info-text h2 {
+        font-size: 35px;
     }
 
     .body-info-text h3 {
-        font-size: 10px;
+        font-size: 20px;
         font-weight: normal;
     }
 
@@ -142,17 +259,17 @@
     }
 
     .body-info-main {
-        grid-template-columns: 35% auto !important;
+        grid-template-columns: auto;
+        justify-content: center;
     }
 
     .body-info-icons {
         display: flex;
         justify-content: space-between;
-        border: none !important;
-        border-top: 1px solid var(--color-light-bg) !important;
+        border-top: 1px solid var(--color-light-bg);
         margin: 55px 0;
         width: 80% !important;
-        text-align: center !important;
+        text-align: center;
     }
 
     .body-info-icons>p {
@@ -161,7 +278,7 @@
 
     .Home {
         background-position: 0 100px;
-        padding: 100px 20px 20px 20px !important;
+        padding: 100px 20px 20px 20px;
     }
 
     .about>.title {
@@ -183,47 +300,26 @@
     .our-planets .planet p {
         font-size: 25px;
     }
+
     .info {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-    .APOD .info{
+
+    .APOD .info {
         flex-direction: column-reverse;
     }
+
     .info .text p {
         display: none;
     }
+
     .info .text section h2 {
         font-size: 30px;
     }
 }
 
-@media (min-width: 2000px) {
-    .welcome-title .welcome {
-        font-size: 45px;
-    }
-
-    .welcome-title .description {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 800px) {
-    .welcome-title .welcome {
-        font-size: 25px;
-    }
-
-    .welcome-title .description {
-        font-size: 12px;
-    }
-    .text p {
-        display: none;
-    }
-    .info .text section h2 {
-        font-size: 40px;
-    }
-    .Home {
-        padding: 100px 35px 35px 35px !important;
-    }
+#menu-button input:hover {
+    cursor: pointer;
 }

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/splash.css">
 
+    <link rel="stylesheet" href="css/SwitchButton.css">
+
     <link rel="icon" href="img/logo.png">
     <script src="js/main.js"></script>
     <script src="js/bodies.js"></script>
@@ -25,9 +27,6 @@
         <section>
             <img src="img/logo.png" alt="icon" />
             <p id="title">AIP</p>
-        </section>
-        <section id="menu-button">
-            <input type="button" value="≡" onClick="displayMobileMenu()">
         </section>
         <nav id="Menu">
             <input type="radio" name="option" id="Home" class="toggle" checked />
@@ -45,12 +44,18 @@
             <input type="radio" name="option" id="Asteroids" class="toggle" />
             <label for="Asteroids"><span>Asteroids</span></label>
 
-
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
             <section class="background-slider">.</section>
         </nav>
+        <label class="switch">
+            <input type="checkbox" onClick="console.log('switch theme')" />
+            <span class="slider round"></span>
+        </label>
+        <section id="menu-button">
+            <input type="button" value="≡" onClick="displayMobileMenu()">
+        </section>
     </header>
     <main role="main">
         <section class="splash paused">
@@ -190,6 +195,8 @@
                 <br /><span>Made by Kenneth Gonzalez</span>
             </p>
         </section>
+
+
     </footer>
 </body>
 

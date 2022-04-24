@@ -6,7 +6,6 @@ html, body {
     
     overflow-y: overlay;
     overflow-x: hidden;
-    
 }
 ::-webkit-scrollbar{
     background: transparent;
@@ -20,6 +19,9 @@ header{
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 
+    box-sizing: border-box;
+    padding: 0 15px;
+
     z-index: 2;
 }
 header > section {
@@ -27,17 +29,17 @@ header > section {
     align-items: center;
 }
 header > section > img{
-    height: 40px;
-    padding: 0px 25px;
+    height: 30px;
+    padding: 0px 15px;
     filter: invert();
     opacity: 0.5;
 }
 header > section > #title{
     color: white;
     font-size: 20px;
-    margin: 0 0 0 -10px;
     opacity: 0.5;
 }
+
 #Menu{
     display: flex;
     font-family: arial, sans-serif;
@@ -50,21 +52,21 @@ header > section > #title{
 .toggle{
     display: none;
 }
-#Menu label{
+#Menu > label{
     box-sizing: border-box;
     color: var(--color-light-bg);
-    margin: 0;
+    /* margin: 0; */
     font-size: 15px;
     padding: 20px 40px;
     z-index: 1;
     float: left;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     text-align: center;
 }
-#Menu label:hover{ 
+#Menu > label:hover{ 
     cursor: pointer; 
     
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 .background-slider{
     position: absolute;
@@ -76,11 +78,11 @@ header > section > #title{
     margin-top: 54px;
     z-index: 2;
 }
-#Menu .toggle:checked + label{ 
-    color: var(--color-light-bg);
+#Menu .toggle:checked + #Menu > label{ 
+    /* color: var(--color-light-bg); */
     opacity: 1;
 }
-#Menu label, .background-slider { transition: all 200ms ease-in-out; }
+#Menu > label, .background-slider { transition: all 200ms ease-in-out; }
 #Menu #Home:checked ~ .background-slider { margin-left: 0; }
 #Menu #Planets:checked ~ .background-slider { margin-left: 16.66% }
 #Menu #Moons:checked ~ .background-slider { margin-left: 33.33% }
@@ -92,8 +94,9 @@ main{
     min-height: calc(100vh - 146px);
 }
 main > section {
-    display: block;
-    
+    display: grid;
+    gap: 50px;
+
     box-sizing: border-box;
     padding: 75px 15px 15px 15px;
 
@@ -112,7 +115,7 @@ main > .Home{
     gap: 50px;
 
     box-sizing: border-box;
-    padding: 100px 50px 50px 50px;
+    /* padding: 100px 50px 50px 50px; */
 }
 .welcome-title{
     color: white;
@@ -131,11 +134,11 @@ main > .Home{
 .welcome-title p{
     margin: 10px 0;
 }
-.welcome-title .welcome {
+/* .welcome-title .welcome {
     font-size: 30px;
-}
+} */
 .welcome-title .Learn {
-    background:rgb(0, 123, 224);
+    background:var(--color-color-spec);
     border-radius: 25px;
     width: fit-content;
     padding: 15px;
@@ -153,18 +156,17 @@ main > .Home{
     text-align: right;
     margin: 0;
     margin-left: auto;
-    /* background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2)); */
     padding: 50px 0;
 
     animation: slideLeft 1s .5s ease-in-out both;
 }
 .about > .title{
-    font-size: 80px;
+    /* font-size: 80px; */
     font-weight: 600;
     margin: 0;
 }
 .about > .description{
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 
 .solar-info{
@@ -176,14 +178,14 @@ main > .Home{
     animation: slideUp 1s 1s ease-in-out both;
 }
 .solar-info-card {
-    background: rgb(0, 123, 224);
+    background: var(--color-color-spec);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 40px 20px;
     border-radius: 5px;
     text-align: center;
     width: 200px;
-    margin: 15px 0;
+    /* margin: 15px 0; */
 }
 .solar-info-card > img {
     width: 75px;
@@ -290,12 +292,12 @@ main > .Home{
     justify-self: end;
 }
 .text section h2 {
-    font-size: 50px;
+    /* font-size: 50px; */
     font-weight: 600;
     margin: 5px 0;
 }
 .text section h2 span {
-    color:rgb(0, 123, 224);
+    color:var(--color-color-spec);
     font-weight: 200;
 }
 .text section {
@@ -308,10 +310,10 @@ main > .Home{
     font-weight: 200;
     margin: 5px 0;
 }
-.text p{
+/* .text p{
     align-self: start;
     text-align: right;
-}
+} */
 
 .MarsRover p, .MarsRover .text section{
     text-align: left;

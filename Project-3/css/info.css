@@ -1,11 +1,11 @@
 .body-info{
     display: grid;
     border-radius: 25px;
-    width: 100%;
+    /* width: 100%;
     min-height: 300px;
     min-width: 300px;
     grid-template-columns: auto 18%;
-    grid-template-rows: 100%;
+    grid-template-rows: 100%; */
     align-items: center;
     float: left;
     z-index: 0;
@@ -21,7 +21,7 @@
     display: grid;
     height: 100%;
     column-gap: 10px;
-    grid-template-columns: 35% auto;
+    /* grid-template-columns: 35% auto; */
     align-items: center;
 }
 .body-info-image, .body-info-main > img {
@@ -31,17 +31,16 @@
 }
 .body-info-text{
     box-sizing: border-box; 
-    padding-right: 25px;
     text-align: center;
 }
 .body-info-text > h2{
     font-family: 'Orbitron', sans-serif;
-    font-size: 25px;
+    /* font-size: 25px; */
     margin: 0;
 }
 .body-info-text > h3{
     font-family: 'Orbitron', sans-serif;
-    font-size: 17px;
+    /* font-size: 17px; */
     margin: 10px 0;
 }
 .body-info-text > p{
@@ -50,10 +49,10 @@
 }
 .body-info-icons{
     font-size: 13px;
-    text-align: right;
+    /* text-align: right; */
     justify-self: center;
     align-self: center;
-    width: fit-content;
+    /* width: fit-content; */
     padding: 0 15px;
     line-height: 19px;
 
@@ -62,7 +61,7 @@
 .body-info-icons > p{
     font-family: 'Raleway', sans-serif;
     margin: 20px 0;
-    font-weight: 200;
+    /* font-weight: 200; */
 }
 .body-info-icons p::first-line {
     font-size: 15px;
