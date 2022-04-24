@@ -3376,7 +3376,7 @@
         "isPlanet": false,
         "gravity": 0.82,
         "avgTemp": 42,
-        "description": "",
+        "description": "Eris (minor-planet designation 136199 Eris) is the most massive and second-largest known dwarf planet in the Solar System. It is a trans-Neptunian object (TNO) in the scattered disk and has a high-eccentricity orbit. Eris was discovered in January 2005 by a Palomar Observatory-based team led by Mike Brown and verified later that year. In September 2006, it was named after the Greco–Roman goddess of strife and discord. Eris is the ninth-most massive known object orbiting the Sun and the sixteenth-most massive overall in the Solar System (counting moons). It is also the largest object that has not been visited by a spacecraft. Eris has been measured at 2,326 ± 12 kilometers (1,445 ± 7 mi) in diameter; its mass is 0.28% that of the Earth and 27% greater than that of Pluto, although Pluto is slightly larger by volume. Eris may complete one rotation every 25.9 hours, making the length of its day close to Earth's. However, sources disagree on the rotation period.",
         "mass": {
             "massValue": 1.66,
             "massExponent": 22
@@ -4006,7 +4006,7 @@
         "isPlanet": false,
         "gravity": 0.401,
         "avgTemp": 50,
-        "description": "",
+        "description": "Haumea (minor-planet designation 136108 Haumea) is a dwarf planet located beyond Neptune's orbit. It was discovered in 2004 by a team headed by Mike Brown of Caltech at the Palomar Observatory in the United States and disputably also in 2005 by a team headed by José Luis Ortiz Moreno at the Sierra Nevada Observatory in Spain, though the latter claim has been contested. On September 17, 2008, it was named after Haumea, the Hawaiian goddess of childbirth, under the expectation by the International Astronomical Union (IAU) that it would prove to be a dwarf planet. Nominal estimates make it the third-largest known trans-Neptunian object, after Eris and Pluto, though the uncertainty in best-fit modeling slightly overlaps with the larger size estimates for Makemake.",
         "mass": {
             "massValue": 4.006,
             "massExponent": 21
@@ -4258,7 +4258,7 @@
         "isPlanet": false,
         "gravity": 0.5,
         "avgTemp": 32,
-        "description": "",
+        "description": "Makemake (minor-planet designation 136472 Makemake) is a dwarf planet and perhaps the second-largest Kuiper belt object in the classical population,[a] with a diameter approximately two-thirds that of Pluto. It has one known satellite. Its extremely low average temperature, about 40 K (−230 °C), means its surface is covered with methane, ethane, and possibly nitrogen ices.",
         "mass": {
             "massValue": 4.4,
             "massExponent": 21
