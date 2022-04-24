@@ -112,7 +112,7 @@ main > .Home{
     gap: 50px;
 
     box-sizing: border-box;
-    padding: 150px 50px 35px 50px;
+    padding: 150px 50px 50px 50px;
 }
 .welcome-title{
     color: white;
@@ -254,12 +254,11 @@ main > .Home{
 }
 
 .media-info{
-    display: grid;
-    grid-auto-rows: auto;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 .media-info > section {
-    height: 600px;
     display: flex;
     align-items: center;
 }
@@ -283,9 +282,6 @@ main > .Home{
 .text {
     box-sizing: border-box;
     display: grid;
-    grid-auto-rows: 50%;
-    height: 100%;
-    width: 100%;
     align-items: center;
     justify-items: center;
     transition: all 300ms ease-in-out;

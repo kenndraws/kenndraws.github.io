@@ -10,12 +10,30 @@ function getAPOD() {
         const res = await response.json();
         return res;
     }
-    const data = getPromise().then(response => {    
+    const data = getPromise().then(response => {
         //Gettings {date, explanation, title, src}
         const host = document.querySelector(".APOD");
-        const date = new Date(response.date).toString().split(" ").slice(0,4).join().replaceAll(",", " ")
-        host.innerHTML += createAPOD({date: date, explanation: response.explanation, src: response.url, title: response.title});
-        console.log(response);
+        const date = new Date(response.date).toString().split(" ").slice(0, 4).join().replaceAll(",", " ")
+        host.innerHTML += createAPOD({ date: date, explanation: response.explanation, src: response.url, title: response.title });
+    });
+}
+function getAsteroids() {
+    //Fetch Astronomy Photo of the Day from API
+    const DATE = new Date();
+    var dd = String(DATE.getDate()).padStart(2, '0');
+    var mm = String(DATE.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = DATE.getFullYear();
+
+    const AST_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${yyyy}-${mm}-${dd}&api_key=${key}`;
+
+    const getPromise = async () => {
+        const response = await fetch(AST_URL);
+        const res = await response.json();
+        return res;
+    }
+    const data = getPromise().then(response => {
+        const NEAR_OBJ = response.near_earth_objects[Object.keys(response.near_earth_objects)[0]];
+        console.log(NEAR_OBJ);
     });
 }
 function getBodies() {
@@ -80,7 +98,7 @@ function createBodyInfoElement(info) {
 
 function createAPOD(info) {
     //Returns a string with html representation of element structure
-
+    //https://kenndraws.github.io/Project-3/img/default.png defaultPNG
     return (
         `<section class="info">
             <img src=${info.src} alt=${info.title} "class="photo-day"  onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" />
@@ -99,11 +117,11 @@ function createAPOD(info) {
 window.addEventListener('load', main);
 function main() {
     getAPOD();
-    getBodies();
+    getAsteroids();
+    //getBodies();
     setTimeout(function () {
         Array.from(document.getElementsByClassName("paused")).forEach(element => {
             element.classList.remove('paused');
         });
     }, 500);
-
 }

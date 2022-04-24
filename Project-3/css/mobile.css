@@ -160,7 +160,7 @@
 
     .Home {
         background-position: 0 100px;
-        padding: 100px 20px 10px 20px !important;
+        padding: 100px 20px 20px 20px !important;
     }
 
     .about>.title {
@@ -223,6 +223,6 @@
         font-size: 40px;
     }
     .Home {
-        padding: 100px 35px 10px 35px !important;
+        padding: 100px 35px 35px 35px !important;
     }
 }
