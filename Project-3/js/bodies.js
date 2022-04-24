@@ -75,19 +75,21 @@ function createBodyInfoElement(info) {
     return (
         `<section class="body-info">
             <section class="body-info-main">
-                <img src=${info.img} alt=${info.name} "class="body-info-image"  onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" />
+                <img src=${info.img} alt='FILE_NOT_FOUND' "class="body-info-image"  
+                    onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" 
+                />
                 <section class="body-info-text">
-                    <h2>${info.title}</h2>
-                    <h3>${info.name}</h3>
-                    <p><strong>${info.sciName},</strong> 
+                    <h2>${info.name}</h2>
+                    <h3>${info.title}</h3>
+                    <p>
                         <span> ${(info.description.length > 620 ? info.description.substring(0, 616) + "..." : info.description)}</span>
                     </p>
                 </section>
             </section>
             <section class="body-info-icons">
                 ${(info.isPlanet ? `<p>Moons<br/>${info.moons}</p>` :
-            (info.around ? `<p>Parent<br/>${info.around[0].toUpperCase() + info.around.substring(1)}</p>` : `<p>Moons<br/>${info.moons}</p>`)
-        )}
+                    (info.around ? `<p>Parent<br/>${info.around[0].toUpperCase() + info.around.substring(1)}</p>` : `<p>Moons<br/>${info.moons}</p>`)
+                )}
                 <p>Gravity<br/>${info.gravity}</p>
                 <p>Mass<br/>${info.mass.massValue.toFixed(2)} x 10 <sup>${info.mass.massExponent}</sup></p>
                 <p>Temp<br/>${info.avgTemp}</p>
@@ -101,7 +103,9 @@ function createAPOD(info) {
     //https://kenndraws.github.io/Project-3/img/default.png defaultPNG
     return (
         `<section class="info">
-            <img src=${info.src} alt=${info.title} "class="photo-day"  onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" />
+            <img src=${info.src} alt='FILE_NOT_FOUND' class="photo-day"  
+                onerror="this.src = './img/default.png'; this.classList.add('image-not-found')" 
+            />
             <section class="text">
                 <section>
                     <h2><span>━</span> ${info.title}</h2>
@@ -118,7 +122,7 @@ window.addEventListener('load', main);
 function main() {
     getAPOD();
     getAsteroids();
-    //getBodies();
+    getBodies();
     setTimeout(function () {
         Array.from(document.getElementsByClassName("paused")).forEach(element => {
             element.classList.remove('paused');
