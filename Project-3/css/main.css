@@ -10,6 +10,9 @@ html, body {
 ::-webkit-scrollbar{
     background: transparent;
 }
+button:hover{
+    cursor:pointer;
+}
 
 header{
     width: 100%;
@@ -98,7 +101,7 @@ main > section {
     gap: 50px;
 
     box-sizing: border-box;
-    padding: 75px 15px 15px 15px;
+    padding: 75px 35px 35px 35px;
 
     z-index: 0;
 }
@@ -201,46 +204,6 @@ main > .Home{
     margin-bottom: 15px;
     font-weight: 600;
 }
-.our-planets-title{
-    color: white;
-    font-size: 70px;
-    text-align: center;
-    margin: 10px 0;
-}
-.our-planets{
-    overflow: hidden;
-}
-.our-planets .planet{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 40%;
-    
-    margin: 55px 0;
-    flex: 0 0 auto;
-
-    transition: all 200ms ease-in-out;
-}
-.our-planets .planet:hover{
-    cursor: pointer;
-    width: 42%;
-    margin: 0 -1%;
-}
-.our-planets .planet img{
-    width: 100%;
-    z-index: 1;
-    border-radius: 25%;
-}
-.our-planets .planet p{
-    position: absolute;
-    z-index: 2;
-    color: white;
-    font-size: 75px;
-    font-weight: 600;
-    text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-}
 .carousel{
     box-sizing: border-box;
     display: flex;
@@ -262,6 +225,7 @@ main > .Home{
 }
 .media-info > section {
     display: flex;
+    width: 100%;
     align-items: center;
 }
 .APOD{
@@ -310,10 +274,10 @@ main > .Home{
     font-weight: 200;
     margin: 5px 0;
 }
-/* .text p{
+.text p{
     align-self: start;
     text-align: right;
-} */
+}
 
 .MarsRover p, .MarsRover .text section{
     text-align: left;
@@ -325,7 +289,7 @@ main > .Home{
     animation-play-state: paused !important;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 @keyframes slideRight {

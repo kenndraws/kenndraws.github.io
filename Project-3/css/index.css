@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 :root {
@@ -10,5 +10,7 @@
     --color-color-spec-two: #286d08;
     --color-dark-bg: #282828; 
     --color-dark-comp: #191919;
-    --background-gradient-one: linear-gradient(0.25turn, black, 85%, #002138)
+    --background-gradient-one: linear-gradient(0.25turn, black, 85%, #002138);
+    --color-error: rgb(222, 37, 37);
+    --form-color-text: white;
 }
