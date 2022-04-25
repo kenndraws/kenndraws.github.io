@@ -35,12 +35,10 @@ header > section > img{
     height: 30px;
     padding: 0px 15px;
     filter: invert();
-    opacity: 0.5;
 }
 header > section > #title{
     color: white;
     font-size: 20px;
-    opacity: 0.5;
 }
 
 #Menu{

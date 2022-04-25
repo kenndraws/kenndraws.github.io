@@ -6,16 +6,19 @@ function main() {
     //getAsteroids();
     //getBodies();
     setTimeout(function () {
-        Array.from(document.getElementsByClassName("paused")).forEach(element => {
-            //element.classList.remove('paused');
+        document.querySelectorAll(".splash-anim").forEach(element => {
+            element.classList.remove('paused');
         });
-    }, 500);
+    }, 1000);
+    // document.querySelectorAll(".paused").forEach(element => {
+    //     element.classList.remove('paused');
+    // });
 }
 
 let displayed = true;
 function displayMobileMenu() {
     //Get Menu and Menu-Button for Slide Effect
-    const menu = document.querySelector("#Menu"); 
+    const menu = document.querySelector("#Menu");
     const button = document.querySelector("#menu-button");
 
     //If menu slide in or out
@@ -46,9 +49,9 @@ function displayClickedMenu() {
 
     function isChecked(input) {
         //if input is checked display section corresponding to the button hide rest
-        if (input.checked) { 
+        if (input.checked) {
             Array.from(document.querySelector("main").children).forEach(section => {
-                if (section.classList.contains(input.id) 
+                if (section.classList.contains(input.id)
                     || section.classList.contains("splash")
                     || section.classList.contains("user-sign")) section.style.display = "";
                 else section.style.display = "none";
@@ -147,8 +150,8 @@ function createBodyInfoElement(info) {
             </section>
             <section class="body-info-icons">
                 ${(info.isPlanet ? `<p>Moons<br/>${info.moons}</p>` :
-                    (info.around ? `<p>Parent<br/>${info.around[0].toUpperCase() + info.around.substring(1)}</p>` : `<p>Moons<br/>${info.moons}</p>`)
-                )}
+            (info.around ? `<p>Parent<br/>${info.around[0].toUpperCase() + info.around.substring(1)}</p>` : `<p>Moons<br/>${info.moons}</p>`)
+        )}
                 <p>Gravity<br/>${info.gravity}</p>
                 <p>Mass<br/>${info.mass.massValue.toFixed(2)} x 10 <sup>${info.mass.massExponent}</sup></p>
                 <p>Temp<br/>${info.avgTemp}</p>

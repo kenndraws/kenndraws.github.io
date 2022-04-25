@@ -13,8 +13,8 @@
     align-items: center;
     overflow: hidden;
 
-    z-index: 5;
-    animation: off .6s ease-in-out 1s both;
+    z-index: 10;
+    animation: off .6s ease-in-out 2.5s both;
 }
 .splash_logo {
     position: absolute;
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
 
-    animation: off .6s ease-in-out forwards;
+    animation: off .6s ease-in-out 1s forwards;
 }
 .splash_logo p {
     border-top: 1px solid white;

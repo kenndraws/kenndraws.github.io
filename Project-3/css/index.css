@@ -12,5 +12,5 @@
     --color-dark-comp: #191919;
     --background-gradient-one: linear-gradient(0.25turn, black, 85%, #002138);
     --color-error: rgb(222, 37, 37);
-    --form-color-text: white;
+    --form-color-text: black;
 }
