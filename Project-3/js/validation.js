@@ -39,11 +39,17 @@ function initValidation(formName) {
         else {
             $form.hide(); //Hide Form
             $(".successMsg").show(); //display success message
+            
+            var formData = new FormData(formEl)
+            console.log($form.serialize().split('&'));
+
             $form.each(function(){
                 this.reset();
             });
             $(".user-sign").removeClass('paused');
             main();
+
+            
         }
     });
 }
