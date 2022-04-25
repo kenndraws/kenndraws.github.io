@@ -1,15 +1,18 @@
-window.addEventListener("load", main);
+//window.addEventListener("load", main);
 
 function main() {
-    //displayClickedMenu();
-    //getAPOD();
-    //getAsteroids();
-    //getBodies();
-    // setTimeout(function () {
-    //     document.querySelectorAll(".splash-anim").forEach(element => {
-    //         element.classList.remove('paused');
-    //     });
-    // }, 1000);
+    setTimeout(() => {
+        $(".user-sign").addClass("hidden");
+        $("header").removeClass("hidden");
+        $("footer").removeClass("hidden");
+
+        displayClickedMenu();
+        getAPOD();
+        getBodies();
+        document.querySelectorAll(".paused").forEach(element => {
+            element.classList.remove('paused');
+        });
+    }, 2000)
 }
 
 let displayed = true;

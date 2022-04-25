@@ -9,8 +9,9 @@
     align-items: center;
     grid-template-columns: 1fr 2fr;
     gap: 0 !important;
-}
 
+    animation: off .6s ease-in-out 2s both;
+}
 #myform, .flex{
     width: 100%;
 }
@@ -111,7 +112,12 @@
 
 input.was-validated:invalid {
     color: var(--color-error);
-    border: 1px solid var(--color-error);
+    border-bottom: 1px solid var(--color-error) !important;
+    margin-bottom: 0 !important;
+}
+input.was-validated:valid {
+    color: var(--color-good);
+    border-bottom: 1px solid var(--color-good) !important;
     margin-bottom: 0 !important;
 }
 
