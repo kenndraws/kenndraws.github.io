@@ -211,8 +211,8 @@ function addElements(){
         for(var j = 0; j < 9; j++){
             var ID = "cell-" + i + "-" + j; // Creating Cell ID
             var value = displayedSudokuArray[i][j]; //Getting Value For Display
-            if(value != 0) sudoku.innerHTML = sudoku.innerHTML +  `<input type="numeric" pattern="[0-9]" class="cell displayed" id=${ID} value=${value} disabled>`; //If it has a value don't allow editing
-            else sudoku.innerHTML = sudoku.innerHTML +  `<input  type="numeric" pattern="[0-9]" class="cell displayed" id=${ID} value="" >`;
+            if(value != 0) sudoku.innerHTML = sudoku.innerHTML +  `<input type="number" pattern="[0-9]*" inputmode="numeric" class="cell displayed" id=${ID} value=${value} disabled>`; //If it has a value don't allow editing
+            else sudoku.innerHTML = sudoku.innerHTML +  `<input  type="number" pattern="[0-9]*" inputmode="numeric" class="cell displayed" id=${ID} value="" >`;
         }
     }
     // get all children
