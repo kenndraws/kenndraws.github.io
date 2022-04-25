@@ -48,8 +48,6 @@ function initValidation(formName) {
             });
             $(".user-sign").removeClass('paused');
             main();
-
-            
         }
     });
 }
