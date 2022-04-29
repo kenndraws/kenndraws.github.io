@@ -1,0 +1,246 @@
+.user-sign {
+    z-index: 4;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: white;
+    padding: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    gap: 0 !important;
+
+    animation: off .6s ease-in-out 2s both;
+}
+#myform, .flex{
+    width: 100%;
+}
+.container {
+    box-sizing: border-box;
+    display: grid;
+    justify-items: center;
+
+    
+    color: var(--form-color-text);
+    font-size: 15px;
+    padding: 25px;
+
+    max-width: 600px;
+    width: 100%;
+}
+.user-sign > section{
+    display: grid;
+    justify-items: center;
+    gap: 30px;
+    background-color: var(--color-color-spec);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+}
+.user-sign > section h1 {
+    margin: 0;
+    margin-bottom: 35px;
+    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    text-align: center;
+
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+}
+.user-sign > section h1 span {
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+}
+.user-sign > section img {
+    border-radius: 50%;
+    width: 150px;
+    filter: invert();
+    align-self: end;
+}
+
+#myform {
+    display: grid;
+    gap: 35px;
+}
+
+#myform ul li input{
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 1.5em;
+    width: 100%;
+}
+#myform ul li select{
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 1.5em;
+    width: 100%;
+}
+#myform input:placeholder-shown {
+    font-style: italic;
+    font-weight: 100;
+    background: transparent;
+    outline: none;
+}
+#myform input::placeholder{
+    color: var(--form-color-text);
+    opacity: 0.5;
+}
+#myform input:focus, #myform input:active, 
+#myform select:focus, #myform select:active{
+    outline: none;
+    color: var(--form-color-text);
+    margin: 0;
+    background: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid var(--color-color-spec);
+}
+
+
+#myform > section > h4 {
+    margin: 0;
+}
+.errorMsg {
+    margin: 5px 0;
+    color: var(--color-error);
+}
+
+input.was-validated:invalid,
+select.was-validated:invalid {
+    color: var(--color-error);
+    border-bottom: 1px solid var(--color-error) !important;
+    margin-bottom: 0 !important;
+}
+input.was-validated:valid,
+select.was-validated:valid {
+    color: var(--color-good);
+    border-bottom: 1px solid var(--color-good) !important;
+    margin-bottom: 0 !important;
+}
+
+input.was-validated:invalid~div.errorMsg,
+select.was-validated:select~div.errorMsg {
+    display: block;
+}
+
+input:valid~div.errorMsg,
+input:invalid~div.errorMsg,
+select:valid~div.errorMsg,
+select:invalid~div.errorMsg {
+    display: none;
+}
+
+.container * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    gap: 15px 25px;
+
+}
+
+.flex li {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex > li label {
+    margin: 10px 0;
+}
+
+.add-state-city {
+    gap: 15px;
+    flex-direction: row !important;
+}
+.add-state-city > section {
+    display: grid;
+}
+#myform label.desc { display:table; clear:both; }
+#myform > section {
+    display: grid;
+    gap: 10px;
+}
+.find-checks {
+    height: max-content;
+}
+.find-checks > input {
+    display: none;
+}
+.find-checks label {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 2px;
+    
+    display:inline-block;
+}
+.find-checks > input:checked + label {
+    background: var(--color-color-spec);
+    color: white;
+}
+
+#formSubmit {
+    width: fit-content;
+    padding: 10px 35px;
+    border: none;
+    background: var(--color-color-spec);
+    color: white;
+    letter-spacing: .09em;
+    border-radius: 30px;
+
+    justify-self: end;
+}
+
+.form-send {
+    flex: 1 2;
+}
+
+
+@media (max-width: 1000px) {
+    .container {
+        width: 100vw;
+    }
+    .user-sign{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr;
+    }
+    .user-sign section h1 {
+        margin: 0;
+    }
+    .user-sign section img {
+        width: 90px;
+    }
+    #formSubmit {
+        justify-self: start;
+    }
+}
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1000px;
+    }
+    .container, #myform input:placeholder-shown, #formSubmit {
+        font-size: 20px;
+    }
+    .user-sign {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .user-sign>section h1 {
+        font-size: 25px;
+    }
+
+    .user-sign>section h1 span {
+        font-size: 30px;
+    }
+
+    .user-sign section img {
+        width: 200px;
+    }
+}
