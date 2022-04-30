@@ -2,13 +2,24 @@ body {
   background: white;
 }
 
+header {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+header > section > img {
+  display: none;
+}
+
+header > section > .light_mode_logo {
+  display: inline-block;
+}
+
 header > section > #title {
   color: black;
-  font-size: 20px;
 }
 
 #Menu > label {
-  color: #818181;
+  color: black;
 }
 
 .background-slider {
@@ -21,11 +32,15 @@ main > .Home {
 
 .welcome-title {
   color: black;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-weight: 300;
 }
 
 .welcome-title .Learn {
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .about {
@@ -38,7 +53,7 @@ main > .Home {
 
 .solar-info-card {
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .info {
@@ -50,7 +65,7 @@ main > .Home {
 }
 
 .text section h2 span {
-  color: #007be0;
+  color: #1094ff;
   font-weight: 200;
 }
 
@@ -66,7 +81,7 @@ main > .Home {
 
 .user-sign > section {
   color: white;
-  background-color: #007be0;
+  background-color: #1094ff;
 }
 
 #myform ul li input {
@@ -96,25 +111,25 @@ main > .Home {
 #myform input:focus {
   color: white;
   background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #007be0;
+  border-bottom: 1px solid #1094ff;
 }
 
 #myform input:active {
   color: white;
   background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #007be0;
+  border-bottom: 1px solid #1094ff;
 }
 
 #myform select:focus {
   color: white;
   background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #007be0;
+  border-bottom: 1px solid #1094ff;
 }
 
 #myform select:active {
   color: white;
   background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #007be0;
+  border-bottom: 1px solid #1094ff;
 }
 
 .container {
@@ -147,12 +162,12 @@ select.was-validated:valid {
 
 .find-checks > input:checked + label {
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .button-1 {
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .splash {
@@ -162,7 +177,7 @@ select.was-validated:valid {
 .splash_logo {
   color: #ffffff;
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .splash_logo p {
@@ -171,12 +186,12 @@ select.was-validated:valid {
 }
 
 .switch > input:checked + .slider {
-  background-color: #007be0;
+  background-color: #1094ff;
 }
 
 .switch > input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #007be0;
-          box-shadow: 0 0 1px #007be0;
+  -webkit-box-shadow: 0 0 1px #1094ff;
+          box-shadow: 0 0 1px #1094ff;
 }
 
 .slider {
@@ -203,12 +218,16 @@ select.was-validated:valid {
 
 .Visits .log_info section .selected_display_style {
   color: white;
-  background: #007be0;
+  background: #1094ff;
 }
 
 .Visits .log_info section :last-child {
   color: white;
-  background: #007be0;
+  background: #1094ff;
+}
+
+.Visits .visitor_grid section {
+  border: 1px solid #e5e5e5;
 }
 
 .Visits .Visiters .log_header {
@@ -219,26 +238,27 @@ select.was-validated:valid {
   color: white;
 }
 
-.Visits .Visiters section {
+.Visits .Visiters > section {
   background: white;
   border-bottom: 1px solid #e5e5e5;
-  border-radius: 0px !important;
+  border-radius: 5px !important;
 }
 
-.Visits .Visiters section .visitor_email_button {
+.Visits .Visiters > section .visitor_email_button {
   color: black;
 }
 
-.Visits .Visiters section .visitor_email_button i {
+.Visits .Visiters > section .visitor_email_button i {
   background: #6192b9;
 }
 
-.Visits .Visiters section i {
+.Visits .Visiters > section i {
   color: white;
 }
 
 .Visits .Visiters .visitor_action :nth-child(2) {
-  background: #eceef0;
+  color: black;
+  background: white !important;
 }
 
 @media (min-width: 1200px) {
@@ -257,6 +277,12 @@ select.was-validated:valid {
   #Menu .toggle:checked + label {
     color: #212121;
     background: #eceef0;
+  }
+}
+
+@media (max-width: 600px) {
+  .Home {
+    background-position: 0 0;
   }
 }
 /*# sourceMappingURL=lightMode.css.map */

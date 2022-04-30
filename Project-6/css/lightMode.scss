@@ -7,6 +7,7 @@ $lightText: #212121;
 
 $colorSpec: rgb(0, 123, 224);
 $colorSpec2: rgb(97, 146, 185);
+$colorSpec3: rgb(16, 148, 255);
 
 $darkBG: black;
 $darkComp: #0e0e0e;
@@ -25,18 +26,24 @@ body {
 
 
 header {
+    background: rgba(255, 255, 255, 0.3);
     >section {
+        >img{
+            display: none;
+        }
+        >.light_mode_logo {
+			display: inline-block;
+		}
         >#title {
             color: $textColorDark;
-            font-size: 20px;
         }
     }
+
 }
 
 #Menu {
     >label {
-        //color: $textColorDark;
-        color: #818181;
+        color: $textColorDark;
     }
 }
 
@@ -52,10 +59,11 @@ main {
 
 .welcome-title {
     color: $textColorDark;
-
+    align-items: flex-end;
+    font-weight: 300;
     .Learn {
         color: $textColorLight;
-        background: $colorSpec;
+        background: $colorSpec3;
     }
 }
 
@@ -69,7 +77,7 @@ main {
 
 .solar-info-card {
     color: $textColorLight;
-    background: $colorSpec;
+    background: $colorSpec3;
 }
 
 .info {
@@ -80,7 +88,7 @@ main {
     section {
         h2 {
             span {
-                color: $colorSpec;
+                color: $colorSpec3;
                 font-weight: 200;
             }
         }
@@ -101,7 +109,7 @@ main {
 
     >section {
         color: $textColorLight;
-        background-color: $colorSpec;
+        background-color: $colorSpec3;
     }
 }
 
@@ -126,13 +134,13 @@ main {
         &:focus {
             color: $textColorLight;
             background: $transparentColor;
-            border-bottom: 1px solid $colorSpec;
+            border-bottom: 1px solid $colorSpec3;
         }
 
         &:active {
             color: $textColorLight;
             background: $transparentColor;
-            border-bottom: 1px solid $colorSpec;
+            border-bottom: 1px solid $colorSpec3;
         }
     }
 
@@ -140,13 +148,13 @@ main {
         &:focus {
             color: $textColorLight;
             background: $transparentColor;
-            border-bottom: 1px solid $colorSpec;
+            border-bottom: 1px solid $colorSpec3;
         }
 
         &:active {
             color: $textColorLight;
             background: $transparentColor;
-            border-bottom: 1px solid $colorSpec;
+            border-bottom: 1px solid $colorSpec3;
         }
     }
 }
@@ -191,7 +199,7 @@ select.was-validated {
             + {
                 label {
                     color: $textColorLight;
-                    background: $colorSpec;
+                    background: $colorSpec3;
                 }
             }
         }
@@ -200,7 +208,7 @@ select.was-validated {
 
 .button-1 {
     color: $textColorLight;
-    background: $colorSpec;
+    background: $colorSpec3;
 }
 
 .splash {
@@ -210,7 +218,7 @@ select.was-validated {
 .splash_logo {
     color: #ffffff;
     color: $textColorLight;
-    background: $colorSpec;
+    background: $colorSpec3;
 
     p {
         border-top: 1px solid $textColorDark;
@@ -223,7 +231,7 @@ select.was-validated {
         &:checked {
             + {
                 .slider {
-                    background-color: $colorSpec;
+                    background-color: $colorSpec3;
                 }
             }
         }
@@ -231,7 +239,7 @@ select.was-validated {
         &:focus {
             + {
                 .slider {
-                    box-shadow: 0 0 1px $colorSpec;
+                    box-shadow: 0 0 1px $colorSpec3;
                 }
             }
         }
@@ -263,16 +271,21 @@ select.was-validated {
             }
             .selected_display_style {
                 color: $textColorLight;
-                background: $colorSpec;
+                background: $colorSpec3;
             }
 
             :last-child {
                 color: $textColorLight;
-                background: $colorSpec;
+                background: $colorSpec3;
             }
         }
 
     }
+    .visitor_grid {
+		section {
+            border: 1px solid #e5e5e5;
+		}
+	}
 
     .Visiters {
         .log_header {
@@ -282,12 +295,11 @@ select.was-validated {
         .visitor-name-icon {
             color: $textColorLight;
         }
-
-        section {
+        >section {
             background: $lightBG;
             border-bottom: 1px solid #e5e5e5;
-            border-radius: 0px !important;
-
+            border-radius: 5px !important;
+    
             .visitor_email_button {
                 color: $textColorDark;
 
@@ -302,9 +314,9 @@ select.was-validated {
         }
 
         .visitor_action {
-
             :nth-child(2) {
-                background: $lightComp;
+                color: $textColorDark;
+                background: $lightBG !important;
             }
         }
     }
@@ -341,4 +353,9 @@ select.was-validated {
             }
         }
     }
+}
+@media (max-width: 600px) {
+	.Home {
+		background-position: 0 0;
+	}
 }

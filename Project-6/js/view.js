@@ -79,10 +79,7 @@ function createAPOD(info) {
     );
 }
 
-function getColor() { //make rnadom color
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    return `#${randomColor}`;
-}
+
 
 
 function renderTable(containerId, visitors) {
@@ -102,7 +99,7 @@ function renderTable(containerId, visitors) {
         const name = visitors[id].fullName.toString()
         const row = `<section id="id-${visitors[id].id}">
             <p>
-                <span class="visitor-name-icon" style="background: ${getColor()}">${name[0]}</span> 
+                <span class="visitor-name-icon" style="background: #${getColor()}">${name[0]}</span> 
                 ${name}
             </p>
             <p>${visitors[id].fullAddress}</p>
@@ -118,8 +115,6 @@ function renderTable(containerId, visitors) {
             </section>
         </section>`
         $(containerId).append(row);
-
-        console.log(name, name[0]);
     }
 
     //Show Visiter Length

@@ -33,13 +33,14 @@
     <header style="display:none">
         <section>
             <img src="img/logo.png" alt="icon" />
+            <img src="img/logoBlack.png" alt="icon" class="light_mode_logo"/>
             <p id="title">AIP</p>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle" checked/>
+            <input type="radio" name="option" id="Home" class="toggle" />
             <label for="Home"><span>Home</span></label>
 
-            <input type="radio" name="option" id="Planets" class="toggle" />
+            <input type="radio" name="option" id="Planets" class="toggle"  />
             <label for="Planets"><span>Planets</span></label>
 
             <input type="radio" name="option" id="Moons" class="toggle" />
@@ -51,9 +52,8 @@
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
-            <input type="radio" name="option" id="Visits" class="toggle"  />
+            <input type="radio" name="option" id="Visits" class="toggle" checked/>
             <label for="Visits"><span>Visists</span></label>
-
             <section class="background-slider">.</section>
         </nav>
         <label class="switch">
@@ -236,7 +236,7 @@
                     <input type="button" class="button-1" value="Log Visit" onClick="addVisitor()">
                 </section>
             </section>
-            <section class="Visiters">
+            <section class="Visiters visitor_grid">
             </section>
         </section>
     </main>

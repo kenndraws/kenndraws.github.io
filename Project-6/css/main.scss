@@ -42,7 +42,9 @@
 	}
 }
 
-$fontFamily: Arial, Helvetica, sans-serif;
+$fontFamily: Arial,
+Helvetica,
+sans-serif;
 $lightBG: white;
 $lightComp: #EDEDED;
 $lightText: #212121;
@@ -59,7 +61,7 @@ $colorGood: rgb(44, 216, 22);
 $textColorDark: black;
 $textColorLight: white;
 
-$transparentColor: rgba(0,0,0,0);
+$transparentColor: rgba(0, 0, 0, 0);
 
 html {
 	margin: 0;
@@ -107,6 +109,10 @@ header {
 		display: flex;
 		align-items: center;
 
+		>.light_mode_logo {
+			display: none;
+		}
+
 		>img {
 			height: 30px;
 			padding: 0px 15px;
@@ -131,11 +137,12 @@ header {
 		box-sizing: border-box;
 		color: $lightBG;
 		font-size: 15px;
-		padding: 20px 40px;
+		padding: 22px 40px;
 		z-index: 1;
 		float: left;
 		text-align: center;
 		transition: all 200ms ease-in-out;
+		height: 60px;
 
 		&:hover {
 			cursor: pointer;
@@ -224,10 +231,10 @@ header {
 	width: 16.66%;
 	height: 1px;
 	font-size: 0;
-	padding: 0px 0;
+	padding: 0 0;
 	background: $lightBG;
-	margin-top: 54px;
-	z-index: 2;
+	margin-top: 59px;
+	z-index: 0;
 	transition: all 200ms ease-in-out;
 }
 
@@ -307,17 +314,16 @@ main {
 	color: $textColorLight;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	gap: 15px;
 	animation: slideUp 1s 1s ease-in-out both;
 }
 
 .solar-info-card {
 	background: $colorSpec;
-	backdrop-filter: blur(15px);
-	-webkit-backdrop-filter: blur(15px);
 	padding: 40px 20px;
 	border-radius: 5px;
 	text-align: center;
-	width: 200px;
+	min-width: 200px;
 
 	>img {
 		width: 75px;
@@ -450,7 +456,6 @@ main {
 	z-index: 0;
 	color: $lightBG;
 	background-color: $darkBG;
-	transition: all 0.2s ease-in-out;
 
 	&:hover {
 		cursor: pointer;
@@ -803,7 +808,8 @@ select {
 	color: $textColorLight;
 	letter-spacing: .09em;
 	border-radius: 30px;
-	:after{
+
+	:after {
 		outline: none;
 	}
 }
@@ -862,7 +868,8 @@ select {
 	box-sizing: border-box;
 	padding: 0 3px;
 	height: 30px;
-	width: 50px;
+	min-width: 50px;
+	margin: 0 35px;
 
 	>input {
 		display: none;
@@ -1005,18 +1012,24 @@ select {
 					cursor: pointer;
 				}
 			}
-			.selected_display_style{
+
+			.selected_display_style {
 				background: $colorSpec;
 			}
+
 			:last-child {
 				background: $colorSpec;
 			}
 		}
 
 	}
-	.visitor_grid{
-		grid-template-columns: repeat(5, 1fr);
-		section{
+
+	.visitor_grid {
+		//grid-template-columns: repeat(5, 1fr);
+		display: flex !important;
+		flex-wrap: wrap;
+
+		section {
 			grid-template-columns: auto !important;
 			grid-auto-rows: max-content;
 			gap: 15px 0 !important;
@@ -1024,7 +1037,7 @@ select {
 			justify-items: center !important;
 			text-align: center !important;
 
-			:first-child{
+			>:first-child {
 				display: grid;
 				justify-items: center;
 				align-items: center;
@@ -1040,40 +1053,47 @@ select {
 					border-radius: 50px;
 				}
 			}
+
 			.visitor_action {
-				margin-top: 20px !important;
-				
-				gap: 15px;
+				gap: 0 5px !important;
+				border: none;
+
 				input,
 				i {
 					margin: 0 !important;
 				}
 			}
 		}
-		.log_header{
+
+		.log_header {
 			display: none;
 		}
 	}
-	.Visiters{
+
+	.Visiters {
 		display: grid;
 		gap: 7px;
-		.log_header{
+
+		.log_header {
 			color: $textColorLight;
 			background: none;
 		}
-		section{
-			display: grid; 
+
+		section {
+			display: grid;
 			justify-items: start;
 			align-items: center;
-			grid-template-columns: 1fr 2fr 1fr 1fr .5fr; 
+			grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
 			background: $darkComp;
 			border-radius: 15px;
 			padding: 10px;
 			gap: 0 15px;
-			.visitor_email_button{
+
+			.visitor_email_button {
 				text-decoration: none;
 				color: $textColorLight;
 				font-weight: 100;
+
 				i {
 					padding: 7px 10px;
 					border-radius: 5px;
@@ -1083,16 +1103,19 @@ select {
 					&:hover {
 						cursor: pointer;
 					}
+
 					@media (min-width: 1200px) {
-						display: none;	
+						display: none;
 					}
 				}
-				span{
+
+				span {
 					@media (max-width: 1200px) {
-						display: none;	
+						display: none;
 					}
 				}
 			}
+
 			.visitor-name-icon {
 				display: inline-block;
 				font-size: 13px;
@@ -1102,13 +1125,14 @@ select {
 				border-radius: 20px;
 				width: fit-content;
 			}
+
 			.visitor_action {
 				margin: 0;
 				background: none;
 				justify-self: center;
 				display: flex;
 				padding: 0 !important;
-				
+
 				gap: 0;
 
 				input,
@@ -1126,7 +1150,8 @@ select {
 					background: $darkComp;
 				}
 			}
-			p{
+
+			p {
 				margin: 0;
 			}
 		}
