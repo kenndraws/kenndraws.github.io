@@ -1,4 +1,3 @@
-
 @keyframes off {
 	100% {
 		opacity: 0;
@@ -6,31 +5,37 @@
 		display: none;
 	}
 }
+
 @keyframes slideRight {
 	from {
 		transform: translateX(-200px);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0px);
 		opacity: 1;
 	}
 }
+
 @keyframes slideLeft {
 	from {
 		transform: translateX(100%);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0px);
 		opacity: 1;
 	}
 }
+
 @keyframes slideUp {
 	from {
 		transform: translateY(200px);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateY(0px);
 		opacity: 1;
@@ -41,39 +46,51 @@ $fontFamily: Arial, Helvetica, sans-serif;
 $lightBG: white;
 $lightComp: #EDEDED;
 $lightText: #212121;
+
 $colorSpec: rgb(0, 123, 224);
-$colorSpec2: #286d08;
-$darkBG: #282828;
-$darkComp: #191919;
-$gradientOne: linear-gradient(0.25turn, black, 85%, #002138);
+$colorSpec2: rgb(97, 146, 185);
+
+$darkBG: black;
+$darkComp: #0e0e0e;
+
 $colorError: rgb(236, 19, 19);
 $colorGood: rgb(44, 216, 22);
-$formTextColor: black;
+
+$textColorDark: black;
+$textColorLight: white;
+
+$transparentColor: rgba(0,0,0,0);
 
 html {
 	margin: 0;
 	padding: 0;
 	font-family: $fontFamily;
-	background: black;
 	overflow-y: overlay;
 	overflow-x: hidden;
 }
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: $fontFamily;
-	background: black;
+	background: $darkBG;
 	overflow-y: overlay;
 	overflow-x: hidden;
+
+	background-size: 100vw auto;
+	background-repeat: no-repeat;
 }
-::-webkit-scrollbar {
-	background: transparent;
-}
-button {
+
+// ::-webkit-scrollbar {
+// 	background: transparent;
+// }
+button,
+input[type="button"] {
 	&:hover {
 		cursor: pointer;
 	}
 }
+
 header {
 	width: 100%;
 	position: fixed;
@@ -84,20 +101,24 @@ header {
 	box-sizing: border-box;
 	padding: 0 15px;
 	z-index: 2;
+	height: 60px;
+
 	>section {
 		display: flex;
 		align-items: center;
+
 		>img {
 			height: 30px;
 			padding: 0px 15px;
-			//filter: invert();
 		}
+
 		>#title {
-			color: white;
+			color: $textColorLight;
 			font-size: 20px;
 		}
 	}
 }
+
 #Menu {
 	display: flex;
 	font-family: arial, sans-serif;
@@ -105,6 +126,7 @@ header {
 	margin: auto;
 	transition: all 200ms ease-in-out;
 	position: relative;
+
 	>label {
 		box-sizing: border-box;
 		color: $lightBG;
@@ -114,10 +136,12 @@ header {
 		float: left;
 		text-align: center;
 		transition: all 200ms ease-in-out;
+
 		&:hover {
 			cursor: pointer;
 		}
 	}
+
 	.toggle {
 		&:checked {
 			+ {
@@ -129,6 +153,7 @@ header {
 			}
 		}
 	}
+
 	#Home {
 		&:checked {
 			~ {
@@ -138,6 +163,7 @@ header {
 			}
 		}
 	}
+
 	#Planets {
 		&:checked {
 			~ {
@@ -147,6 +173,7 @@ header {
 			}
 		}
 	}
+
 	#Moons {
 		&:checked {
 			~ {
@@ -156,6 +183,7 @@ header {
 			}
 		}
 	}
+
 	#Dwarfs {
 		&:checked {
 			~ {
@@ -165,7 +193,8 @@ header {
 			}
 		}
 	}
-	#Asteroids {
+
+	#Other {
 		&:checked {
 			~ {
 				.background-slider {
@@ -174,7 +203,8 @@ header {
 			}
 		}
 	}
-	#Other {
+
+	#Visits {
 		&:checked {
 			~ {
 				.background-slider {
@@ -184,29 +214,34 @@ header {
 		}
 	}
 }
+
 .toggle {
 	display: none;
 }
+
 .background-slider {
 	position: absolute;
 	width: 16.66%;
 	height: 1px;
 	font-size: 0;
 	padding: 0px 0;
-	background: white;
+	background: $lightBG;
 	margin-top: 54px;
 	z-index: 2;
 	transition: all 200ms ease-in-out;
 }
+
 main {
-	min-height: calc(100vh - 146px);
+	min-height: calc(100vh - 106px);
+
 	>section {
 		display: grid;
 		gap: 50px;
 		box-sizing: border-box;
-		padding: 75px 35px 35px 35px;
+		padding: 95px 35px 35px 35px;
 		z-index: 0;
 	}
+
 	>.Home {
 		background-image: url('./../img/earth-background.jpg');
 		background-size: 100vw auto;
@@ -219,8 +254,9 @@ main {
 		box-sizing: border-box;
 	}
 }
+
 .welcome-title {
-	color: white;
+	color: $textColorLight;
 	text-align: center;
 	opacity: 1;
 	font-family: 'Raleway', sans-serif;
@@ -230,43 +266,50 @@ main {
 	align-items: center;
 	justify-content: center;
 	animation: slideRight 1s ease-in-out both;
+
 	p {
 		margin: 10px 0;
 	}
+
 	.Learn {
 		background: $colorSpec;
 		border-radius: 25px;
 		width: fit-content;
 		padding: 15px;
 		font-size: 16px;
-		color: white;
+		color: $textColorLight;
 		text-decoration: none;
 		margin: 10px 0;
+
 		&:hover {
 			cursor: pointer;
 		}
 	}
 }
+
 .about {
-	color: white;
+	color: $textColorLight;
 	max-width: 600px;
 	text-align: right;
 	margin: 0;
 	margin-left: auto;
 	padding: 50px 0;
 	animation: slideLeft 1s .5s ease-in-out both;
+
 	>.title {
 		font-weight: 600;
 		margin: 0;
 	}
 }
+
 .solar-info {
 	display: flex;
-	color: white;
+	color: $textColorLight;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	animation: slideUp 1s 1s ease-in-out both;
 }
+
 .solar-info-card {
 	background: $colorSpec;
 	backdrop-filter: blur(15px);
@@ -275,21 +318,25 @@ main {
 	border-radius: 5px;
 	text-align: center;
 	width: 200px;
+
 	>img {
 		width: 75px;
 		height: auto;
 		//filter: invert();
 		margin-bottom: 25px;
 	}
+
 	>p {
 		margin: 0;
 	}
+
 	>.amount {
 		font-size: 30px;
 		margin-bottom: 15px;
 		font-weight: 600;
 	}
 }
+
 .carousel {
 	box-sizing: border-box;
 	display: flex;
@@ -302,69 +349,83 @@ main {
 	padding: 0 50px;
 	overflow: scroll;
 }
+
 .media-info {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+
 	>section {
 		display: flex;
 		width: 100%;
 		align-items: center;
 	}
 }
+
 .APOD {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .info {
 	box-sizing: border-box;
-	color: white;
+	color: $textColorLight;
 	display: grid;
 	grid-template-columns: calc(50% - 20px) calc(50% - 20px);
 	align-items: center;
 	justify-items: center;
 	gap: 40px;
+
 	img {
 		width: 100%;
 	}
 }
+
 .text {
 	box-sizing: border-box;
 	display: grid;
 	align-items: center;
 	justify-items: center;
 	transition: all 300ms ease-in-out;
+
 	>* {
 		justify-self: end;
 	}
+
 	section {
 		h2 {
 			font-weight: 600;
 			margin: 5px 0;
+
 			span {
 				color: $colorSpec;
 				font-weight: 200;
 			}
 		}
-		border-bottom: 1px solid white;
+
+		border-bottom: 1px solid $textColorLight;
 		padding-bottom: 15px;
 		text-align: right;
+
 		h3 {
 			font-size: 18px;
 			font-weight: 200;
 			margin: 5px 0;
 		}
 	}
+
 	p {
 		align-self: start;
 		text-align: right;
 	}
 }
+
 .MarsRover {
 	p {
 		text-align: left;
 	}
+
 	.text {
 		section {
 			text-align: left;
@@ -372,12 +433,15 @@ main {
 		}
 	}
 }
+
 .paused {
 	animation-play-state: paused !important;
 }
+
 .hidden {
 	display: none !important;
 }
+
 .body-info {
 	display: grid;
 	border-radius: 25px;
@@ -385,55 +449,66 @@ main {
 	float: left;
 	z-index: 0;
 	color: $lightBG;
-	background-color: black;
+	background-color: $darkBG;
 	transition: all 0.2s ease-in-out;
+
 	&:hover {
 		cursor: pointer;
 	}
 }
+
 .body-info-main {
 	display: grid;
 	height: 100%;
 	column-gap: 10px;
 	align-items: center;
+
 	>img {
 		max-width: 80%;
 		max-height: 90%;
 		justify-self: center;
 	}
 }
+
 .body-info-image {
 	max-width: 80%;
 	max-height: 90%;
 	justify-self: center;
 }
+
 .body-info-text {
 	box-sizing: border-box;
 	text-align: center;
 	padding: 0 15px;
+
 	>h2 {
 		font-family: 'Orbitron', sans-serif;
 		margin: 0;
 	}
+
 	>h3 {
 		font-family: 'Orbitron', sans-serif;
 		margin: 10px 0;
 	}
+
 	>p {
 		margin: 0;
 		font-size: 15px;
 	}
 }
+
 .body-info-icons {
 	font-size: 13px;
 	justify-self: center;
 	align-self: center;
 	padding: 0 15px;
 	line-height: 19px;
+
 	>p {
 		font-family: 'Raleway', sans-serif;
 		margin: 20px 0;
 	}
+
 	p {
 		&::first-line {
 			font-size: 15px;
@@ -441,23 +516,25 @@ main {
 		}
 	}
 }
+
 .image-not-found {
 	opacity: 0.5;
 	width: 50px;
 	height: 50px;
 }
+
 .user-sign {
 	z-index: 4;
 	width: 100vw;
 	min-height: 100vh;
-	background-color: white;
+	background-color: $textColorLight;
 	padding: 0;
 	display: grid;
 	justify-items: center;
 	align-items: center;
 	grid-template-columns: 1fr 2fr;
 	gap: 0 !important;
-	animation: off .6s ease-in-out 2s both;
+
 	>section {
 		display: grid;
 		justify-items: center;
@@ -467,6 +544,7 @@ main {
 		height: 100%;
 		box-sizing: border-box;
 		padding: 25px;
+
 		h1 {
 			margin: 0;
 			margin-bottom: 35px;
@@ -474,14 +552,16 @@ main {
 			font-weight: 300;
 			text-align: center;
 			font-size: 20px;
-			color: white;
+			color: $textColorLight;
 			line-height: 30px;
+
 			span {
 				font-size: 25px;
 				font-weight: 500;
-				color: white;
+				color: $textColorLight;
 			}
 		}
+
 		img {
 			border-radius: 50%;
 			width: 150px;
@@ -490,10 +570,12 @@ main {
 		}
 	}
 }
+
 #myform {
 	width: 100%;
 	display: grid;
 	gap: 35px;
+
 	ul {
 		li {
 			input {
@@ -502,6 +584,7 @@ main {
 				line-height: 1.5em;
 				width: 100%;
 			}
+
 			select {
 				border: none;
 				border-bottom: 1px solid #e5e5e5;
@@ -510,6 +593,7 @@ main {
 			}
 		}
 	}
+
 	input {
 		&:placeholder-shown {
 			font-style: italic;
@@ -517,53 +601,69 @@ main {
 			background: transparent;
 			outline: none;
 		}
+
 		&::placeholder {
-			color: $formTextColor;
+			color: $textColorDark;
 			opacity: 0.5;
 		}
+
 		&:focus {
 			outline: none;
-			color: $formTextColor;
+			color: $textColorDark;
 			margin: 0;
-			background: rgba(0, 0, 0, 0);
+			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
 		}
+
 		&:active {
 			outline: none;
-			color: $formTextColor;
+			color: $textColorDark;
 			margin: 0;
-			background: rgba(0, 0, 0, 0);
+			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
 		}
 	}
+
 	select {
 		&:focus {
 			outline: none;
-			color: $formTextColor;
+			color: $textColorDark;
 			margin: 0;
-			background: rgba(0, 0, 0, 0);
+			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
 		}
+
 		&:active {
 			outline: none;
-			color: $formTextColor;
+			color: $textColorDark;
 			margin: 0;
-			background: rgba(0, 0, 0, 0);
+			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
 		}
 	}
+
 	>section {
-		>h4 {
-			margin: 0;
-		}
-		display: grid;
 		gap: 10px;
 	}
+
+	.find-checks-area {
+		h4 {
+			margin: 0;
+		}
+
+		display: grid;
+	}
+
+	.formButtons {
+		display: flex;
+	}
+
 	label.desc {
 		display: table;
 		clear: both;
 	}
 }
+
 .flex {
 	width: 100%;
 	display: flex;
@@ -572,100 +672,121 @@ main {
 	padding: 0;
 	margin: 0 auto;
 	gap: 15px 25px;
+
 	li {
 		display: flex;
 		flex-direction: column;
 	}
+
 	>li {
 		label {
 			margin: 10px 0;
 		}
 	}
 }
+
 .container {
 	box-sizing: border-box;
 	display: grid;
 	justify-items: center;
-	color: $formTextColor;
+	color: $textColorDark;
 	font-size: 15px;
 	padding: 25px;
 	max-width: 600px;
 	width: 100%;
+
 	* {
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 }
+
 .errorMsg {
 	margin: 5px 0;
 	color: $colorError;
 }
+
 input.was-validated {
 	&:invalid {
 		color: $colorError;
 		border-bottom: 1px solid $colorError !important;
 		margin-bottom: 0 !important;
 	}
+
 	&:valid {
 		color: $colorGood;
 		border-bottom: 1px solid $colorGood !important;
 		margin-bottom: 0 !important;
 	}
+
 	&:invalid~div.errorMsg {
 		display: block;
 	}
 }
+
 select.was-validated {
 	&:invalid {
 		color: $colorError;
 		border-bottom: 1px solid $colorError !important;
 		margin-bottom: 0 !important;
 	}
+
 	&:valid {
 		color: $colorGood;
 		border-bottom: 1px solid $colorGood !important;
 		margin-bottom: 0 !important;
 	}
+
 	&:select~div.errorMsg {
 		display: block;
 	}
 }
+
 input {
 	&:valid~div.errorMsg {
 		display: none;
 	}
+
 	&:invalid~div.errorMsg {
 		display: none;
 	}
 }
+
 select {
 	&:valid~div.errorMsg {
 		display: none;
 	}
+
 	&:invalid~div.errorMsg {
 		display: none;
 	}
 }
+
 .add-state-city {
 	gap: 15px;
 	flex-direction: row !important;
+
 	>section {
 		display: grid;
 	}
 }
+
 .find-checks {
 	height: max-content;
+
 	>input {
 		display: none;
+
 		&:checked {
 			+ {
 				label {
 					background: $colorSpec;
-					color: white;
+					color: $textColorLight;
 				}
 			}
 		}
 	}
+
 	label {
 		margin: 5px 0;
 		padding: 10px;
@@ -673,19 +794,24 @@ select {
 		display: inline-block;
 	}
 }
-#formSubmit {
+
+.button-1 {
 	width: fit-content;
 	padding: 10px 35px;
 	border: none;
 	background: $colorSpec;
-	color: white;
+	color: $textColorLight;
 	letter-spacing: .09em;
 	border-radius: 30px;
-	justify-self: end;
+	:after{
+		outline: none;
+	}
 }
+
 .form-send {
 	flex: 1 2;
 }
+
 .splash {
 	position: fixed;
 	width: 100vw;
@@ -694,7 +820,7 @@ select {
 	margin: auto;
 	top: 0 !important;
 	left: 0 !important;
-	background: black;
+	background: $darkBG;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -702,6 +828,7 @@ select {
 	z-index: 10;
 	animation: off .6s ease-in-out 2.5s both;
 }
+
 .splash_logo {
 	position: absolute;
 	margin: auto;
@@ -722,24 +849,29 @@ select {
 	justify-content: center;
 	align-items: center;
 	animation: off .6s ease-in-out 1s forwards;
+
 	p {
-		border-top: 1px solid white;
-		border-bottom: 1px solid white;
+		border-top: 1px solid $textColorLight;
+		border-bottom: 1px solid $textColorLight;
 		padding: 5px 0;
 	}
 }
+
 .switch {
 	position: relative;
 	box-sizing: border-box;
 	padding: 0 3px;
 	height: 30px;
 	width: 50px;
+
 	>input {
 		display: none;
+
 		&:checked {
 			+ {
 				.slider {
 					background-color: $colorSpec;
+
 					&:before {
 						-webkit-transform: translateX(19px);
 						-ms-transform: translateX(19px);
@@ -748,6 +880,7 @@ select {
 				}
 			}
 		}
+
 		&:focus {
 			+ {
 				.slider {
@@ -757,6 +890,7 @@ select {
 		}
 	}
 }
+
 .slider {
 	position: absolute;
 	cursor: pointer;
@@ -767,6 +901,7 @@ select {
 	background-color: $darkBG;
 	-webkit-transition: .4s;
 	transition: .4s;
+
 	&:before {
 		position: relative;
 		content: "";
@@ -779,12 +914,15 @@ select {
 		transition: .4s;
 	}
 }
+
 .slider.round {
 	border-radius: 36px;
+
 	&:before {
 		border-radius: 50%;
 	}
 }
+
 #menu-button {
 	input {
 		&:hover {
@@ -792,19 +930,241 @@ select {
 		}
 	}
 }
+
+.footer {
+	box-sizing: border-box;
+	width: 100vw;
+	display: flex;
+	padding: 10px 30px;
+	color: $textColorLight;
+	background-color: $darkComp;
+	align-items: center;
+	justify-content: space-evenly;
+
+	>* {
+		flex: 1 100%;
+	}
+
+	li {
+		line-height: 2em;
+	}
+}
+
+.footer_main {
+	h1 {
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+}
+
+.footer_links {
+	display: flex;
+	list-style: none;
+	margin: 0 !important;
+
+	>* {
+		flex: 1 50%;
+	}
+}
+
+.footer_legal {
+	text-align: right;
+	opacity: 0.5;
+}
+
+.Visits {
+	color: $textColorLight;
+	text-align: left;
+	gap: 25px;
+	min-height: calc(100vh - 106px);
+	grid-auto-rows: min-content;
+
+	.log_info {
+		display: flex;
+		align-items: center;
+		font-weight: 200;
+
+		.total_users {
+			font-size: 20px;
+		}
+
+		span {
+			margin: 0 15px;
+		}
+
+		section {
+			margin-left: auto;
+
+			>* {
+				border-radius: 5px;
+				margin: 0 5px;
+				background: $darkComp;
+				padding: 10px 20px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			.selected_display_style{
+				background: $colorSpec;
+			}
+			:last-child {
+				background: $colorSpec;
+			}
+		}
+
+	}
+	.visitor_grid{
+		grid-template-columns: repeat(5, 1fr);
+		section{
+			grid-template-columns: auto !important;
+			grid-auto-rows: max-content;
+			gap: 15px 0 !important;
+			padding: 25px !important;
+			justify-items: center !important;
+			text-align: center !important;
+
+			:first-child{
+				display: grid;
+				justify-items: center;
+				align-items: center;
+				gap: 15px 0;
+				width: 100%;
+				font-size: 20px;
+
+				.visitor-name-icon {
+					display: block;
+					font-size: 50px;
+					padding: 12px 25px;
+					margin: 0;
+					border-radius: 50px;
+				}
+			}
+			.visitor_action {
+				margin-top: 20px !important;
+				
+				gap: 15px;
+				input,
+				i {
+					margin: 0 !important;
+				}
+			}
+		}
+		.log_header{
+			display: none;
+		}
+	}
+	.Visiters{
+		display: grid;
+		gap: 7px;
+		.log_header{
+			color: $textColorLight;
+			background: none;
+		}
+		section{
+			display: grid; 
+			justify-items: start;
+			align-items: center;
+			grid-template-columns: 1fr 2fr 1fr 1fr .5fr; 
+			background: $darkComp;
+			border-radius: 15px;
+			padding: 10px;
+			gap: 0 15px;
+			.visitor_email_button{
+				text-decoration: none;
+				color: $textColorLight;
+				font-weight: 100;
+				i {
+					padding: 7px 10px;
+					border-radius: 5px;
+					margin: 5px;
+					background: $colorSpec2;
+
+					&:hover {
+						cursor: pointer;
+					}
+					@media (min-width: 1200px) {
+						display: none;	
+					}
+				}
+				span{
+					@media (max-width: 1200px) {
+						display: none;	
+					}
+				}
+			}
+			.visitor-name-icon {
+				display: inline-block;
+				font-size: 13px;
+				box-sizing: border-box;
+				padding: 7px 10px;
+				margin: 0 15px 0 0;
+				border-radius: 20px;
+				width: fit-content;
+			}
+			.visitor_action {
+				margin: 0;
+				background: none;
+				justify-self: center;
+				display: flex;
+				padding: 0 !important;
+				
+				gap: 0;
+
+				input,
+				i {
+					padding: 7px 10px;
+					border-radius: 5px;
+					margin: 5px;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+				:nth-child(2) {
+					background: $darkComp;
+				}
+			}
+			p{
+				margin: 0;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 900px) {
+	.footer {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.footer_links {
+		width: 100%;
+	}
+
+	.footer_legal {
+		text-align: center;
+	}
+}
+
 @media (min-width: 2000px) {
 	.welcome-title {
 		.welcome {
 			font-size: 45px;
 		}
+
 		.description {
 			font-size: 20px;
 		}
 	}
+
 	.container {
 		max-width: 1000px;
 		font-size: 20px;
 	}
+
 	#myform {
 		input {
 			&:placeholder-shown {
@@ -812,19 +1172,24 @@ select {
 			}
 		}
 	}
-	#formSubmit {
+
+	.button-1 {
 		font-size: 20px;
 	}
+
 	.user-sign {
 		grid-template-columns: 1fr 3fr;
+
 		>section {
 			h1 {
 				font-size: 25px;
+
 				span {
 					font-size: 30px;
 				}
 			}
 		}
+
 		section {
 			img {
 				width: 200px;
@@ -832,18 +1197,22 @@ select {
 		}
 	}
 }
+
 @media (min-width: 1200px) {
 	#menu-button {
 		display: none;
 	}
+
 	.welcome-title {
 		.welcome {
 			font-size: 30px;
 		}
+
 		.description {
 			font-size: 12px;
 		}
 	}
+
 	.info {
 		.text {
 			section {
@@ -852,11 +1221,14 @@ select {
 				}
 			}
 		}
+
 		width: 100%;
 	}
+
 	.Home {
 		padding: 100px 50px 50px 50px;
 	}
+
 	.body-info {
 		width: 100%;
 		min-height: 300px;
@@ -864,46 +1236,57 @@ select {
 		grid-template-columns: 85% 15%;
 		grid-template-rows: 100%;
 	}
+
 	.body-info-text {
 		h2 {
 			font-size: 25px;
 		}
+
 		h3 {
 			font-size: 17px;
 			font-weight: normal;
 		}
 	}
+
 	.body-info-image {
 		width: auto;
 	}
+
 	.body-info-main {
 		grid-template-columns: 40% 60%;
 		justify-content: center;
 	}
+
 	.body-info-icons {
 		>p {
 			font-weight: 200;
 		}
 	}
+
 	.about {
 		>.title {
 			font-size: 80px;
 		}
+
 		>.description {
 			font-size: 20px;
 		}
 	}
+
 	.solar-info-card {
 		margin: 15px 0;
 	}
+
 	#Menu {
 		label {
 			margin: 0;
 			opacity: 0.5;
+
 			&:hover {
 				opacity: 0.7;
 			}
 		}
+
 		.toggle {
 			&:checked+#Menu {
 				label {
@@ -912,30 +1295,37 @@ select {
 			}
 		}
 	}
+
 	.APOD {
 		.info {
 			flex-direction: column-reverse;
 		}
 	}
 }
+
 @media (max-width: 1200px) {
 	.welcome-title {
 		margin-top: 0px;
 	}
+
 	.about {
 		>.title {
 			font-size: 80px;
 		}
+
 		>.description {
 			font-size: 20px;
 		}
 	}
+
 	.slide {
 		right: 0 !important;
 	}
+
 	#menu-button {
 		margin-left: auto;
 		transition: all 200ms ease-in-out;
+
 		input {
 			color: $lightBG;
 			font-size: 35px;
@@ -947,9 +1337,11 @@ select {
 			outline: none;
 		}
 	}
+
 	.button-slide {
 		padding-right: calc(50% + 15px) !important;
 	}
+
 	#Menu {
 		position: absolute;
 		display: flex;
@@ -961,30 +1353,36 @@ select {
 		margin: auto;
 		z-index: 2;
 		background: rgba(0, 0, 0, 0.9);
+
 		label {
 			border-radius: 15px;
 			margin: 5px 15px;
 			max-width: calc(100% - 30px);
 			transition: none;
 			opacity: 0.8;
+
 			&:hover {
 				cursor: pointer;
 				opacity: 1;
 			}
 		}
+
 		.toggle {
 			&:checked+label {
 				color: $lightText;
-				background: white;
+				background: $lightBG;
 			}
 		}
 	}
+
 	.background-slider {
 		display: none;
 	}
+
 	.info {
 		width: 100%;
 	}
+
 	.text {
 		section {
 			h2 {
@@ -992,6 +1390,7 @@ select {
 			}
 		}
 	}
+
 	.MarsRover {
 		.info {
 			iframe {
@@ -1000,30 +1399,36 @@ select {
 		}
 	}
 }
+
 @media (min-width: 800px) {
 	.welcome-title {
 		.welcome {
 			font-size: 30px;
 		}
+
 		.description {
 			font-size: 12px;
 		}
 	}
 }
+
 @media (max-width: 800px) {
 	.welcome-title {
 		.welcome {
 			font-size: 25px;
 		}
+
 		.description {
 			font-size: 12px;
 		}
 	}
+
 	.text {
 		p {
 			display: none;
 		}
 	}
+
 	.info {
 		.text {
 			section {
@@ -1033,24 +1438,29 @@ select {
 			}
 		}
 	}
+
 	.Home {
 		padding: 100px 35px 35px 35px;
 	}
 }
+
 @media (min-width: 600px) {
 	.body-info {
 		grid-template-columns: 85% 15%;
 		grid-template-rows: 100%;
 	}
+
 	.body-info-main {
 		grid-template-columns: 40% 60%;
 		justify-content: center;
 	}
+
 	.body-info-icons {
 		width: fit-content;
 		text-align: right;
 	}
 }
+
 @media (max-width: 600px) {
 	.body-info {
 		max-width: 100%;
@@ -1059,27 +1469,34 @@ select {
 		grid-template-rows: auto 25%;
 		margin: 15px 0 !important;
 	}
+
 	.body-info-text {
 		>p {
 			display: none;
 		}
+
 		padding: 0;
 		justify-self: center;
+
 		h2 {
 			font-size: 35px;
 		}
+
 		h3 {
 			font-size: 20px;
 			font-weight: normal;
 		}
 	}
+
 	.body-info-image {
 		width: auto;
 	}
+
 	.body-info-main {
 		grid-template-columns: auto;
 		justify-content: center;
 	}
+
 	.body-info-icons {
 		display: flex;
 		justify-content: space-between;
@@ -1087,28 +1504,35 @@ select {
 		margin: 55px 0;
 		width: 80% !important;
 		text-align: center;
+
 		>p {
 			font-weight: 100;
 		}
 	}
+
 	.Home {
 		background-position: 0 100px;
 		padding: 100px 20px 20px 20px;
 	}
+
 	.about {
 		>.title {
 			font-size: 50px;
 		}
+
 		>.description {
 			font-size: 12px;
 		}
 	}
+
 	.solar-info {
 		flex-direction: column;
 	}
+
 	.solar-info-card {
 		margin: 15px auto;
 	}
+
 	.our-planets {
 		.planet {
 			p {
@@ -1116,46 +1540,52 @@ select {
 			}
 		}
 	}
+
 	.info {
 		display: flex;
 		flex-direction: column;
+
 		.text {
 			p {
 				display: none;
 			}
+
 			section {
 				h2 {
 					font-size: 30px;
 				}
 			}
 		}
+
 		iframe {
 			width: 100%;
 		}
 	}
+
 	.APOD {
 		.info {
 			flex-direction: column-reverse;
 		}
 	}
 }
+
 @media (max-width: 1000px) {
 	.container {
 		width: 100vw;
 	}
+
 	.user-sign {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 3fr;
+
 		section {
 			h1 {
 				margin: 0;
 			}
+
 			img {
 				width: 90px;
 			}
 		}
-	}
-	#formSubmit {
-		justify-self: start;
 	}
 }

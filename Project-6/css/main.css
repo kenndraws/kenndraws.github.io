@@ -96,7 +96,6 @@ html {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: black;
   overflow-y: overlay;
   overflow-x: hidden;
 }
@@ -108,13 +107,12 @@ body {
   background: black;
   overflow-y: overlay;
   overflow-x: hidden;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
 }
 
-::-webkit-scrollbar {
-  background: transparent;
-}
-
-button:hover {
+button:hover,
+input[type="button"]:hover {
   cursor: pointer;
 }
 
@@ -133,6 +131,7 @@ header {
           box-sizing: border-box;
   padding: 0 15px;
   z-index: 2;
+  height: 60px;
 }
 
 header > section {
@@ -203,11 +202,11 @@ header > section > #title {
   margin-left: 49.99%;
 }
 
-#Menu #Asteroids:checked ~ .background-slider {
+#Menu #Other:checked ~ .background-slider {
   margin-left: 66.66%;
 }
 
-#Menu #Other:checked ~ .background-slider {
+#Menu #Visits:checked ~ .background-slider {
   margin-left: 83.33%;
 }
 
@@ -229,7 +228,7 @@ header > section > #title {
 }
 
 main {
-  min-height: calc(100vh - 146px);
+  min-height: calc(100vh - 106px);
 }
 
 main > section {
@@ -238,7 +237,7 @@ main > section {
   gap: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 75px 35px 35px 35px;
+  padding: 95px 35px 35px 35px;
   z-index: 0;
 }
 
@@ -603,8 +602,6 @@ main > .Home {
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
   gap: 0 !important;
-  -webkit-animation: off .6s ease-in-out 2s both;
-          animation: off .6s ease-in-out 2s both;
 }
 
 .user-sign > section {
@@ -726,13 +723,22 @@ main > .Home {
 }
 
 #myform > section {
-  display: -ms-grid;
-  display: grid;
   gap: 10px;
 }
 
-#myform > section > h4 {
+#myform .find-checks-area {
+  display: -ms-grid;
+  display: grid;
+}
+
+#myform .find-checks-area h4 {
   margin: 0;
+}
+
+#myform .formButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #myform label.desc {
@@ -875,7 +881,7 @@ select:invalid ~ div.errorMsg {
   display: inline-block;
 }
 
-#formSubmit {
+.button-1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -885,8 +891,10 @@ select:invalid ~ div.errorMsg {
   color: white;
   letter-spacing: .09em;
   border-radius: 30px;
-  -ms-grid-column-align: end;
-      justify-self: end;
+}
+
+.button-1 :after {
+  outline: none;
 }
 
 .form-send {
@@ -988,7 +996,7 @@ select:invalid ~ div.errorMsg {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #282828;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -1017,6 +1025,273 @@ select:invalid ~ div.errorMsg {
   cursor: pointer;
 }
 
+.footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 30px;
+  color: white;
+  background-color: #0e0e0e;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer_main h1 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.footer_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0 !important;
+}
+
+.footer_links > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
+}
+
+.footer_legal {
+  text-align: right;
+  opacity: 0.5;
+}
+
+.Visits {
+  color: white;
+  text-align: left;
+  gap: 25px;
+  min-height: calc(100vh - 106px);
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
+}
+
+.Visits .log_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 200;
+}
+
+.Visits .log_info .total_users {
+  font-size: 20px;
+}
+
+.Visits .log_info span {
+  margin: 0 15px;
+}
+
+.Visits .log_info section {
+  margin-left: auto;
+}
+
+.Visits .log_info section > * {
+  border-radius: 5px;
+  margin: 0 5px;
+  background: #0e0e0e;
+  padding: 10px 20px;
+}
+
+.Visits .log_info section > *:hover {
+  cursor: pointer;
+}
+
+.Visits .log_info section .selected_display_style {
+  background: #007be0;
+}
+
+.Visits .log_info section :last-child {
+  background: #007be0;
+}
+
+.Visits .visitor_grid {
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.Visits .visitor_grid section {
+  -ms-grid-columns: auto !important;
+      grid-template-columns: auto !important;
+  grid-auto-rows: -webkit-max-content;
+  grid-auto-rows: max-content;
+  gap: 15px 0 !important;
+  padding: 25px !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+
+.Visits .visitor_grid section :first-child {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px 0;
+  width: 100%;
+  font-size: 20px;
+}
+
+.Visits .visitor_grid section :first-child .visitor-name-icon {
+  display: block;
+  font-size: 50px;
+  padding: 12px 25px;
+  margin: 0;
+  border-radius: 50px;
+}
+
+.Visits .visitor_grid section .visitor_action {
+  margin-top: 20px !important;
+  gap: 15px;
+}
+
+.Visits .visitor_grid section .visitor_action input,
+.Visits .visitor_grid section .visitor_action i {
+  margin: 0 !important;
+}
+
+.Visits .visitor_grid .log_header {
+  display: none;
+}
+
+.Visits .Visiters {
+  display: -ms-grid;
+  display: grid;
+  gap: 7px;
+}
+
+.Visits .Visiters .log_header {
+  color: white;
+  background: none;
+}
+
+.Visits .Visiters section {
+  display: -ms-grid;
+  display: grid;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 2fr 1fr 1fr .5fr;
+      grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
+  background: #0e0e0e;
+  border-radius: 15px;
+  padding: 10px;
+  gap: 0 15px;
+}
+
+.Visits .Visiters section .visitor_email_button {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+}
+
+.Visits .Visiters section .visitor_email_button i {
+  padding: 7px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  background: #6192b9;
+}
+
+.Visits .Visiters section .visitor_email_button i:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .Visits .Visiters section .visitor_email_button i {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Visits .Visiters section .visitor_email_button span {
+    display: none;
+  }
+}
+
+.Visits .Visiters section .visitor-name-icon {
+  display: inline-block;
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 7px 10px;
+  margin: 0 15px 0 0;
+  border-radius: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Visits .Visiters section .visitor_action {
+  margin: 0;
+  background: none;
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 !important;
+  gap: 0;
+}
+
+.Visits .Visiters section .visitor_action input,
+.Visits .Visiters section .visitor_action i {
+  padding: 7px 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.Visits .Visiters section .visitor_action input:hover,
+.Visits .Visiters section .visitor_action i:hover {
+  cursor: pointer;
+}
+
+.Visits .Visiters section .visitor_action :nth-child(2) {
+  background: #0e0e0e;
+}
+
+.Visits .Visiters section p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .footer_links {
+    width: 100%;
+  }
+  .footer_legal {
+    text-align: center;
+  }
+}
+
 @media (min-width: 2000px) {
   .welcome-title .welcome {
     font-size: 45px;
@@ -1031,7 +1306,7 @@ select:invalid ~ div.errorMsg {
   #myform input:placeholder-shown {
     font-size: 20px;
   }
-  #formSubmit {
+  .button-1 {
     font-size: 20px;
   }
   .user-sign {
@@ -1366,10 +1641,6 @@ select:invalid ~ div.errorMsg {
   }
   .user-sign section img {
     width: 90px;
-  }
-  #formSubmit {
-    -ms-grid-column-align: start;
-        justify-self: start;
   }
 }
 /*# sourceMappingURL=main.css.map */

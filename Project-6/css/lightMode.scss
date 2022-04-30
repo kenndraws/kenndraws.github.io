@@ -1,0 +1,344 @@
+$fontFamily: Arial,
+Helvetica,
+sans-serif;
+$lightBG: white;
+$lightComp: rgb(236, 238, 240);
+$lightText: #212121;
+
+$colorSpec: rgb(0, 123, 224);
+$colorSpec2: rgb(97, 146, 185);
+
+$darkBG: black;
+$darkComp: #0e0e0e;
+
+$colorError: rgb(236, 19, 19);
+$colorGood: rgb(44, 216, 22);
+
+$textColorDark: black;
+$textColorLight: white;
+
+$transparentColor: rgba(0, 0, 0, 0);
+
+body {
+    background: $lightBG;
+}
+
+
+header {
+    >section {
+        >#title {
+            color: $textColorDark;
+            font-size: 20px;
+        }
+    }
+}
+
+#Menu {
+    >label {
+        //color: $textColorDark;
+        color: #818181;
+    }
+}
+
+.background-slider {
+    background: $textColorDark;
+}
+
+main {
+    >.Home {
+        background-image: url('./../img/light_background.PNG');
+    }
+}
+
+.welcome-title {
+    color: $textColorDark;
+
+    .Learn {
+        color: $textColorLight;
+        background: $colorSpec;
+    }
+}
+
+.about {
+    color: $textColorDark;
+}
+
+.solar-info {
+    color: $textColorDark;
+}
+
+.solar-info-card {
+    color: $textColorLight;
+    background: $colorSpec;
+}
+
+.info {
+    color: $textColorDark;
+}
+
+.text {
+    section {
+        h2 {
+            span {
+                color: $colorSpec;
+                font-weight: 200;
+            }
+        }
+
+        border-bottom: 1px solid $textColorDark;
+    }
+}
+
+
+.body-info {
+    color: $textColorDark;
+    background-color: $lightBG;
+}
+
+.user-sign {
+    color: $textColorLight;
+    background-color: $darkComp;
+
+    >section {
+        color: $textColorLight;
+        background-color: $colorSpec;
+    }
+}
+
+#myform {
+    ul {
+        li {
+            input {
+                border-bottom: 1px solid #505050;
+            }
+
+            select {
+                border-bottom: 1px solid #505050;
+            }
+        }
+    }
+
+    input {
+        &::placeholder {
+            color: $textColorLight;
+        }
+
+        &:focus {
+            color: $textColorLight;
+            background: $transparentColor;
+            border-bottom: 1px solid $colorSpec;
+        }
+
+        &:active {
+            color: $textColorLight;
+            background: $transparentColor;
+            border-bottom: 1px solid $colorSpec;
+        }
+    }
+
+    select {
+        &:focus {
+            color: $textColorLight;
+            background: $transparentColor;
+            border-bottom: 1px solid $colorSpec;
+        }
+
+        &:active {
+            color: $textColorLight;
+            background: $transparentColor;
+            border-bottom: 1px solid $colorSpec;
+        }
+    }
+}
+
+
+.container {
+    color: $textColorLight;
+}
+
+.errorMsg {
+    color: $colorError;
+}
+
+input.was-validated {
+    &:invalid {
+        color: $colorError;
+        border-bottom: 1px solid $colorError !important;
+    }
+
+    &:valid {
+        color: $colorGood;
+        border-bottom: 1px solid $colorGood !important;
+    }
+}
+
+select.was-validated {
+    &:invalid {
+        color: $colorError;
+        border-bottom: 1px solid $colorError !important;
+    }
+
+    &:valid {
+        color: $colorGood;
+        border-bottom: 1px solid $colorGood !important;
+    }
+}
+
+
+.find-checks {
+    >input {
+        &:checked {
+            + {
+                label {
+                    color: $textColorLight;
+                    background: $colorSpec;
+                }
+            }
+        }
+    }
+}
+
+.button-1 {
+    color: $textColorLight;
+    background: $colorSpec;
+}
+
+.splash {
+    background: $lightBG;
+}
+
+.splash_logo {
+    color: #ffffff;
+    color: $textColorLight;
+    background: $colorSpec;
+
+    p {
+        border-top: 1px solid $textColorDark;
+        border-bottom: 1px solid $textColorDark;
+    }
+}
+
+.switch {
+    >input {
+        &:checked {
+            + {
+                .slider {
+                    background-color: $colorSpec;
+                }
+            }
+        }
+
+        &:focus {
+            + {
+                .slider {
+                    box-shadow: 0 0 1px $colorSpec;
+                }
+            }
+        }
+    }
+}
+
+.slider {
+    background-color: $lightComp;
+
+    &:before {
+        background-color: $lightBG;
+    }
+}
+
+.footer {
+    color: $textColorDark;
+    background-color: $lightComp;
+}
+
+
+.Visits {
+    color: $textColorDark;
+
+    .log_info {
+        section {
+            >* {
+                color: $textColorDark;
+                background: $lightComp;
+            }
+            .selected_display_style {
+                color: $textColorLight;
+                background: $colorSpec;
+            }
+
+            :last-child {
+                color: $textColorLight;
+                background: $colorSpec;
+            }
+        }
+
+    }
+
+    .Visiters {
+        .log_header {
+            color: $textColorDark;
+        }
+
+        .visitor-name-icon {
+            color: $textColorLight;
+        }
+
+        section {
+            background: $lightBG;
+            border-bottom: 1px solid #e5e5e5;
+            border-radius: 0px !important;
+
+            .visitor_email_button {
+                color: $textColorDark;
+
+                i {
+                    background: $colorSpec2;
+                }
+            }
+
+            i {
+                color: $textColorLight;
+            }
+        }
+
+        .visitor_action {
+
+            :nth-child(2) {
+                background: $lightComp;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #Menu {
+        .toggle {
+            &:checked+#Menu {
+                label {
+                    //color: $textColorDark;
+                    color: #818181;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    #menu-button {
+        input {
+            color: $textColorDark;
+        }
+    }
+
+    #Menu {
+        background: rgba(255, 255, 255, 1);
+
+        .toggle {
+            &:checked+label {
+                color: $lightText;
+                background: $lightComp;
+            }
+        }
+    }
+}

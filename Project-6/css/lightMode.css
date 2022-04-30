@@ -1,0 +1,262 @@
+body {
+  background: white;
+}
+
+header > section > #title {
+  color: black;
+  font-size: 20px;
+}
+
+#Menu > label {
+  color: #818181;
+}
+
+.background-slider {
+  background: black;
+}
+
+main > .Home {
+  background-image: url("./../img/light_background.PNG");
+}
+
+.welcome-title {
+  color: black;
+}
+
+.welcome-title .Learn {
+  color: white;
+  background: #007be0;
+}
+
+.about {
+  color: black;
+}
+
+.solar-info {
+  color: black;
+}
+
+.solar-info-card {
+  color: white;
+  background: #007be0;
+}
+
+.info {
+  color: black;
+}
+
+.text section {
+  border-bottom: 1px solid black;
+}
+
+.text section h2 span {
+  color: #007be0;
+  font-weight: 200;
+}
+
+.body-info {
+  color: black;
+  background-color: white;
+}
+
+.user-sign {
+  color: white;
+  background-color: #0e0e0e;
+}
+
+.user-sign > section {
+  color: white;
+  background-color: #007be0;
+}
+
+#myform ul li input {
+  border-bottom: 1px solid #505050;
+}
+
+#myform ul li select {
+  border-bottom: 1px solid #505050;
+}
+
+#myform input::-webkit-input-placeholder {
+  color: white;
+}
+
+#myform input:-ms-input-placeholder {
+  color: white;
+}
+
+#myform input::-ms-input-placeholder {
+  color: white;
+}
+
+#myform input::placeholder {
+  color: white;
+}
+
+#myform input:focus {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #007be0;
+}
+
+#myform input:active {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #007be0;
+}
+
+#myform select:focus {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #007be0;
+}
+
+#myform select:active {
+  color: white;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #007be0;
+}
+
+.container {
+  color: white;
+}
+
+.errorMsg {
+  color: #ec1313;
+}
+
+input.was-validated:invalid {
+  color: #ec1313;
+  border-bottom: 1px solid #ec1313 !important;
+}
+
+input.was-validated:valid {
+  color: #2cd816;
+  border-bottom: 1px solid #2cd816 !important;
+}
+
+select.was-validated:invalid {
+  color: #ec1313;
+  border-bottom: 1px solid #ec1313 !important;
+}
+
+select.was-validated:valid {
+  color: #2cd816;
+  border-bottom: 1px solid #2cd816 !important;
+}
+
+.find-checks > input:checked + label {
+  color: white;
+  background: #007be0;
+}
+
+.button-1 {
+  color: white;
+  background: #007be0;
+}
+
+.splash {
+  background: white;
+}
+
+.splash_logo {
+  color: #ffffff;
+  color: white;
+  background: #007be0;
+}
+
+.splash_logo p {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.switch > input:checked + .slider {
+  background-color: #007be0;
+}
+
+.switch > input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #007be0;
+          box-shadow: 0 0 1px #007be0;
+}
+
+.slider {
+  background-color: #eceef0;
+}
+
+.slider:before {
+  background-color: white;
+}
+
+.footer {
+  color: black;
+  background-color: #eceef0;
+}
+
+.Visits {
+  color: black;
+}
+
+.Visits .log_info section > * {
+  color: black;
+  background: #eceef0;
+}
+
+.Visits .log_info section .selected_display_style {
+  color: white;
+  background: #007be0;
+}
+
+.Visits .log_info section :last-child {
+  color: white;
+  background: #007be0;
+}
+
+.Visits .Visiters .log_header {
+  color: black;
+}
+
+.Visits .Visiters .visitor-name-icon {
+  color: white;
+}
+
+.Visits .Visiters section {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 0px !important;
+}
+
+.Visits .Visiters section .visitor_email_button {
+  color: black;
+}
+
+.Visits .Visiters section .visitor_email_button i {
+  background: #6192b9;
+}
+
+.Visits .Visiters section i {
+  color: white;
+}
+
+.Visits .Visiters .visitor_action :nth-child(2) {
+  background: #eceef0;
+}
+
+@media (min-width: 1200px) {
+  #Menu .toggle:checked + #Menu label {
+    color: #818181;
+  }
+}
+
+@media (max-width: 1200px) {
+  #menu-button input {
+    color: black;
+  }
+  #Menu {
+    background: white;
+  }
+  #Menu .toggle:checked + label {
+    color: #212121;
+    background: #eceef0;
+  }
+}
+/*# sourceMappingURL=lightMode.css.map */

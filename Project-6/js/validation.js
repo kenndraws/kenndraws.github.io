@@ -25,30 +25,7 @@ function initValidation(formName) {
     });
 
     $form.submit(function (event) {
-        $form = $(this);
-        formEl = $form.get(0); //formElement
-
-        event.preventDefault();  //prevent default browser submit
-        event.stopPropagation(); //stop event bubbling
-
-        validateForm();
-
-        if (!formEl.checkValidity()) {
-            $(":input").addClass("was-validated")
-        }
-        else {
-            $form.hide(); //Hide Form
-            $(".successMsg").show(); //display success message
-            
-            var formData = new FormData(formEl)
-            console.log($form.serialize().split('&'));
-
-            $form.each(function(){
-                this.reset();
-            });
-            $(".user-sign").removeClass('paused');
-            main();
-        }
+        submitForm($form, event);
     });
 }
 
@@ -75,7 +52,7 @@ function validateState(id, msg) {
 
 function validateCheckboxGroup(fieldName, groupName, message) {
     let valid = $(`input[name="${groupName}"]:checked`).length > 0;
-    
+
     setElementValidity(fieldName, valid, message);
 
     return valid;
@@ -86,7 +63,7 @@ function setElementValidity(fieldName, valid, message) {
     let el = $field.get(0);
     if (valid) {  //it has a value
         el.setCustomValidity('');  //sets to no error message and field is valid
-    } else {    
+    } else {
         el.setCustomValidity(message);   //sets error message and field gets 'invalid' stat
     }
     //TODO  insert or remove message in error div for element

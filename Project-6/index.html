@@ -6,31 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/main.scss">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lightMode.css" class="lightModeCSS">
 
     <link rel="icon" href="img/logoBlack.png">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+
+    <script src="js/controller.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway:wght@200;300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway:wght@200;300;500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8de1927029.js" crossorigin="anonymous"></script>
 
 
     <title>Astronomy Info Project</title>
 </head>
 
 <body>
-    <header class="hidden">
+    <header style="display:none">
         <section>
             <img src="img/logo.png" alt="icon" />
             <p id="title">AIP</p>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle" checked />
+            <input type="radio" name="option" id="Home" class="toggle" checked/>
             <label for="Home"><span>Home</span></label>
 
             <input type="radio" name="option" id="Planets" class="toggle" />
@@ -42,16 +48,16 @@
             <input type="radio" name="option" id="Dwarfs" class="toggle" />
             <label for="Dwarfs"><span>Dwarfs</span></label>
 
-            <input type="radio" name="option" id="Asteroids" class="toggle" />
-            <label for="Asteroids"><span>Asteroids</span></label>
-
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
+            <input type="radio" name="option" id="Visits" class="toggle"  />
+            <label for="Visits"><span>Visists</span></label>
+
             <section class="background-slider">.</section>
         </nav>
-        <label class="switch hidden">
-            <input type="checkbox" onClick="console.log('switch theme')" />
+        <label class="switch">
+            <input type="checkbox" onClick="switchTheme()" />
             <span class="slider round"></span>
         </label>
         <section id="menu-button">
@@ -64,7 +70,7 @@
                 <p>AIP</p>
             </section>
         </section>
-        <section class="user-sign paused">
+        <section class="user-sign">
             <section>
                 <img src="./img/logo.png" alt="" />
                 <h1><span> Astronomy Info Project </span><br />Visit Form </h1>
@@ -99,59 +105,6 @@
                             <section>
                                 <label for="state">State</label>
                                 <input type="text" id="state" name="state" placeholder="ex. UT" required>
-                                <!-- <select id="state" name="state" required>
-                                    <option value="AL">AL</option>
-                                    <option value="AK">AK</option>
-                                    <option value="AR">AR</option>	
-                                    <option value="AZ">AZ</option>
-                                    <option value="CA">CA</option>
-                                    <option value="CO">CO</option>
-                                    <option value="CT">CT</option>
-                                    <option value="DC">DC</option>
-                                    <option value="DE">DE</option>
-                                    <option value="FL">FL</option>
-                                    <option value="GA">GA</option>
-                                    <option value="HI">HI</option>
-                                    <option value="IA">IA</option>	
-                                    <option value="ID">ID</option>
-                                    <option value="IL">IL</option>
-                                    <option value="IN">IN</option>
-                                    <option value="KS">KS</option>
-                                    <option value="KY">KY</option>
-                                    <option value="LA">LA</option>
-                                    <option value="MA">MA</option>
-                                    <option value="MD">MD</option>
-                                    <option value="ME">ME</option>
-                                    <option value="MI">MI</option>
-                                    <option value="MN">MN</option>
-                                    <option value="MO">MO</option>	
-                                    <option value="MS">MS</option>
-                                    <option value="MT">MT</option>
-                                    <option value="NC">NC</option>	
-                                    <option value="NE">NE</option>
-                                    <option value="NH">NH</option>
-                                    <option value="NJ">NJ</option>
-                                    <option value="NM">NM</option>			
-                                    <option value="NV">NV</option>
-                                    <option value="NY">NY</option>
-                                    <option value="ND">ND</option>
-                                    <option value="OH">OH</option>
-                                    <option value="OK">OK</option>
-                                    <option value="OR">OR</option>
-                                    <option value="PA">PA</option>
-                                    <option value="RI">RI</option>
-                                    <option value="SC">SC</option>
-                                    <option value="SD">SD</option>
-                                    <option value="TN">TN</option>
-                                    <option value="TX">TX</option>
-                                    <option value="UT">UT</option>
-                                    <option value="VT">VT</option>
-                                    <option value="VA">VA</option>
-                                    <option value="WA">WA</option>
-                                    <option value="WI">WI</option>	
-                                    <option value="WV">WV</option>
-                                    <option value="WY">WY</option>
-                                </select> -->
                                 <div class="errorMsg">Invalid State</div>
                             </section>
                         </li>
@@ -169,12 +122,12 @@
                         </li>
                         <li>
                             <label for="phone">Phone</label>
-                            <input type="phone" id="phone" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
+                            <input type="phone" id="phone" name="phone" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
                                 placeholder="ex. 800123456" required>
                             <div class="errorMsg">Invalid Phone</div>
                         </li>
                     </ul>
-                    <section>
+                    <section class="find-checks-area">
                         <h4>How did you find us?</h4>
 
                         <section class="find-checks">
@@ -191,7 +144,11 @@
                         </section>
 
                     </section>
-                    <button id="formSubmit" type="submit">Send</button>
+                    <section class="formButtons">
+                        <button id="formCancel" class="button-1" onClick="main()" type="button"
+                            style="display:none">Cancel</button>
+                        <button id="formSubmit" class="button-1" type="submit">Save</button>
+                    </section>
                 </form>
             </div>
         </section>
@@ -259,43 +216,6 @@
                     </section>
                 </section>
             </section>
-            <section class="our-planets hidden">
-                <p class="our-planets-title">Our Planets</p>
-                <section class="carousel">
-                    <section class="planet obj-1" id>
-                        <img src="img/mercury.jpg " alt="Mercury" />
-                        <p class="planet-name">M E R C U R Y</p>
-                    </section>
-                    <section class="planet obj-2">
-                        <img src="img/venus.jpg " alt="venus" />
-                        <p class="planet-name">V E N U S</p>
-                    </section>
-                    <section class="planet obj-3">
-                        <img src="img/earth.jpg " alt="earth" />
-                        <p class="planet-name">E A R T H</p>
-                    </section>
-                    <section class="planet obj-4">
-                        <img src="img/mars.jpg " alt="mars" />
-                        <p class="planet-name">M A R S</p>
-                    </section>
-                    <section class="planet obj-5">
-                        <img src="img/jupiter.jpg " alt="Jupiter" />
-                        <p class="planet-name">J U P I T E R</p>
-                    </section>
-                    <section class="planet obj-6">
-                        <img src="img/saturn.jpg " alt="Saturn" />
-                        <p class="planet-name">S A T U R N</p>
-                    </section>
-                    <section class="planet obj-7">
-                        <img src="img/uranus.jpg " alt="Uranus" />
-                        <p class="planet-name">U R A N U S</p>
-                    </section>
-                    <section class="planet obj-8">
-                        <img src="img/neptune.jpg " alt="Neptune" />
-                        <p class="planet-name">N E P T U N E</p>
-                    </section>
-                </section>
-            </section>
         </section>
         <section class="Planets" style="display:none">
         </section>
@@ -303,12 +223,24 @@
         </section>
         <section class="Dwarfs" style="display:none">
         </section>
-        <section class="Asteroids" style="display:none">
-        </section>
         <section class="Other" style="display:none">
         </section>
+        <section class="Visits" style="display:none">
+            <section class="log_info">
+                <p class="total_users">Total Visits: </p>
+                <span>0</span>
+                <section>
+                    <i class="fa-solid fa-grip-lines button-1 display_style selected_display_style"></i>
+                    <i class="fa-solid fa-grip button-1 display_style "></i>
+                    <i class="fa-solid fa-filter button-1 hidden"></i>
+                    <input type="button" class="button-1" value="Log Visit" onClick="addVisitor()">
+                </section>
+            </section>
+            <section class="Visiters">
+            </section>
+        </section>
     </main>
-    <footer class="footer hidden">
+    <footer class="footer" style="display:none">
         <section class="footer_main">
             <h1>Astronomy Info Project</h1>
         </section>
@@ -327,17 +259,9 @@
                 <br /><span>Made by Kenneth Gonzalez</span>
             </p>
         </section>
-
-
     </footer>
 
     <script src="js/validation.js"></script>
-    <script>
-        $(document).ready(() => {
-            initValidation("#myform");
-            //main();
-        });
-    </script>
 </body>
 
 </html>
