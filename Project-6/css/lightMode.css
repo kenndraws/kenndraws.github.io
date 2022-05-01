@@ -1,20 +1,21 @@
 body {
-  background: white;
+  background: #eceef0;
+}
+
+body .dark_mode_logo {
+  display: none;
+}
+
+body .light_mode_logo {
+  display: inline-block;
+}
+
+.text {
+  color: black;
 }
 
 header {
   background: rgba(255, 255, 255, 0.3);
-}
-
-header > section > img {
-  display: none;
-}
-
-header > section > .light_mode_logo {
-  display: inline-block;
-}
-
-header > section > #title {
   color: black;
 }
 
@@ -26,21 +27,13 @@ header > section > #title {
   background: black;
 }
 
-main > .Home {
-  background-image: url("./../img/light_background.PNG");
+.media-info .info {
+  background: white;
 }
 
 .welcome-title {
   color: black;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   font-weight: 300;
-}
-
-.welcome-title .Learn {
-  color: white;
-  background: #1094ff;
 }
 
 .about {
@@ -52,8 +45,10 @@ main > .Home {
 }
 
 .solar-info-card {
-  color: white;
-  background: #1094ff;
+  background-color: white;
+  border: 1px solid #eceef0;
+  -webkit-box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.1);
 }
 
 .info {
@@ -65,7 +60,7 @@ main > .Home {
 }
 
 .text section h2 span {
-  color: #1094ff;
+  color: #239cff;
   font-weight: 200;
 }
 
@@ -75,136 +70,36 @@ main > .Home {
 }
 
 .user-sign {
-  color: white;
-  background-color: #0e0e0e;
-}
-
-.user-sign > section {
-  color: white;
-  background-color: #1094ff;
+  background-color: white;
 }
 
 #myform ul li input {
-  border-bottom: 1px solid #505050;
-}
-
-#myform ul li select {
-  border-bottom: 1px solid #505050;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 #myform input::-webkit-input-placeholder {
-  color: white;
+  color: black;
 }
 
 #myform input:-ms-input-placeholder {
-  color: white;
+  color: black;
 }
 
 #myform input::-ms-input-placeholder {
-  color: white;
+  color: black;
 }
 
 #myform input::placeholder {
-  color: white;
-}
-
-#myform input:focus {
-  color: white;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #1094ff;
-}
-
-#myform input:active {
-  color: white;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #1094ff;
-}
-
-#myform select:focus {
-  color: white;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #1094ff;
-}
-
-#myform select:active {
-  color: white;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #1094ff;
+  color: black;
 }
 
 .container {
-  color: white;
-}
-
-.errorMsg {
-  color: #ec1313;
-}
-
-input.was-validated:invalid {
-  color: #ec1313;
-  border-bottom: 1px solid #ec1313 !important;
-}
-
-input.was-validated:valid {
-  color: #2cd816;
-  border-bottom: 1px solid #2cd816 !important;
-}
-
-select.was-validated:invalid {
-  color: #ec1313;
-  border-bottom: 1px solid #ec1313 !important;
-}
-
-select.was-validated:valid {
-  color: #2cd816;
-  border-bottom: 1px solid #2cd816 !important;
-}
-
-.find-checks > input:checked + label {
-  color: white;
-  background: #1094ff;
-}
-
-.button-1 {
-  color: white;
-  background: #1094ff;
-}
-
-.splash {
-  background: white;
-}
-
-.splash_logo {
-  color: #ffffff;
-  color: white;
-  background: #1094ff;
-}
-
-.splash_logo p {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-.switch > input:checked + .slider {
-  background-color: #1094ff;
-}
-
-.switch > input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #1094ff;
-          box-shadow: 0 0 1px #1094ff;
-}
-
-.slider {
-  background-color: #eceef0;
-}
-
-.slider:before {
-  background-color: white;
+  color: black;
 }
 
 .footer {
   color: black;
-  background-color: #eceef0;
+  background-color: white;
 }
 
 .Visits {
@@ -218,12 +113,12 @@ select.was-validated:valid {
 
 .Visits .log_info section .selected_display_style {
   color: white;
-  background: #1094ff;
+  background: #239cff;
 }
 
 .Visits .log_info section :last-child {
   color: white;
-  background: #1094ff;
+  background: #239cff;
 }
 
 .Visits .visitor_grid section {
@@ -240,8 +135,6 @@ select.was-validated:valid {
 
 .Visits .Visiters > section {
   background: white;
-  border-bottom: 1px solid #e5e5e5;
-  border-radius: 5px !important;
 }
 
 .Visits .Visiters > section .visitor_email_button {

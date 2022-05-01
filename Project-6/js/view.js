@@ -19,7 +19,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 000)
+    }, 1000)
 
     renderTable(".Visiters", people);
 }
@@ -99,7 +99,7 @@ function renderTable(containerId, visitors) {
         const name = visitors[id].fullName.toString()
         const row = `<section id="id-${visitors[id].id}">
             <p>
-                <span class="visitor-name-icon" style="background: #${getColor()}">${name[0]}</span> 
+                <span class="visitor-name-icon" style="background: ${getHSL()}">${name[0]}</span> 
                 ${name}
             </p>
             <p>${visitors[id].fullAddress}</p>

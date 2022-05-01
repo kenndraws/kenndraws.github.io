@@ -46,14 +46,14 @@ $fontFamily: Arial,
 Helvetica,
 sans-serif;
 $lightBG: white;
-$lightComp: #EDEDED;
+$lightComp: rgb(236, 238, 240);
 $lightText: #212121;
 
-$colorSpec: rgb(0, 123, 224);
+$colorSpec: rgb(35, 156, 255);
 $colorSpec2: rgb(97, 146, 185);
 
 $darkBG: black;
-$darkComp: #0e0e0e;
+$darkComp: #181818;
 
 $colorError: rgb(236, 19, 19);
 $colorGood: rgb(44, 216, 22);
@@ -62,6 +62,14 @@ $textColorDark: black;
 $textColorLight: white;
 
 $transparentColor: rgba(0, 0, 0, 0);
+
+.text {
+	color: $textColorLight;
+}
+
+@mixin text {
+	color: $textColorLight;
+}
 
 html {
 	margin: 0;
@@ -81,6 +89,10 @@ body {
 
 	background-size: 100vw auto;
 	background-repeat: no-repeat;
+
+	.light_mode_logo {
+		display: none;
+	}
 }
 
 // ::-webkit-scrollbar {
@@ -101,25 +113,23 @@ header {
 	backdrop-filter: blur(15px);
 	-webkit-backdrop-filter: blur(15px);
 	box-sizing: border-box;
-	padding: 0 15px;
+	padding: 0 35px;
 	z-index: 2;
 	height: 60px;
+	gap: 15px;
+
+	color: $textColorLight;
 
 	>section {
 		display: flex;
+		gap: 15px;
 		align-items: center;
-
-		>.light_mode_logo {
-			display: none;
-		}
 
 		>img {
 			height: 30px;
-			padding: 0px 15px;
 		}
 
 		>#title {
-			color: $textColorLight;
 			font-size: 20px;
 		}
 	}
@@ -250,7 +260,7 @@ main {
 	}
 
 	>.Home {
-		background-image: url('./../img/earth-background.jpg');
+		background-image: url('./../img/background.PNG');
 		background-size: 100vw auto;
 		background-repeat: no-repeat;
 		width: 100vw;
@@ -272,7 +282,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	animation: slideRight 1s ease-in-out both;
+	animation: slideUp 1s ease-in-out both;
 
 	p {
 		margin: 10px 0;
@@ -312,14 +322,14 @@ main {
 .solar-info {
 	display: flex;
 	color: $textColorLight;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 	gap: 15px;
 	animation: slideUp 1s 1s ease-in-out both;
 }
 
 .solar-info-card {
-	background: $colorSpec;
+	background: $darkComp;
 	padding: 40px 20px;
 	border-radius: 5px;
 	text-align: center;
@@ -366,79 +376,83 @@ main {
 		width: 100%;
 		align-items: center;
 	}
-}
 
-.APOD {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.info {
-	box-sizing: border-box;
-	color: $textColorLight;
-	display: grid;
-	grid-template-columns: calc(50% - 20px) calc(50% - 20px);
-	align-items: center;
-	justify-items: center;
-	gap: 40px;
-
-	img {
-		width: 100%;
-	}
-}
-
-.text {
-	box-sizing: border-box;
-	display: grid;
-	align-items: center;
-	justify-items: center;
-	transition: all 300ms ease-in-out;
-
-	>* {
-		justify-self: end;
+	.APOD {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
-	section {
-		h2 {
-			font-weight: 600;
-			margin: 5px 0;
+	.info {
+		box-sizing: border-box;
+		color: $textColorLight;
+		display: grid;
+		grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+		align-items: center;
+		justify-items: center;
+		gap: 40px;
+		background: $darkComp;
 
-			span {
-				color: $colorSpec;
-				font-weight: 200;
-			}
+		img {
+			width: 100%;
 		}
-
-		border-bottom: 1px solid $textColorLight;
-		padding-bottom: 15px;
-		text-align: right;
-
-		h3 {
-			font-size: 18px;
-			font-weight: 200;
-			margin: 5px 0;
-		}
-	}
-
-	p {
-		align-self: start;
-		text-align: right;
-	}
-}
-
-.MarsRover {
-	p {
-		text-align: left;
 	}
 
 	.text {
+		box-sizing: border-box;
+		display: grid;
+		align-items: center;
+		justify-items: center;
+		transition: all 300ms ease-in-out;
+		padding: 35px;
+
+		>* {
+			justify-self: end;
+		}
+
 		section {
+			h2 {
+				font-weight: 600;
+				margin: 5px 0;
+
+				span {
+					color: $colorSpec;
+					font-weight: 200;
+				}
+			}
+
+			border-bottom: 1px solid $textColorLight;
+			padding-bottom: 15px;
+			text-align: right;
+
+			h3 {
+				font-size: 18px;
+				font-weight: 200;
+				margin: 5px 0;
+			}
+		}
+
+		p {
+			align-self: start;
+			text-align: right;
+		}
+	}
+
+	.MarsRover {
+		p {
 			text-align: left;
-			justify-self: start;
+		}
+
+		.text {
+			section {
+				text-align: left;
+				justify-self: start;
+			}
 		}
 	}
 }
+
+
 
 .paused {
 	animation-play-state: paused !important;
@@ -532,19 +546,24 @@ main {
 	z-index: 4;
 	width: 100vw;
 	min-height: 100vh;
-	background-color: $textColorLight;
+	background-color: $darkComp;
 	padding: 0;
 	display: grid;
 	justify-items: center;
 	align-items: center;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 1fr 2.5fr;
 	gap: 0 !important;
 
 	>section {
 		display: grid;
 		justify-items: center;
 		gap: 30px;
-		background-color: $colorSpec;
+		//background-color: $colorSpec;
+
+		background-image: url('./../img/background2.PNG');
+		background-size: auto 100vh;
+		background-repeat: no-repeat;
+
 		width: 100%;
 		height: 100%;
 		box-sizing: border-box;
@@ -569,8 +588,7 @@ main {
 
 		img {
 			border-radius: 50%;
-			width: 150px;
-			//filter: invert();
+			width: 100px;
 			align-self: end;
 		}
 	}
@@ -585,14 +603,7 @@ main {
 		li {
 			input {
 				border: none;
-				border-bottom: 1px solid #e5e5e5;
-				line-height: 1.5em;
-				width: 100%;
-			}
-
-			select {
-				border: none;
-				border-bottom: 1px solid #e5e5e5;
+				border-bottom: 1px solid #505050;
 				line-height: 1.5em;
 				width: 100%;
 			}
@@ -608,13 +619,12 @@ main {
 		}
 
 		&::placeholder {
-			color: $textColorDark;
+			color: $textColorLight;
 			opacity: 0.5;
 		}
 
 		&:focus {
 			outline: none;
-			color: $textColorDark;
 			margin: 0;
 			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
@@ -622,25 +632,6 @@ main {
 
 		&:active {
 			outline: none;
-			color: $textColorDark;
-			margin: 0;
-			background: $transparentColor;
-			border-bottom: 1px solid $colorSpec;
-		}
-	}
-
-	select {
-		&:focus {
-			outline: none;
-			color: $textColorDark;
-			margin: 0;
-			background: $transparentColor;
-			border-bottom: 1px solid $colorSpec;
-		}
-
-		&:active {
-			outline: none;
-			color: $textColorDark;
 			margin: 0;
 			background: $transparentColor;
 			border-bottom: 1px solid $colorSpec;
@@ -694,7 +685,7 @@ main {
 	box-sizing: border-box;
 	display: grid;
 	justify-items: center;
-	color: $textColorDark;
+	color: $textColorLight;
 	font-size: 15px;
 	padding: 25px;
 	max-width: 600px;
@@ -818,50 +809,6 @@ select {
 	flex: 1 2;
 }
 
-.splash {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	padding: 0 !important;
-	margin: auto;
-	top: 0 !important;
-	left: 0 !important;
-	background: $darkBG;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	z-index: 10;
-	animation: off .6s ease-in-out 2.5s both;
-}
-
-.splash_logo {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	font-size: 26px;
-	font-weight: 600;
-	color: #ffffff;
-	z-index: 5;
-	background: $colorSpec;
-	padding: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	animation: off .6s ease-in-out 1s forwards;
-
-	p {
-		border-top: 1px solid $textColorLight;
-		border-bottom: 1px solid $textColorLight;
-		padding: 5px 0;
-	}
-}
 
 .switch {
 	position: relative;
@@ -869,7 +816,6 @@ select {
 	padding: 0 3px;
 	height: 30px;
 	min-width: 50px;
-	margin: 0 35px;
 
 	>input {
 		display: none;
@@ -905,7 +851,7 @@ select {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: $darkBG;
+	background-color: $lightComp;
 	-webkit-transition: .4s;
 	transition: .4s;
 
@@ -952,31 +898,50 @@ select {
 		flex: 1 100%;
 	}
 
-	li {
-		line-height: 2em;
+	.footer_main {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+
+		img {
+			height: 40px;
+		}
+
+		h1 {
+			font-weight: 400;
+			font-size: 1.5rem;
+		}
 	}
-}
 
-.footer_main {
-	h1 {
-		font-weight: 400;
-		font-size: 1.5rem;
+	.footer_links {
+		display: flex;
+		list-style: none;
+		justify-content: center;
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+		gap: 15px;
+		font-size: 25px;
+
+		.footer_contact {
+			display: inline-block;
+			font-size: 12px;
+			width: fit-content;
+			padding: 10px 15px;
+			color: $textColorLight;
+			text-decoration: none;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
-}
 
-.footer_links {
-	display: flex;
-	list-style: none;
-	margin: 0 !important;
-
-	>* {
-		flex: 1 50%;
+	.footer_legal {
+		text-align: right;
+		opacity: 0.5;
 	}
-}
-
-.footer_legal {
-	text-align: right;
-	opacity: 0.5;
 }
 
 .Visits {
@@ -1072,20 +1037,20 @@ select {
 
 	.Visiters {
 		display: grid;
-		gap: 7px;
+		gap: 5px;
 
 		.log_header {
 			color: $textColorLight;
 			background: none;
 		}
 
-		section {
+		>section {
 			display: grid;
 			justify-items: start;
 			align-items: center;
 			grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
 			background: $darkComp;
-			border-radius: 15px;
+			border-radius: 5px;
 			padding: 10px;
 			gap: 0 15px;
 
@@ -1137,9 +1102,10 @@ select {
 
 				input,
 				i {
-					padding: 7px 10px;
 					border-radius: 5px;
 					margin: 5px;
+					padding: 8px 7px 8px 8px;
+					font-size: 16px;
 
 					&:hover {
 						cursor: pointer;
@@ -1162,7 +1128,6 @@ select {
 @media (max-width: 900px) {
 	.footer {
 		flex-direction: column;
-		text-align: center;
 	}
 
 	.footer_links {
@@ -1170,7 +1135,7 @@ select {
 	}
 
 	.footer_legal {
-		text-align: center;
+		text-align: center !important;
 	}
 }
 
@@ -1592,6 +1557,16 @@ select {
 			flex-direction: column-reverse;
 		}
 	}
+
+	.footer_main {
+		h1 {
+			display: none;
+		}
+
+		img {
+			margin: 15px 0;
+		}
+	}
 }
 
 @media (max-width: 1000px) {
@@ -1600,10 +1575,15 @@ select {
 	}
 
 	.user-sign {
+
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 3fr;
 
-		section {
+		>section {
+			background-image: url('./../img/background4.PNG');
+			background-size: 100vw auto;
+			background-repeat: no-repeat;
+
 			h1 {
 				margin: 0;
 			}

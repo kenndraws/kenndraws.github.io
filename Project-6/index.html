@@ -32,15 +32,15 @@
 <body>
     <header style="display:none">
         <section>
-            <img src="img/logo.png" alt="icon" />
-            <img src="img/logoBlack.png" alt="icon" class="light_mode_logo"/>
+            <img src="img/logo.png" alt="icon" class="dark_mode_logo" />
+            <img src="img/logoBlack.png" alt="icon" class="light_mode_logo" />
             <p id="title">AIP</p>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle" />
+            <input type="radio" name="option" id="Home" class="toggle"  />
             <label for="Home"><span>Home</span></label>
 
-            <input type="radio" name="option" id="Planets" class="toggle"  />
+            <input type="radio" name="option" id="Planets" class="toggle" />
             <label for="Planets"><span>Planets</span></label>
 
             <input type="radio" name="option" id="Moons" class="toggle" />
@@ -53,27 +53,26 @@
             <label for="Other"><span>Other</span></label>
 
             <input type="radio" name="option" id="Visits" class="toggle" checked/>
-            <label for="Visits"><span>Visists</span></label>
+            <label for="Visits"><span>Visits</span></label>
+
             <section class="background-slider">.</section>
         </nav>
-        <label class="switch">
-            <input type="checkbox" onClick="switchTheme()" />
-            <span class="slider round"></span>
-        </label>
+        <section class="style_switch">
+            Night Mode:
+            <label class="switch">
+                <input type="checkbox" onClick="switchTheme()" />
+                <span class="slider round"></span>
+            </label>
+        </section>
         <section id="menu-button">
             <input type="button" value="≡" onClick="displayMobileMenu()">
         </section>
     </header>
     <main role="main">
-        <section class="splash splash-anim paused hidden">
-            <section class="splash_logo splash-anim paused">
-                <p>AIP</p>
-            </section>
-        </section>
         <section class="user-sign">
             <section>
-                <img src="./img/logo.png" alt="" />
-                <h1><span> Astronomy Info Project </span><br />Visit Form </h1>
+                <!-- <img src="./img/logo.png" alt="" />
+                <h1><span> Astronomy Info Project </span><br />Visit Form </h1> -->
             </section>
             <div class="container">
                 <div class="successMsg" style="display:none">
@@ -153,7 +152,7 @@
             </div>
         </section>
         <section class="Home" style="display:none">
-            <section class="welcome-title paused ">
+            <section class="welcome-title paused">
                 <p class="welcome">Astronomy Info Project</p>
                 <p class="description">Learn about our Solar System</p>
                 <a class="Learn" href="mailto:kenneth.gonzalez@uvu.com">Contact Us</a>
@@ -236,25 +235,27 @@
                     <input type="button" class="button-1" value="Log Visit" onClick="addVisitor()">
                 </section>
             </section>
-            <section class="Visiters visitor_grid">
+            <section class="Visiters">
             </section>
         </section>
     </main>
     <footer class="footer" style="display:none">
         <section class="footer_main">
+            <img src="img/logo.png" alt="icon" class="dark_mode_logo" />
+            <img src="img/logoBlack.png" alt="icon" class="light_mode_logo" />
             <h1>Astronomy Info Project</h1>
         </section>
 
         <ul class="footer_links">
-            <li>Planets</li>
-            <li>Moons</li>
-            <li>Dwarfs</li>
-            <li>Asteroids</li>
-            <li>Other</li>
+            <li><i class="fa-brands fa-github"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><a class="footer_contact button-1" href="mailto:kenneth.gonzalez@uvu.com">Email Us</a></li>
         </ul>
 
         <section class="footer_legal">
-            <p>&copy; 2019 Astronomy Info Project.
+            <p>&copy; 2022 Astronomy Info Project.
                 <br />All Rights Reserved.
                 <br /><span>Made by Kenneth Gonzalez</span>
             </p>

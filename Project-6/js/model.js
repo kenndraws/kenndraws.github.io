@@ -51,7 +51,12 @@ function getColor() { //make random color
         return getColor();
     }
     console.log(result)
+
     return randomColor;
+}
+function getHSL(){
+    const degree = Math.floor(Math.random() * 360)
+    return `hsl(${degree}, 56%, 57%)`;
 }
 
 class Visitor {
