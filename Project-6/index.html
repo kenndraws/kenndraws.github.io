@@ -70,33 +70,32 @@
     </header>
     <main role="main">
         <section class="user-sign">
-            <section>
-                <!-- <img src="./img/logo.png" alt="" />
-                <h1><span> Astronomy Info Project </span><br />Visit Form </h1> -->
-            </section>
+            <section class="left"></section>
             <div class="container">
                 <div class="successMsg" style="display:none">
                     Thank you for logging your visit!
                 </div>
                 <form id="myform" novalidate>
-                    <img src="img/logo.png" alt="icon" />
+                    <!-- <img src="img/logo.png" alt="icon" /> -->
                     <ul class="flex">
-                        <li>
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" name="first-name" placeholder="ex. Ken" required>
-                            <div class="errorMsg">First Name is Required</div>
-                        </li>
-                        <li>
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" name="last-name" placeholder="ex. Gonzalez" required>
-                            <div class="errorMsg">Last Name is Required</div>
+                        <li class="form_flex">
+                            <section>
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="ex. Ken" required>
+                                <div class="errorMsg">First Name is Required</div>
+                            </section>
+                            <section>
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="ex. Gonzalez" required>
+                                <div class="errorMsg">Last Name is Required</div>
+                            </section>
                         </li>
                         <li>
                             <label for="address">Address</label>
                             <input type="text" id="address" name="address" placeholder="ex. 500 W 754 E" required>
                             <div class="errorMsg">Invalid Address</div>
                         </li>
-                        <li class="add-state-city">
+                        <li class="form_flex">
                             <section>
                                 <label for="city">City</label>
                                 <input type="text" id="city" name="city" placeholder="ex. South Jordan" required>
@@ -107,12 +106,12 @@
                                 <input type="text" id="state" name="state" placeholder="ex. UT" required>
                                 <div class="errorMsg">Invalid State</div>
                             </section>
-                        </li>
-                        <li>
-                            <label for="zip">Zip</label>
-                            <input id="zip" name="zip" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$"
-                                placeholder="ex. 84000" required>
-                            <div class="errorMsg">Invalid Zip Code</div>
+                            <section>
+                                <label for="zip">Zip</label>
+                                <input id="zip" name="zip" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$"
+                                    placeholder="ex. 84000" required>
+                                <div class="errorMsg">Invalid Zip Code</div>
+                            </section>
                         </li>
                         <li>
                             <label for="email">Email</label>
@@ -151,6 +150,7 @@
                     </section>
                 </form>
             </div>
+            <section class="right"></section>
         </section>
         <section class="Home" style="display:none">
             <section class="welcome-title paused">

@@ -93,24 +93,27 @@ header {
 
 .user-sign {
     background-color: $textColorLight;
-}
-#myform {
-    ul {
-        li {
+    .container {
+        color: $textColorDark;
+    
+        #myform {
+            ul {
+                li {
+                    input {
+                        border-bottom: 1px solid #e5e5e5;
+                    }
+                }
+            }
             input {
-                border-bottom: 1px solid #e5e5e5;
+                &::placeholder {
+                    color: $textColorDark;
+                }
             }
         }
     }
-    input {
-        &::placeholder {
-            color: $textColorDark;
-        }
-    }
 }
-.container {
-    color: $textColorDark;
-}
+
+
 
 .footer {
     color: $textColorDark;

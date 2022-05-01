@@ -244,7 +244,7 @@ main {
 main > section {
   display: -ms-grid;
   display: grid;
-  gap: 50px;
+  gap: 35px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 95px 35px 35px 35px;
@@ -551,7 +551,7 @@ main > .Home {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  padding: 0 15px;
+  padding: 15px;
 }
 
 .body-info-text > h2 {
@@ -605,22 +605,12 @@ main > .Home {
   display: -ms-grid;
   display: grid;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: 1fr 2.5fr;
-      grid-template-columns: 1fr 2.5fr;
+  -ms-grid-columns: calc(100vh/2) auto calc(100vh/2);
+      grid-template-columns: calc(100vh/2) auto calc(100vh/2);
   gap: 0 !important;
 }
 
 .user-sign > section {
-  display: -ms-grid;
-  display: grid;
-  justify-items: center;
-  gap: 30px;
-  background-image: url("./../img/background2.PNG");
-  background-size: auto 100vh;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -628,32 +618,22 @@ main > .Home {
   padding: 25px;
 }
 
-.user-sign > section h1 {
-  margin: 0;
-  margin-bottom: 35px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  font-size: 20px;
-  color: white;
-  line-height: 30px;
+.user-sign > .left {
+  background-image: url("./../img/background2.PNG");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: right;
 }
 
-.user-sign > section h1 span {
-  font-size: 25px;
-  font-weight: 500;
-  color: white;
+.user-sign > .right {
+  background-image: url("./../img/background3.PNG");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-position-x: left;
 }
 
-.user-sign > section img {
-  border-radius: 50%;
-  width: 100px;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-}
-
-.container {
+.user-sign .container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -ms-grid;
@@ -667,26 +647,22 @@ main > .Home {
           align-items: center;
   width: 100%;
   height: 100%;
-  background-image: url("./../img/background3.PNG");
-  background-size: auto 100vh;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
 }
 
-.container * {
+.user-sign .container * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.container #myform {
+.user-sign .container #myform {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  gap: 35px;
+  gap: 10px;
   max-width: 600px;
 }
 
-.container #myform > img {
+.user-sign .container #myform > img {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   width: 30px;
@@ -696,7 +672,7 @@ main > .Home {
   border-radius: 50%;
 }
 
-.container #myform .flex {
+.user-sign .container #myform .flex {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -711,7 +687,7 @@ main > .Home {
   gap: 15px 25px;
 }
 
-.container #myform .flex li {
+.user-sign .container #myform .flex li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -721,78 +697,78 @@ main > .Home {
           flex-direction: column;
 }
 
-.container #myform .flex > li label {
+.user-sign .container #myform .flex > li label {
   margin: 10px 0;
 }
 
-.container #myform ul li input {
+.user-sign .container #myform ul li input {
   border: none;
   border-bottom: 1px solid #505050;
   line-height: 1.5em;
   width: 100%;
 }
 
-.container #myform input:placeholder-shown {
+.user-sign .container #myform input:placeholder-shown {
   font-style: italic;
   font-weight: 100;
   background: transparent;
   outline: none;
 }
 
-.container #myform input::-webkit-input-placeholder {
+.user-sign .container #myform input::-webkit-input-placeholder {
   color: white;
   opacity: 0.5;
 }
 
-.container #myform input:-ms-input-placeholder {
+.user-sign .container #myform input:-ms-input-placeholder {
   color: white;
   opacity: 0.5;
 }
 
-.container #myform input::-ms-input-placeholder {
+.user-sign .container #myform input::-ms-input-placeholder {
   color: white;
   opacity: 0.5;
 }
 
-.container #myform input::placeholder {
+.user-sign .container #myform input::placeholder {
   color: white;
   opacity: 0.5;
 }
 
-.container #myform input:focus {
+.user-sign .container #myform input:focus {
   outline: none;
   margin: 0;
   background: rgba(0, 0, 0, 0);
   border-bottom: 1px solid #239cff;
 }
 
-.container #myform input:active {
+.user-sign .container #myform input:active {
   outline: none;
   margin: 0;
   background: rgba(0, 0, 0, 0);
   border-bottom: 1px solid #239cff;
 }
 
-.container #myform > section {
+.user-sign .container #myform > section {
   gap: 10px;
 }
 
-.container #myform .find-checks-area {
+.user-sign .container #myform .find-checks-area {
   display: -ms-grid;
   display: grid;
 }
 
-.container #myform .find-checks-area h4 {
+.user-sign .container #myform .find-checks-area h4 {
   margin: 0;
 }
 
-.container #myform .formButtons {
+.user-sign .container #myform .formButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.container #myform label.desc {
+.user-sign .container #myform label.desc {
   display: table;
   clear: both;
 }
@@ -808,14 +784,14 @@ input.was-validated:invalid {
   margin-bottom: 0 !important;
 }
 
+input.was-validated:invalid ~ div.errorMsg {
+  display: block;
+}
+
 input.was-validated:valid {
   color: #2cd816;
   border-bottom: 1px solid #2cd816 !important;
   margin-bottom: 0 !important;
-}
-
-input.was-validated:invalid ~ div.errorMsg {
-  display: block;
 }
 
 select.was-validated:invalid {
@@ -850,7 +826,7 @@ select:invalid ~ div.errorMsg {
   display: none;
 }
 
-.add-state-city {
+.form_flex {
   gap: 15px;
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: normal !important;
@@ -858,7 +834,8 @@ select:invalid ~ div.errorMsg {
           flex-direction: row !important;
 }
 
-.add-state-city > section {
+.form_flex > section {
+  width: 100%;
   display: -ms-grid;
   display: grid;
 }
@@ -1285,10 +1262,6 @@ select:invalid ~ div.errorMsg {
   .button-1 {
     font-size: 20px;
   }
-  .user-sign {
-    -ms-grid-columns: 1fr 3fr;
-        grid-template-columns: 1fr 3fr;
-  }
   .user-sign > section h1 {
     font-size: 25px;
   }
@@ -1512,10 +1485,8 @@ select:invalid ~ div.errorMsg {
         grid-template-columns: 100%;
     -ms-grid-rows: auto 25%;
         grid-template-rows: auto 25%;
-    margin: 15px 0 !important;
   }
   .body-info-text {
-    padding: 0;
     -ms-grid-column-align: center;
         justify-self: center;
   }
@@ -1614,19 +1585,17 @@ select:invalid ~ div.errorMsg {
   .user-sign {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 3fr;
-        grid-template-rows: 1fr 3fr;
+    -ms-grid-rows: 1fr 5fr;
+        grid-template-rows: 1fr 5fr;
   }
-  .user-sign > section {
+  .user-sign > .left {
     background-image: url("./../img/background4.PNG");
     background-size: 100vw auto;
     background-repeat: no-repeat;
+    background-position-y: top;
   }
-  .user-sign > section h1 {
-    margin: 0;
-  }
-  .user-sign > section img {
-    width: 90px;
+  .user-sign > .right {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

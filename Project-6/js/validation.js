@@ -52,7 +52,6 @@ function validateState(id, msg) {
 
 function validateCheckboxGroup(fieldName, groupName, message) {
     let valid = $(`input[name="${groupName}"]:checked`).length > 0;
-
     setElementValidity(fieldName, valid, message);
 
     return valid;

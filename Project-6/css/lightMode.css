@@ -73,27 +73,27 @@ header {
   background-color: white;
 }
 
-#myform ul li input {
+.user-sign .container {
+  color: black;
+}
+
+.user-sign .container #myform ul li input {
   border-bottom: 1px solid #e5e5e5;
 }
 
-#myform input::-webkit-input-placeholder {
+.user-sign .container #myform input::-webkit-input-placeholder {
   color: black;
 }
 
-#myform input:-ms-input-placeholder {
+.user-sign .container #myform input:-ms-input-placeholder {
   color: black;
 }
 
-#myform input::-ms-input-placeholder {
+.user-sign .container #myform input::-ms-input-placeholder {
   color: black;
 }
 
-#myform input::placeholder {
-  color: black;
-}
-
-.container {
+.user-sign .container #myform input::placeholder {
   color: black;
 }
 

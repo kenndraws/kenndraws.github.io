@@ -253,7 +253,7 @@ main {
 
 	>section {
 		display: grid;
-		gap: 50px;
+		gap: 35px;
 		box-sizing: border-box;
 		padding: 95px 35px 35px 35px;
 		z-index: 0;
@@ -498,7 +498,7 @@ main {
 .body-info-text {
 	box-sizing: border-box;
 	text-align: center;
-	padding: 0 15px;
+	padding: 15px;
 
 	>h2 {
 		font-family: 'Orbitron', sans-serif;
@@ -550,171 +550,149 @@ main {
 	padding: 0;
 	display: grid;
 	justify-items: center;
-	align-items: center;
-	grid-template-columns: 1fr 2.5fr;
+	//align-items: center;
+	grid-template-columns: calc(100vh/2) auto calc(100vh/2);
 	gap: 0 !important;
 
 	>section {
-		display: grid;
-		justify-items: center;
-		gap: 30px;
-		//background-color: $colorSpec;
-
-		background-image: url('./../img/background2.PNG');
-		background-size: auto 100vh;
-		background-repeat: no-repeat;
-
 		width: 100%;
 		height: 100%;
 		box-sizing: border-box;
 		padding: 25px;
-
-		h1 {
-			margin: 0;
-			margin-bottom: 35px;
-			font-family: 'Raleway', sans-serif;
-			font-weight: 300;
-			text-align: center;
-			font-size: 20px;
-			color: $textColorLight;
-			line-height: 30px;
-
-			span {
-				font-size: 25px;
-				font-weight: 500;
-				color: $textColorLight;
-			}
-		}
-
-		img {
-			border-radius: 50%;
-			width: 100px;
-			align-self: end;
-		}
 	}
-}
+	>.left{
+		background-image: url('./../img/background2.PNG');
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position-x: right;
+	}
+	>.right{
+		background-image: url('./../img/background3.PNG');
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		background-position-x: left;
+	}
 
-.container {
-	box-sizing: border-box;
-	display: grid;
-	justify-items: center;
-	color: $textColorLight;
-	font-size: 15px;
-	padding: 25px;
-	//max-width: 600px;
-	
-	align-items: center;
-
-	width: 100%;
-	height: 100%;
-
-	background-image: url('./../img/background3.PNG');
-	background-size: auto 100vh;
-	background-repeat: no-repeat;
-	background-position: 100% 0;
-
-	* {
-		-webkit-box-sizing: border-box;
+	.container {
 		box-sizing: border-box;
-	}
-
-	#myform {
-		width: 100%;
 		display: grid;
-		gap: 35px;
+		justify-items: center;
+		color: $textColorLight;
+		font-size: 15px;
+		padding: 25px;
+		//max-width: 600px;
+		
+		align-items: center;
 	
-		max-width: 600px;
-		
-		>img{
-			box-sizing: content-box;
-			width: 30px;
-			margin: auto;
-			background: $colorSpec;
-			padding: 15px;
-			border-radius: 50%;
+		width: 100%;
+		height: 100%;
+	
+		* {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 		}
-		.flex {
+	
+		#myform {
 			width: 100%;
-			display: flex;
-			flex-direction: column;
-			list-style-type: none;
-			padding: 0;
-			margin: 0 auto;
-			gap: 15px 25px;
+			display: grid;
+			gap: 10px;
 		
-			li {
+			max-width: 600px;
+			
+			>img{
+				box-sizing: content-box;
+				width: 30px;
+				margin: auto;
+				background: $colorSpec;
+				padding: 15px;
+				border-radius: 50%;
+			}
+			.flex {
+				width: 100%;
 				display: flex;
 				flex-direction: column;
-			}
-		
-			>li {
-				label {
-					margin: 10px 0;
+				list-style-type: none;
+				padding: 0;
+				margin: 0 auto;
+				gap: 15px 25px;
+			
+				li {
+					display: flex;
+					flex-direction: column;
+				}
+			
+				>li {
+					label {
+						margin: 10px 0;
+					}
 				}
 			}
-		}
-		
-		ul {
-			li {
-				input {
-					border: none;
-					border-bottom: 1px solid #505050;
-					line-height: 1.5em;
-					width: 100%;
+			
+			ul {
+				li {
+					input {
+						border: none;
+						border-bottom: 1px solid #505050;
+						line-height: 1.5em;
+						width: 100%;
+					}
 				}
 			}
-		}
-	
-		input {
-			&:placeholder-shown {
-				font-style: italic;
-				font-weight: 100;
-				background: transparent;
-				outline: none;
+		
+			input {
+				&:placeholder-shown {
+					font-style: italic;
+					font-weight: 100;
+					background: transparent;
+					outline: none;
+				}
+		
+				&::placeholder {
+					color: $textColorLight;
+					opacity: 0.5;
+				}
+		
+				&:focus {
+					outline: none;
+					margin: 0;
+					background: $transparentColor;
+					border-bottom: 1px solid $colorSpec;
+				}
+		
+				&:active {
+					outline: none;
+					margin: 0;
+					background: $transparentColor;
+					border-bottom: 1px solid $colorSpec;
+				}
 			}
-	
-			&::placeholder {
-				color: $textColorLight;
-				opacity: 0.5;
+		
+			>section {
+				gap: 10px;
 			}
-	
-			&:focus {
-				outline: none;
-				margin: 0;
-				background: $transparentColor;
-				border-bottom: 1px solid $colorSpec;
+		
+			.find-checks-area {
+				h4 {
+					margin: 0;
+				}
+		
+				display: grid;
 			}
-	
-			&:active {
-				outline: none;
-				margin: 0;
-				background: $transparentColor;
-				border-bottom: 1px solid $colorSpec;
+		
+			.formButtons {
+				display: flex;
 			}
-		}
-	
-		>section {
-			gap: 10px;
-		}
-	
-		.find-checks-area {
-			h4 {
-				margin: 0;
+		
+			label.desc {
+				display: table;
+				clear: both;
 			}
-	
-			display: grid;
-		}
-	
-		.formButtons {
-			display: flex;
-		}
-	
-		label.desc {
-			display: table;
-			clear: both;
 		}
 	}
+	
 }
+
 
 .errorMsg {
 	margin: 5px 0;
@@ -726,6 +704,9 @@ input.was-validated {
 		color: $colorError;
 		border-bottom: 1px solid $colorError !important;
 		margin-bottom: 0 !important;
+		~div.errorMsg {
+			display: block;
+		}
 	}
 
 	&:valid {
@@ -734,9 +715,7 @@ input.was-validated {
 		margin-bottom: 0 !important;
 	}
 
-	&:invalid~div.errorMsg {
-		display: block;
-	}
+
 }
 
 select.was-validated {
@@ -777,11 +756,12 @@ select {
 	}
 }
 
-.add-state-city {
+.form_flex {
 	gap: 15px;
 	flex-direction: row !important;
 
 	>section {
+		width: 100%;
 		display: grid;
 	}
 }
@@ -1187,7 +1167,6 @@ select {
 	}
 
 	.user-sign {
-		grid-template-columns: 1fr 3fr;
 
 		>section {
 			h1 {
@@ -1476,15 +1455,14 @@ select {
 		height: fit-content;
 		grid-template-columns: 100%;
 		grid-template-rows: auto 25%;
-		margin: 15px 0 !important;
 	}
 
 	.body-info-text {
+		
 		>p {
 			display: none;
 		}
 
-		padding: 0;
 		justify-self: center;
 
 		h2 {
@@ -1595,20 +1573,16 @@ select {
 	.user-sign {
 
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 3fr;
+		grid-template-rows: 1fr 5fr;
 
-		>section {
+		>.left{
 			background-image: url('./../img/background4.PNG');
 			background-size: 100vw auto;
 			background-repeat: no-repeat;
-
-			h1 {
-				margin: 0;
-			}
-
-			img {
-				width: 90px;
-			}
+			background-position-y: top;
+		}
+		>.right{
+			display: none;
 		}
 	}
 }
