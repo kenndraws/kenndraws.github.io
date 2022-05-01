@@ -653,86 +653,50 @@ main > .Home {
       align-self: end;
 }
 
-#myform {
+.container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  color: white;
+  font-size: 15px;
+  padding: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("./../img/background3.PNG");
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+
+.container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container #myform {
   width: 100%;
   display: -ms-grid;
   display: grid;
   gap: 35px;
+  max-width: 600px;
 }
 
-#myform ul li input {
-  border: none;
-  border-bottom: 1px solid #505050;
-  line-height: 1.5em;
-  width: 100%;
+.container #myform > img {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 30px;
+  margin: auto;
+  background: #239cff;
+  padding: 15px;
+  border-radius: 50%;
 }
 
-#myform input:placeholder-shown {
-  font-style: italic;
-  font-weight: 100;
-  background: transparent;
-  outline: none;
-}
-
-#myform input::-webkit-input-placeholder {
-  color: white;
-  opacity: 0.5;
-}
-
-#myform input:-ms-input-placeholder {
-  color: white;
-  opacity: 0.5;
-}
-
-#myform input::-ms-input-placeholder {
-  color: white;
-  opacity: 0.5;
-}
-
-#myform input::placeholder {
-  color: white;
-  opacity: 0.5;
-}
-
-#myform input:focus {
-  outline: none;
-  margin: 0;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #239cff;
-}
-
-#myform input:active {
-  outline: none;
-  margin: 0;
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #239cff;
-}
-
-#myform > section {
-  gap: 10px;
-}
-
-#myform .find-checks-area {
-  display: -ms-grid;
-  display: grid;
-}
-
-#myform .find-checks-area h4 {
-  margin: 0;
-}
-
-#myform .formButtons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#myform label.desc {
-  display: table;
-  clear: both;
-}
-
-.flex {
+.container #myform .flex {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,7 +711,7 @@ main > .Home {
   gap: 15px 25px;
 }
 
-.flex li {
+.container #myform .flex li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -757,26 +721,80 @@ main > .Home {
           flex-direction: column;
 }
 
-.flex > li label {
+.container #myform .flex > li label {
   margin: 10px 0;
 }
 
-.container {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -ms-grid;
-  display: grid;
-  justify-items: center;
-  color: white;
-  font-size: 15px;
-  padding: 25px;
-  max-width: 600px;
+.container #myform ul li input {
+  border: none;
+  border-bottom: 1px solid #505050;
+  line-height: 1.5em;
   width: 100%;
 }
 
-.container * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.container #myform input:placeholder-shown {
+  font-style: italic;
+  font-weight: 100;
+  background: transparent;
+  outline: none;
+}
+
+.container #myform input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.container #myform input:-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.container #myform input::-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.container #myform input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.container #myform input:focus {
+  outline: none;
+  margin: 0;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #239cff;
+}
+
+.container #myform input:active {
+  outline: none;
+  margin: 0;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #239cff;
+}
+
+.container #myform > section {
+  gap: 10px;
+}
+
+.container #myform .find-checks-area {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container #myform .find-checks-area h4 {
+  margin: 0;
+}
+
+.container #myform .formButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container #myform label.desc {
+  display: table;
+  clear: both;
 }
 
 .errorMsg {
@@ -1537,7 +1555,6 @@ select:invalid ~ div.errorMsg {
     font-weight: 100;
   }
   .Home {
-    background-position: 0 100px;
     padding: 100px 20px 20px 20px;
   }
   .about > .title {

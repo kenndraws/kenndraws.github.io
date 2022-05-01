@@ -172,10 +172,4 @@ header {
     background: #eceef0;
   }
 }
-
-@media (max-width: 600px) {
-  .Home {
-    background-position: 0 0;
-  }
-}
 /*# sourceMappingURL=lightMode.css.map */
