@@ -137,10 +137,55 @@ header {
   gap: 15px;
   background: #181818;
   color: white;
-  overflow: visible;
 }
 
-header > section {
+header #nav {
+  padding: 21px 40px;
+  color: white;
+  position: relative;
+}
+
+header #nav .dropdown-toggle {
+  padding: 0;
+  margin: 0;
+}
+
+header #nav .dropdown {
+  background: #2178f6;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 15px;
+  margin: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+}
+
+header #nav .dropdown li {
+  list-style-type: none;
+  padding: 15px 0;
+}
+
+header #nav .dropdown li label {
+  color: white;
+}
+
+header #nav *:hover {
+  cursor: pointer;
+}
+
+header .header-title {
+  padding: 15px 20px !important;
+}
+
+header .header-title > section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,12 +195,18 @@ header > section {
           align-items: center;
 }
 
-header > section > img {
+header .header-title > section > img {
   height: 30px;
 }
 
-header > section > #title {
+header .header-title > section > #title {
   font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+header .header-title .dropdown {
+  background: #181818 !important;
 }
 
 #Menu {
@@ -163,19 +214,21 @@ header > section > #title {
   display: -ms-flexbox;
   display: flex;
   font-family: arial, sans-serif;
-  overflow: hidden;
   margin: auto;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
 }
 
 #Menu > label {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: white;
-  font-size: 15px;
-  padding: 22px 40px;
+  padding: 20px 40px;
   z-index: 1;
   float: left;
   text-align: center;
@@ -188,49 +241,77 @@ header > section > #title {
   cursor: pointer;
 }
 
-#Menu .toggle:checked + #Menu > label {
-  opacity: 1;
+.style_switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
 }
 
-#Menu #Home:checked ~ .background-slider {
-  margin-left: 0;
+.style_switch .switch {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 3px;
+  height: 30px;
+  min-width: 50px;
 }
 
-#Menu #Planets:checked ~ .background-slider {
-  margin-left: 16.66%;
+.style_switch .switch > input {
+  display: none;
 }
 
-#Menu #Moons:checked ~ .background-slider {
-  margin-left: 33.33%;
+.style_switch .switch > input:checked + .slider {
+  background-color: #2178f6;
 }
 
-#Menu #Dwarfs:checked ~ .background-slider {
-  margin-left: 49.99%;
+.style_switch .switch > input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  transform: translateX(19px);
 }
 
-#Menu #Other:checked ~ .background-slider {
-  margin-left: 66.66%;
+.style_switch .switch > input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2178f6;
+          box-shadow: 0 0 1px #2178f6;
 }
 
-#Menu #Visits:checked ~ .background-slider {
-  margin-left: 83.33%;
+.style_switch .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eceef0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.style_switch .switch .slider:before {
+  position: relative;
+  content: "";
+  height: 25px;
+  width: 25px;
+  margin: 3px;
+  background-color: white;
+  float: left;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.style_switch .switch .slider.round {
+  border-radius: 36px;
+}
+
+.style_switch .switch .slider.round:before {
+  border-radius: 50%;
 }
 
 .toggle {
   display: none;
-}
-
-.background-slider {
-  position: absolute;
-  width: 16.66%;
-  height: 1px;
-  font-size: 0;
-  padding: 0 0;
-  background: white;
-  margin-top: 59px;
-  z-index: 0;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
 }
 
 main {
@@ -911,65 +992,6 @@ input:invalid ~ div.errorMsg {
           flex: 1 2;
 }
 
-.switch {
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 3px;
-  height: 30px;
-  min-width: 50px;
-}
-
-.switch > input {
-  display: none;
-}
-
-.switch > input:checked + .slider {
-  background-color: #2178f6;
-}
-
-.switch > input:checked + .slider:before {
-  -webkit-transform: translateX(19px);
-  transform: translateX(19px);
-}
-
-.switch > input:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #2178f6;
-          box-shadow: 0 0 1px #2178f6;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #eceef0;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: relative;
-  content: "";
-  height: 25px;
-  width: 25px;
-  margin: 3px;
-  background-color: white;
-  float: left;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider.round {
-  border-radius: 36px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
 #menu-button input:hover {
   cursor: pointer;
 }
@@ -1403,9 +1425,6 @@ input:invalid ~ div.errorMsg {
   #Menu label {
     margin: 0;
   }
-  #Menu label:hover {
-    opacity: 0.7;
-  }
   #Menu .toggle:checked + #Menu label {
     color: white;
   }
@@ -1471,11 +1490,9 @@ input:invalid ~ div.errorMsg {
     max-width: calc(100% - 30px);
     -webkit-transition: none;
     transition: none;
-    opacity: 0.8;
   }
   #Menu label:hover {
     cursor: pointer;
-    opacity: 1;
   }
   #Menu .toggle:checked + label {
     color: #212121;

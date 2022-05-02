@@ -79,7 +79,6 @@ $speed: 500ms;
 		outline: none;
 	}
 }
-
 html {
 	margin: 0;
 	padding: 0;
@@ -87,7 +86,6 @@ html {
 	overflow-y: overlay;
 	overflow-x: hidden;
 }
-
 body {
 	margin: 0;
 	padding: 0;
@@ -103,10 +101,6 @@ body {
 		display: none;
 	}
 }
-
-// ::-webkit-scrollbar {
-// 	background: transparent;
-// }
 button,
 input[type="button"] {
 	&:hover {
@@ -119,8 +113,6 @@ header {
 	position: fixed;
 	display: flex;
 	align-items: center;
-	//backdrop-filter: blur(15px);
-	//-webkit-backdrop-filter: blur(15px);
 	box-sizing: border-box;
 	padding: 0 35px;
 	z-index: 2;
@@ -130,35 +122,89 @@ header {
 	background: $darkComp;
 	color: $textColorLight;
 
-	>section {
-		display: flex;
-		gap: 15px;
-		align-items: center;
+	#nav {
+		padding: 21px 40px;
+		color: $textColorLight;
+		position: relative;
 
-		>img {
-			height: 30px;
+		.dropdown-toggle {
+			padding: 0;
+			margin: 0;
 		}
 
-		>#title {
-			font-size: 20px;
+		.dropdown {
+			background: $colorSpec;
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			padding: 15px;
+			margin: 0;
+
+			min-width: fit-content;
+			width: 100%;
+			
+			box-sizing: border-box;
+			text-align: center;
+			border-radius: 0 0 10px 10px;
+
+			li {
+				list-style-type: none;
+				padding: 15px 0;
+
+				label {
+					color: $lightBG;
+				}
+			}
+		}
+
+		* {
+			&:hover {
+
+				cursor: pointer;
+			}
 		}
 	}
-	overflow: visible;
+
+	.header-title {
+		padding: 15px 20px !important;
+
+		>section {
+			display: flex;
+			gap: 15px;
+			align-items: center;
+
+			>img {
+				height: 30px;
+			}
+
+			>#title {
+				font-size: 20px;
+				margin: 0;
+				color: $textColorLight;
+			}
+		}
+		.dropdown{
+			background: $darkComp !important;
+		}
+	}
 }
 
 #Menu {
 	display: flex;
 	font-family: arial, sans-serif;
-	overflow: hidden;
 	margin: auto;
 	transition: all 200ms ease-in-out;
 	position: relative;
+	align-items: center;
+
+	font-size: 15px;
+
 
 	>label {
 		box-sizing: border-box;
 		color: $lightBG;
-		font-size: 15px;
-		padding: 22px 40px;
+		padding: 20px 40px;
 		z-index: 1;
 		float: left;
 		text-align: center;
@@ -169,75 +215,75 @@ header {
 			cursor: pointer;
 		}
 	}
+}
 
-	.toggle {
-		&:checked {
-			+ {
-				#Menu {
-					>label {
-						opacity: 1;
+.style_switch {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	.switch {
+		position: relative;
+		box-sizing: border-box;
+		padding: 0 3px;
+		height: 30px;
+		min-width: 50px;
+
+		>input {
+			display: none;
+
+			&:checked {
+				+ {
+					.slider {
+						background-color: $colorSpec;
+
+						&:before {
+							-webkit-transform: translateX(19px);
+							-ms-transform: translateX(19px);
+							transform: translateX(19px);
+						}
+					}
+				}
+			}
+
+			&:focus {
+				+ {
+					.slider {
+						box-shadow: 0 0 1px $colorSpec;
 					}
 				}
 			}
 		}
-	}
 
-	#Home {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 0;
-				}
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $lightComp;
+			-webkit-transition: .4s;
+			transition: .4s;
+
+			&:before {
+				position: relative;
+				content: "";
+				height: 25px;
+				width: 25px;
+				margin: 3px;
+				background-color: $lightBG;
+				float: left;
+				-webkit-transition: .4s;
+				transition: .4s;
 			}
 		}
-	}
 
-	#Planets {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 16.66%;
-				}
-			}
-		}
-	}
+		.slider.round {
+			border-radius: 36px;
 
-	#Moons {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 33.33%;
-				}
-			}
-		}
-	}
-
-	#Dwarfs {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 49.99%;
-				}
-			}
-		}
-	}
-
-	#Other {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 66.66%;
-				}
-			}
-		}
-	}
-
-	#Visits {
-		&:checked {
-			~ {
-				.background-slider {
-					margin-left: 83.33%;
-				}
+			&:before {
+				border-radius: 50%;
 			}
 		}
 	}
@@ -245,18 +291,6 @@ header {
 
 .toggle {
 	display: none;
-}
-
-.background-slider {
-	position: absolute;
-	width: 16.66%;
-	height: 1px;
-	font-size: 0;
-	padding: 0 0;
-	background: $lightBG;
-	margin-top: 59px;
-	z-index: 0;
-	transition: all 200ms ease-in-out;
 }
 
 main {
@@ -282,8 +316,8 @@ main {
 		flex-direction: column;
 		gap: 50px;
 		box-sizing: border-box;
-		
-		.bottom-banner{
+
+		.bottom-banner {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			align-items: center;
@@ -295,11 +329,12 @@ main {
 			font-size: 30px;
 
 			border-radius: 10px;
-			
-			span{
+
+			span {
 				font-size: 0.5em;
 				font-weight: 100;
 			}
+
 			button {
 				@include button;
 				font-size: 0.5em;
@@ -372,8 +407,8 @@ main {
 	border-radius: 5px;
 	text-align: center;
 	min-width: 200px;
-    max-width: 350px;
-    flex-grow: 1;
+	max-width: 350px;
+	flex-grow: 1;
 
 	>img {
 		width: 75px;
@@ -435,7 +470,8 @@ main {
 		img {
 			width: 100%;
 		}
-		iframe{
+
+		iframe {
 			width: 100%;
 		}
 	}
@@ -748,10 +784,12 @@ main {
 			.formButtons {
 				display: flex;
 				gap: 10px;
+
 				button {
 					@include button;
 				}
-				:first-child{
+
+				:first-child {
 					background: $colorSpec2;
 					color: black;
 				}
@@ -818,73 +856,6 @@ input {
 	flex: 1 2;
 }
 
-
-.switch {
-	position: relative;
-	box-sizing: border-box;
-	padding: 0 3px;
-	height: 30px;
-	min-width: 50px;
-
-	>input {
-		display: none;
-
-		&:checked {
-			+ {
-				.slider {
-					background-color: $colorSpec;
-
-					&:before {
-						-webkit-transform: translateX(19px);
-						-ms-transform: translateX(19px);
-						transform: translateX(19px);
-					}
-				}
-			}
-		}
-
-		&:focus {
-			+ {
-				.slider {
-					box-shadow: 0 0 1px $colorSpec;
-				}
-			}
-		}
-	}
-}
-
-.slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: $lightComp;
-	-webkit-transition: .4s;
-	transition: .4s;
-
-	&:before {
-		position: relative;
-		content: "";
-		height: 25px;
-		width: 25px;
-		margin: 3px;
-		background-color: $lightBG;
-		float: left;
-		-webkit-transition: .4s;
-		transition: .4s;
-	}
-}
-
-.slider.round {
-	border-radius: 36px;
-
-	&:before {
-		border-radius: 50%;
-	}
-}
-
 #menu-button {
 	input {
 		&:hover {
@@ -934,8 +905,9 @@ input {
 		gap: 15px;
 		font-size: 1.66em;
 
-		a{
+		a {
 			color: $textColorLight;
+
 			i {
 				opacity: 0.65;
 			}
@@ -1123,7 +1095,7 @@ input {
 				gap: 0;
 
 				input,
-				i { 
+				i {
 					@include button;
 					margin: 5px;
 					padding: 8px 7px 8px 8px;
@@ -1291,11 +1263,6 @@ input {
 	#Menu {
 		label {
 			margin: 0;
-			//opacity: 0.5;
-
-			&:hover {
-				opacity: 0.7;
-			}
 		}
 
 		.toggle {
@@ -1370,11 +1337,9 @@ input {
 			margin: 5px 15px;
 			max-width: calc(100% - 30px);
 			transition: none;
-			opacity: 0.8;
 
 			&:hover {
 				cursor: pointer;
-				opacity: 1;
 			}
 		}
 
@@ -1526,24 +1491,24 @@ input {
 		.info {
 			display: flex;
 			flex-direction: column;
-	
+
 			.text {
 				p {
 					display: none;
 				}
-	
+
 				section {
 					h2 {
 						font-size: 30px;
 					}
 				}
 			}
-	
+
 			iframe {
 				width: 100%;
 			}
 		}
-	
+
 		.APOD {
 			.info {
 				flex-direction: column-reverse;
@@ -1577,7 +1542,7 @@ input {
 		}
 	}
 
-	
+
 
 	.footer_main {
 		h1 {

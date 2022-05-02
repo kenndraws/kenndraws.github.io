@@ -21,7 +21,8 @@ function displayMobileMenu() {
 
 function displayClickedMenu() {
     //Get Menu Item to add event listeners to each input
-    $("#Menu").children("input").each(function () {
+    //$("#Menu").children("input").each(function () {
+    $(".toggle").each(function () {
         isChecked(this); //Display default checked which is Home
         $(this).change(function () {
             isChecked(this); //Display Checked
@@ -46,8 +47,8 @@ function displayClickedMenu() {
                     $(this).show();
                 }
                 else $(this).hide();
-                
-                
+
+
             });
         }
     }
@@ -106,10 +107,10 @@ function submitForm($form, event) {
         }, 1000)
     }
 }
-function displayStyleButtons(){
+function displayStyleButtons() {
     $(".display_style").each(function () {
-        $(this).click(function(){
-            if(!$(this).attr("class").includes("selected_display_style")){
+        $(this).click(function () {
+            if (!$(this).attr("class").includes("selected_display_style")) {
                 $(".selected_display_style").removeClass("selected_display_style");
                 $(this).addClass("selected_display_style");
                 changeVisitorStyle();
@@ -117,32 +118,32 @@ function displayStyleButtons(){
         })
     });
 }
-function changeVisitorStyle(){
-    if(!$(".Visiters").attr("class").includes("visitor_grid")){
+function changeVisitorStyle() {
+    if (!$(".Visiters").attr("class").includes("visitor_grid")) {
         $(".Visiters").addClass("visitor_grid");
         $(".log_header").hide();
-        
+
     }
-    else{
+    else {
         $(".Visiters").removeClass("visitor_grid");
         $(".log_header").show();
     }
 }
-function visit_actions(){
-    $(".visit-edit").click(function() {
+function visit_actions() {
+    $(".visit-edit").click(function () {
         const parentID = $(this).parent().parent().attr("id")
-        console.log("Edit ",  parentID);
+        console.log("Edit ", parentID);
     });
-    $(".visit-delete").click(function() {
+    $(".visit-delete").click(function () {
         const parentID = $(this).parent().parent().attr("id")
-        console.log("Delete ",  parentID);
+        console.log("Delete ", parentID);
     });
 }
 function addVisitor() {
     //called on 'click' of 'New Visitor' button 
     //calls view 'clearForm' to clear form contents
     //calls view 'showForm'
-    
+
     $("#formCancel").show(); //At least one user has been logged then we can show
     showForm();
 
@@ -154,3 +155,15 @@ function deleteVisitor(id) {
     //calls view 'renderTable' 
     //calls view 'showTable'
 }
+
+$(function () { // Dropdown toggle
+    $('.dropdown-toggle').click(function () {
+        $(this).next('.dropdown').slideToggle();
+    });
+
+    $(document).click(function (e) {
+        var target = e.target;
+        if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle'))
+        { $('.dropdown').delay(200).slideUp(); }
+    });
+});

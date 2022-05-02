@@ -33,19 +33,30 @@ body {
 }
 
 header {
-    //background: rgba(255, 255, 255, 0.3);
     background: $lightBG;
     color: $textColorDark;
+    
+    .header-title {
+		>section {
+			#title{
+                color: $textColorDark !important;
+            }
+		}
+		.dropdown{
+            color: $textColorDark !important;
+			background: $lightBG !important;
+		}
+	}
 }
 
 #Menu {
+    #nav {
+        color: $textColorDark;
+    }
+
     >label {
         color: $textColorDark;
     }
-}
-
-.background-slider {
-    background: $textColorDark;
 }
 
 .media-info {

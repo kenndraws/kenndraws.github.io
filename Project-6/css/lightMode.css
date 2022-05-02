@@ -15,12 +15,21 @@ header {
   color: black;
 }
 
-#Menu > label {
+header .header-title > section #title {
+  color: black !important;
+}
+
+header .header-title .dropdown {
+  color: black !important;
+  background: white !important;
+}
+
+#Menu #nav {
   color: black;
 }
 
-.background-slider {
-  background: black;
+#Menu > label {
+  color: black;
 }
 
 .media-info .info {
