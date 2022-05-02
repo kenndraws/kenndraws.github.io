@@ -10,12 +10,8 @@ body .light_mode_logo {
   display: inline-block;
 }
 
-.text {
-  color: black;
-}
-
 header {
-  background: rgba(255, 255, 255, 0.3);
+  background: white;
   color: black;
 }
 
@@ -29,6 +25,7 @@ header {
 
 .media-info .info {
   background: white;
+  color: black;
 }
 
 .welcome-title {
@@ -51,16 +48,12 @@ header {
           box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.1);
 }
 
-.info {
-  color: black;
-}
-
 .text section {
   border-bottom: 1px solid black;
 }
 
 .text section h2 span {
-  color: #239cff;
+  color: #2178f6;
   font-weight: 200;
 }
 
@@ -102,6 +95,10 @@ header {
   background-color: white;
 }
 
+.footer .footer_links a {
+  color: black;
+}
+
 .Visits {
   color: black;
 }
@@ -113,12 +110,11 @@ header {
 
 .Visits .log_info section .selected_display_style {
   color: white;
-  background: #239cff;
+  background: #2178f6;
 }
 
 .Visits .log_info section :last-child {
   color: white;
-  background: #239cff;
 }
 
 .Visits .visitor_grid section {
@@ -142,7 +138,7 @@ header {
 }
 
 .Visits .Visiters > section .visitor_email_button i {
-  background: #6192b9;
+  background: #deebfe;
 }
 
 .Visits .Visiters > section i {

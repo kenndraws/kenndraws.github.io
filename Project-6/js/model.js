@@ -42,22 +42,14 @@ function getBodies() {
     });
 }
 
-function getColor() { //make random color
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    const result = randomColor.match(/.{1,2}/g) || []; //Making sure colors are pleasing 
-
-    if(randomColor === "000000" || randomColor === "ffffff" || randomColor.length < 6 || !result.includes("60")){
-        //No white, black, ugly, or invalid color
-        return getColor();
-    }
-    console.log(result)
-
-    return randomColor;
-}
 function getHSL(){
     const degree = Math.floor(Math.random() * 360)
     return `hsl(${degree}, 56%, 57%)`;
 }
+
+let lightMode = false;
+let dataLoaded = false;
+let displayed = true;
 
 class Visitor {
     constructor(id, firstName, lastName, address, city, state, zip, cell, email, find, comments) {

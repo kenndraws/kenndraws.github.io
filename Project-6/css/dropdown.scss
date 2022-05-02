@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
+$bg: #fff;
+$bg-hover: hsl(0, 0%, 84%);
+$padding: 18px 21px;
+
+* {
+  box-sizing: border-box;
+}
+
+
+.dropdown {
+  position: relative;
+  box-sizing: content-box;
+  width: 210px;
+  height: 1em;
+  padding: $padding;
+  background-color: $bg; // necessary for overlaying hover bg-color of selected option
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  
+  &:hover svg {
+    transform: scale(1.1);
+  }
+  
+  button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    
+    &:focus {
+      & ~ svg {
+        transform: rotate(-180deg);
+        //transform: scaleY(-1);
+      }
+    }
+  }
+  
+  .options {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  input {
+    display: none;
+    
+    &:checked + label {
+      display: block;
+      z-index: 5;
+      font-weight: 600;
+      transform: none !important;
+    }
+  }
+  
+  label {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    padding: $padding;
+    line-height: 1;
+    background-color: $bg;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s ease ;
+    
+    &:hover {
+      background-color: $bg-hover;
+    }
+  }
+  
+  button:focus + .options input:not(:checked) + label, .options label:active, .options label:active ~ label {
+    transform: translateY(calc(var(--index) * 100%));
+  }
+
+  button:focus + .options input:checked + label ~ label, .options input:checked ~ label:active, .options input:checked ~ label:active ~ label {
+    transform: translateY(calc((var(--index) - 1) * 100%));
+  }
+    
+  svg {
+    position: absolute;
+    width: 21px;
+    top: 25%;
+    right: 14px;
+    z-index: 5;
+    fill: currentColor;
+    transition: transform 0.1s;
+  }
+}

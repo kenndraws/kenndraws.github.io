@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lightMode.css" class="lightModeCSS">
+    
+    <link rel="stylesheet" href="css/dropdown.css">
 
     <link rel="icon" href="img/logoBlack.png">
 
@@ -37,7 +39,7 @@
             <p id="title">AIP</p>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle" />
+            <input type="radio" name="option" id="Home" class="toggle" checked/>
             <label for="Home"><span>Home</span></label>
 
             <input type="radio" name="option" id="Planets" class="toggle" />
@@ -52,7 +54,7 @@
             <input type="radio" name="option" id="Other" class="toggle" />
             <label for="Other"><span>Other</span></label>
 
-            <input type="radio" name="option" id="Visits" class="toggle" checked />
+            <input type="radio" name="option" id="Visits" class="toggle"  />
             <label for="Visits"><span>Visits</span></label>
 
             <section class="background-slider">.</section>
@@ -76,7 +78,7 @@
                     Thank you for logging your visit!
                 </div>
                 <form id="myform" novalidate>
-                    <!-- <img src="img/logo.png" alt="icon" /> -->
+                    <img src="img/logo.png" alt="icon" />
                     <ul class="flex">
                         <li class="form_flex">
                             <section>
@@ -127,7 +129,7 @@
                         </li>
                     </ul>
                     <section class="find-checks-area">
-                        <h4>How did you find us?</h4>
+                        <p>How did you find us?</p>
 
                         <section class="find-checks">
                             <input type="checkbox" id='google' name='find-page' value="google">
@@ -144,9 +146,8 @@
 
                     </section>
                     <section class="formButtons">
-                        <button id="formCancel" class="button-1" onClick="main()" type="button"
-                            style="display:none">Cancel</button>
-                        <button id="formSubmit" class="button-1" type="submit">Save</button>
+                        <button id="formCancel" onClick="main()" type="button" style="display:none">Cancel</button>
+                        <button id="formSubmit" type="submit">Save</button>
                     </section>
                 </form>
             </div>
@@ -208,13 +209,17 @@
                                 solar eclipse ever taken from the Martian surface.
                                 Credits: NASA/JPL-Caltech/ASU/MSSS/SSI</p>
                         </section>
-                        <iframe width="80%" height="425" src="https://www.youtube.com/embed/aKK7vS2CHC8"
+                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/aKK7vS2CHC8"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </section>
                 </section>
+            </section>
+            <section class="bottom-banner">
+                <h1>Wanna know how I built this? <br/><span>Check out my Space API</span></h1>
+                <button>View Now</button>
             </section>
         </section>
         <section class="Planets" style="display:none">
@@ -230,10 +235,10 @@
                 <p class="total_users">Total Visits: </p>
                 <span>0</span>
                 <section>
-                    <i class="fa-solid fa-grip-lines button-1 display_style selected_display_style"></i>
-                    <i class="fa-solid fa-grip button-1 display_style "></i>
-                    <i class="fa-solid fa-filter button-1 hidden"></i>
-                    <input type="button" class="button-1" value="Log Visit" onClick="addVisitor()">
+                    <i class="fa-solid fa-grip-lines display_style selected_display_style"></i>
+                    <i class="fa-solid fa-grip display_style "></i>
+                    <i class="fa-solid fa-filter hidden"></i>
+                    <input type="button" value="Log Visit" onClick="addVisitor()">
                 </section>
             </section>
             <section class="Visiters">
@@ -248,11 +253,20 @@
         </section>
 
         <ul class="footer_links">
-            <li><i class="fa-brands fa-github"></i></li>
-            <li><i class="fa-brands fa-facebook"></i></li>
-            <li><i class="fa-brands fa-twitter"></i></li>
-            <li><i class="fa-brands fa-instagram"></i></li>
-            <li><a class="footer_contact button-1" href="mailto:kenneth.gonzalez@uvu.com">Email Us</a></li>
+            <li>
+                <a href="https://github.com/kenndraws/kenndraws.github.io" target="_blank">
+                    <i class="fa-brands fa-github"></i></a></li>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i></a></li>
+            <li>
+                <a href="https://mobile.twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter"></i></a></li>
+            <li>
+                <a href="https://www.instagram.com/kenndraws/?hl=en" target="_blank">
+                    <i class="fa-brands fa-instagram"></i></a></li>
+            <li>
+                <a class="footer_contact" href="mailto:kenneth.gonzalez@uvu.com">Email Us</a></li>
         </ul>
 
         <section class="footer_legal">

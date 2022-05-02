@@ -1,10 +1,13 @@
-$fontFamily: Arial, Helvetica, sans-serif;
+$fontFamily: Arial,
+Helvetica,
+sans-serif;
 $lightBG: white;
 $lightComp: rgb(236, 238, 240);
 $lightText: #212121;
 
-$colorSpec: rgb(35, 156, 255);
-$colorSpec2: rgb(97, 146, 185);
+//$colorSpec: rgb(35, 156, 255);
+$colorSpec: #2178f6;
+$colorSpec2: #deebfe;
 
 $darkBG: black;
 $darkComp: #0e0e0e;
@@ -19,18 +22,19 @@ $transparentColor: rgba(0, 0, 0, 0);
 
 body {
     background: $lightComp;
+
     .dark_mode_logo {
         display: none;
     }
+
     .light_mode_logo {
         display: inline-block;
     }
 }
-.text {
-    color: $textColorDark;
-}
+
 header {
-    background: rgba(255, 255, 255, 0.3);
+    //background: rgba(255, 255, 255, 0.3);
+    background: $lightBG;
     color: $textColorDark;
 }
 
@@ -44,11 +48,13 @@ header {
     background: $textColorDark;
 }
 
-.media-info{
-    .info{
+.media-info {
+    .info {
         background: $lightBG;
+        color: $textColorDark;
     }
 }
+
 .welcome-title {
     color: $textColorDark;
     font-weight: 300;
@@ -65,12 +71,9 @@ header {
 .solar-info-card {
     background-color: $lightBG;
     border: 1px solid $lightComp;
-    box-shadow: 7px 7px 15px rgba(0,0,0,0.1);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.1);
 }
 
-.info {
-    color: $textColorDark;
-}
 
 .text {
     section {
@@ -93,9 +96,10 @@ header {
 
 .user-sign {
     background-color: $textColorLight;
+
     .container {
         color: $textColorDark;
-    
+
         #myform {
             ul {
                 li {
@@ -104,6 +108,7 @@ header {
                     }
                 }
             }
+
             input {
                 &::placeholder {
                     color: $textColorDark;
@@ -118,6 +123,12 @@ header {
 .footer {
     color: $textColorDark;
     background-color: $lightBG;
+
+    .footer_links {
+        a {
+            color: $textColorDark;
+        }
+    }
 }
 
 
@@ -130,6 +141,7 @@ header {
                 color: $textColorDark;
                 background: $lightComp;
             }
+
             .selected_display_style {
                 color: $textColorLight;
                 background: $colorSpec;
@@ -137,16 +149,16 @@ header {
 
             :last-child {
                 color: $textColorLight;
-                background: $colorSpec;
             }
         }
 
     }
+
     .visitor_grid {
-		section {
+        section {
             border: 1px solid #e5e5e5;
-		}
-	}
+        }
+    }
 
     .Visiters {
         .log_header {
@@ -156,10 +168,11 @@ header {
         .visitor-name-icon {
             color: $textColorLight;
         }
+
         >section {
             background: $lightBG;
             //border-bottom: 1px solid #e5e5e5;
-    
+
             .visitor_email_button {
                 color: $textColorDark;
 

@@ -1,5 +1,3 @@
-let dataLoaded = false;
-
 function main() {
     setTimeout(() => { //Wait for Form to Hide
         $(".user-sign").hide();
@@ -8,6 +6,7 @@ function main() {
 
         displayClickedMenu();
         displayStyleButtons();
+        visit_actions();
 
         if (!dataLoaded) {
             getAPOD();
@@ -19,7 +18,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 1000)
+    }, 000)
 
     renderTable(".Visiters", people);
 }
@@ -110,8 +109,8 @@ function renderTable(containerId, visitors) {
             </a>
             <p style="display: none" >${visitors[id].id}</p>
             <section class="visitor_action">
-                <i class="fa-solid fa-pen-to-square button-1"></i>
-                <i class="fa-solid fa-trash-can button-1"></i>    
+                <i class="fa-solid fa-pen-to-square visit-edit"></i>
+                <i class="fa-solid fa-trash-can visit-delete"></i>    
             </section>
         </section>`
         $(containerId).append(row);
@@ -121,13 +120,13 @@ function renderTable(containerId, visitors) {
     $(".Visits .log_info span").text(visitors.length);
 }
 
-let lightMode = false;
 function switchTheme() {
     const styles = document.querySelector('.lightModeCSS');
     if (lightMode) styles.href = "css/lightMode.css";
     else styles.href = "";
     lightMode = !lightMode;
 }
+
 function showForm() {
     $("header").hide();
     $("footer").hide();

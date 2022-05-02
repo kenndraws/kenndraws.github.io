@@ -1,8 +1,7 @@
 $(document).ready(function () {
-    initValidation("#myform");   //in validation.js, should set up submit event handler
-    //main();
+    //initValidation("#myform");   //in validation.js, should set up submit event handler
+    main();
 });
-let displayed = true;
 function displayMobileMenu() {
     //Get Menu and Menu-Button for Slide Effect
 
@@ -128,6 +127,16 @@ function changeVisitorStyle(){
         $(".Visiters").removeClass("visitor_grid");
         $(".log_header").show();
     }
+}
+function visit_actions(){
+    $(".visit-edit").click(function() {
+        const parentID = $(this).parent().parent().attr("id")
+        console.log("Edit ",  parentID);
+    });
+    $(".visit-delete").click(function() {
+        const parentID = $(this).parent().parent().attr("id")
+        console.log("Delete ",  parentID);
+    });
 }
 function addVisitor() {
     //called on 'click' of 'New Visitor' button 
