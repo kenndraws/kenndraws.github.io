@@ -99,6 +99,10 @@ header .header-title .dropdown {
   color: black;
 }
 
+.user-sign .container #myform .find-checks-area .find-checks label {
+  background: #eceef0;
+}
+
 .footer {
   color: black;
   background-color: white;
