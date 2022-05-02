@@ -251,6 +251,7 @@ main > .Home {
   background-image: url("./../img/background.PNG");
   background-size: 100vw auto;
   background-repeat: no-repeat;
+  background-position: 0 60px;
   width: 100vw;
   min-height: calc(100vh);
   display: -webkit-box;
@@ -320,14 +321,14 @@ main > .Home .bottom-banner button :after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: slideUp 1s ease-in-out both;
-          animation: slideUp 1s ease-in-out both;
+  -webkit-animation: slideRight 500ms ease-in-out both;
+          animation: slideRight 500ms ease-in-out both;
 }
 
 .welcome-title p {
@@ -358,8 +359,8 @@ main > .Home .bottom-banner button :after {
   margin: 0;
   margin-left: auto;
   padding: 50px 0;
-  -webkit-animation: slideLeft 1s .5s ease-in-out both;
-          animation: slideLeft 1s .5s ease-in-out both;
+  -webkit-animation: slideLeft 500ms 500ms ease-in-out both;
+          animation: slideLeft 500ms 500ms ease-in-out both;
 }
 
 .about > .title {
@@ -372,14 +373,14 @@ main > .Home .bottom-banner button :after {
   display: -ms-flexbox;
   display: flex;
   color: white;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 15px;
-  -webkit-animation: slideUp 1s 1s ease-in-out both;
-          animation: slideUp 1s 1s ease-in-out both;
+  -webkit-animation: slideUp 500ms 500ms ease-in-out both;
+          animation: slideUp 500ms 500ms ease-in-out both;
 }
 
 .solar-info-card {
@@ -388,6 +389,10 @@ main > .Home .bottom-banner button :after {
   border-radius: 5px;
   text-align: center;
   min-width: 200px;
+  max-width: 350px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .solar-info-card > img {
@@ -1361,8 +1366,8 @@ input:invalid ~ div.errorMsg {
     width: 100%;
     min-height: 300px;
     min-width: 300px;
-    -ms-grid-columns: 85% 15%;
-        grid-template-columns: 85% 15%;
+    -ms-grid-columns: 6fr 1fr;
+        grid-template-columns: 6fr 1fr;
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
   }
@@ -1377,8 +1382,8 @@ input:invalid ~ div.errorMsg {
     width: auto;
   }
   .body-info-main {
-    -ms-grid-columns: 40% 60%;
-        grid-template-columns: 40% 60%;
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1519,14 +1524,14 @@ input:invalid ~ div.errorMsg {
 
 @media (min-width: 600px) {
   .body-info {
-    -ms-grid-columns: 85% 15%;
-        grid-template-columns: 85% 15%;
+    -ms-grid-columns: 6fr 1fr;
+        grid-template-columns: 6fr 1fr;
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
   }
   .body-info-main {
-    -ms-grid-columns: 40% 60%;
-        grid-template-columns: 40% 60%;
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1545,8 +1550,8 @@ input:invalid ~ div.errorMsg {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     -ms-grid-rows: auto 25%;
         grid-template-rows: auto 25%;
   }

@@ -64,6 +64,8 @@ $textColorLight: white;
 
 $transparentColor: rgba(0, 0, 0, 0);
 
+$speed: 500ms;
+
 @mixin button {
 	width: fit-content;
 	padding: 10px 20px;
@@ -272,6 +274,8 @@ main {
 		background-image: url('./../img/background.PNG');
 		background-size: 100vw auto;
 		background-repeat: no-repeat;
+		background-position: 0 60px;
+
 		width: 100vw;
 		min-height: calc(100vh);
 		display: flex;
@@ -314,9 +318,9 @@ main {
 	font-weight: 200;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: end;
 	justify-content: center;
-	animation: slideUp 1s ease-in-out both;
+	animation: slideRight $speed ease-in-out both;
 
 	p {
 		margin: 10px 0;
@@ -345,7 +349,7 @@ main {
 	margin: 0;
 	margin-left: auto;
 	padding: 50px 0;
-	animation: slideLeft 1s .5s ease-in-out both;
+	animation: slideLeft $speed $speed ease-in-out both;
 
 	>.title {
 		font-weight: 600;
@@ -356,10 +360,10 @@ main {
 .solar-info {
 	display: flex;
 	color: $textColorLight;
-	justify-content: space-evenly;
+	justify-content: center;
 	flex-wrap: wrap;
 	gap: 15px;
-	animation: slideUp 1s 1s ease-in-out both;
+	animation: slideUp $speed $speed ease-in-out both;
 }
 
 .solar-info-card {
@@ -368,11 +372,12 @@ main {
 	border-radius: 5px;
 	text-align: center;
 	min-width: 200px;
+    max-width: 350px;
+    flex-grow: 1;
 
 	>img {
 		width: 75px;
 		height: auto;
-		//filter: invert();
 		margin-bottom: 25px;
 	}
 
@@ -1239,7 +1244,7 @@ input {
 		width: 100%;
 		min-height: 300px;
 		min-width: 300px;
-		grid-template-columns: 85% 15%;
+		grid-template-columns: 6fr 1fr;
 		grid-template-rows: 100%;
 	}
 
@@ -1259,7 +1264,7 @@ input {
 	}
 
 	.body-info-main {
-		grid-template-columns: 40% 60%;
+		grid-template-columns: 2fr 3fr;
 		justify-content: center;
 	}
 
@@ -1452,12 +1457,12 @@ input {
 
 @media (min-width: 600px) {
 	.body-info {
-		grid-template-columns: 85% 15%;
+		grid-template-columns: 6fr 1fr;
 		grid-template-rows: 100%;
 	}
 
 	.body-info-main {
-		grid-template-columns: 40% 60%;
+		grid-template-columns: 2fr 3fr;
 		justify-content: center;
 	}
 
@@ -1471,7 +1476,7 @@ input {
 	.body-info {
 		max-width: 100%;
 		height: fit-content;
-		grid-template-columns: 100%;
+		grid-template-columns: 1fr;
 		grid-template-rows: auto 25%;
 	}
 
