@@ -1127,6 +1127,9 @@ input:invalid ~ div.errorMsg {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .Visits .visit-stats .visit-stat {
@@ -1208,7 +1211,7 @@ input:invalid ~ div.errorMsg {
   color: white;
   letter-spacing: .09em;
   border-radius: 5px;
-  margin: 0 5px;
+  margin: 5px;
   background: #181818;
   padding: 10px 20px;
 }
@@ -1293,7 +1296,6 @@ input:invalid ~ div.errorMsg {
   background: none;
   display: -ms-grid;
   display: grid;
-  justify-items: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1316,7 +1318,6 @@ input:invalid ~ div.errorMsg {
 .Visits .Visiters > .visitor {
   display: -ms-grid;
   display: grid;
-  justify-items: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1335,7 +1336,7 @@ input:invalid ~ div.errorMsg {
 }
 
 .Visits .Visiters > .visitor .visitor_email_button i {
-  padding: 7px 10px;
+  padding: 7px;
   border-radius: 5px;
   margin: 5px;
   background: #deebfe;
@@ -1655,6 +1656,9 @@ input:invalid ~ div.errorMsg {
 }
 
 @media (max-width: 600px) {
+  main > section {
+    padding: 75px 15px 15px 15px;
+  }
   .body-info {
     max-width: 100%;
     height: -webkit-fit-content;
@@ -1754,6 +1758,61 @@ input:invalid ~ div.errorMsg {
   }
   .footer_main img {
     margin: 15px 0;
+  }
+  .log_info {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    gap: 15px;
+    width: 100%;
+  }
+  .log_info .visit-stats {
+    display: -ms-grid;
+    display: grid;
+  }
+  .log_info .visit-stats .visit-stat {
+    font-size: 14px;
+  }
+  .log_info .visit-stats .visit-stat .visit-stat-num span {
+    font-size: 1.5em !important;
+  }
+  .log_info .log_buttons {
+    margin-left: 0 !important;
+  }
+  .Visiters .log_header {
+    justify-items: center;
+  }
+  .Visiters .log_header p span {
+    display: none;
+  }
+  .Visiters .visitor {
+    font-size: 14px;
+  }
+  .Visiters .visitor a {
+    -ms-grid-column-align: center !important;
+        justify-self: center !important;
+  }
+  .Visiters .visitor i {
+    font-size: .9em !important;
+  }
+  .Visiters .visitor .visitor_action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .visitor_grid section .visitor_action {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
   }
 }
 

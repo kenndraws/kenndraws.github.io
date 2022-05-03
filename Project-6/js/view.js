@@ -17,7 +17,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 1000)
+    }, 000)
 
     renderTable(".Visiters", people);
 }
@@ -84,12 +84,12 @@ function renderTable(containerId, visitors) {
     $(containerId).empty();
     //Table Header
     $(containerId).append(`<section class="log_header">
-        <p><i class="fa-solid fa-bars-staggered"></i>Name</p>
-        <p><i class="fa-regular fa-chess-rook"></i>Address</p>
-        <p><i class="fa-solid fa-phone"></i>Phone</p>
-        <p><i class="fa-regular fa-envelope"></i>Email</p>
-        <p style="display: none">ID</p>
-        <p class="visitor_action"><i class="fa-solid fa-location-crosshairs"></i>Actions</p>
+        <p><i class="fa-solid fa-bars-staggered"></i><span>Name</span></p>
+        <p><i class="fa-regular fa-chess-rook"></i><span>Address</span></p>
+        <p><i class="fa-solid fa-phone"></i><span>Phone</span></p>
+        <p><i class="fa-regular fa-envelope"></i><span>Email</span></p>
+        <p style="display: none"><span>ID</span></p>
+        <p class="visitor_action"><i class="fa-solid fa-location-crosshairs"></i><span>Actions</span></p>
     </section>`);
 
     //Render List

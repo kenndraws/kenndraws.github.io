@@ -45,7 +45,8 @@
 $fontFamily: Arial,
 Helvetica,
 sans-serif;
-$font2: Rubik, sans-serif;
+$font2: Rubik,
+sans-serif;
 $lightBG: white;
 $lightComp: #e9eef1;
 $lightText: #212121;
@@ -347,7 +348,7 @@ main {
 				height: fit-content;
 				justify-self: end;
 
-				a{
+				a {
 					text-decoration: none;
 					color: $textColorLight;
 				}
@@ -402,7 +403,7 @@ main {
 		left: -50px;
 		border-radius: 50%;
 		padding: 15px;
-		
+
 		background: $darkComp;
 	}
 }
@@ -970,6 +971,7 @@ input {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 15px;
+		width: fit-content;
 
 		.visit-stat {
 			background: $colorSpec2;
@@ -997,9 +999,8 @@ input {
 					padding-right: 15px;
 					border-right: 2px solid $colorSpec;
 				}
-				i{
-					
-				}
+
+				i {}
 			}
 		}
 
@@ -1036,7 +1037,7 @@ input {
 
 			>* {
 				@include button;
-				margin: 0 5px;
+				margin: 5px;
 				background: $darkComp;
 				padding: 10px 20px;
 
@@ -1106,29 +1107,29 @@ input {
 	.Visiters {
 		display: grid;
 		gap: 5px;
+
 		.log_header {
 			color: $textColorLight;
 			background: none;
 
 			display: grid;
-			justify-items: start;
 			align-items: center;
 			grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
 			background: none;
 			padding: 5px 10px;
 			gap: 0 15px;
-			
-			i{
+
+			i {
 				margin-right: 10px;
 			}
-			.visitor_action{
+
+			.visitor_action {
 				justify-self: center;
 			}
 		}
 
 		>.visitor {
 			display: grid;
-			justify-items: start;
 			align-items: center;
 			grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
 			background: $darkComp;
@@ -1142,7 +1143,7 @@ input {
 				font-weight: 100;
 
 				i {
-					padding: 7px 10px;
+					padding: 7px;
 					border-radius: 5px;
 					margin: 5px;
 					background: $colorSpec2;
@@ -1526,6 +1527,12 @@ input {
 }
 
 @media (max-width: 600px) {
+	main {
+		>section {
+			padding: 75px 15px 15px 15px;
+		}
+	}
+
 	.body-info {
 		max-width: 100%;
 		height: fit-content;
@@ -1630,8 +1637,6 @@ input {
 		}
 	}
 
-
-
 	.footer_main {
 		h1 {
 			display: none;
@@ -1639,6 +1644,63 @@ input {
 
 		img {
 			margin: 15px 0;
+		}
+	}
+
+	.log_info {
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		gap: 15px;
+
+		width: 100%;
+
+		.visit-stats {
+			display: grid;
+			.visit-stat {
+				font-size: 14px;
+
+				.visit-stat-num {
+					span {
+						font-size: 1.5em !important;
+					}
+				}
+			}
+
+		}
+
+		.log_buttons {
+			margin-left: 0 !important;
+		}
+	}
+	.Visiters{
+		.log_header {
+			justify-items: center;
+			p {
+				span{
+					display: none;
+				}
+			}
+		}
+		.visitor{
+			font-size: 14px;
+			a{
+				justify-self: center !important;
+			}
+			i {
+				font-size: .9em !important;
+			}
+			.visitor_action{
+				flex-direction: column-reverse;
+				
+			}
+		}
+	}
+	.visitor_grid {
+		section {
+			.visitor_action {
+				flex-direction: row !important;
+			}
 		}
 	}
 }
