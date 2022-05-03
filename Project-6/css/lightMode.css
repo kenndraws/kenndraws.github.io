@@ -162,14 +162,6 @@ header .header-title .dropdown {
   border: 1px solid #e5e5e5;
 }
 
-.Visits .Visiters > .visitor .visitor_email_button {
-  color: #333;
-}
-
-.Visits .Visiters > .visitor .visitor_email_button i {
-  background: #deebfe;
-}
-
 .Visits .Visiters > .visitor i {
   color: white;
 }

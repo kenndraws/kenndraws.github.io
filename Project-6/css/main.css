@@ -1331,7 +1331,6 @@ input:invalid ~ div.errorMsg {
 
 .Visits .Visiters > .visitor .visitor_email_button {
   text-decoration: none;
-  color: white;
   font-weight: 100;
 }
 
@@ -1339,6 +1338,7 @@ input:invalid ~ div.errorMsg {
   padding: 7px;
   border-radius: 5px;
   margin: 5px;
+  color: #333;
   background: #deebfe;
 }
 
@@ -1807,6 +1807,11 @@ input:invalid ~ div.errorMsg {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .visitor_grid {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .visitor_grid section .visitor_action {
     -webkit-box-orient: horizontal !important;

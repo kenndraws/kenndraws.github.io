@@ -1139,13 +1139,14 @@ input {
 
 			.visitor_email_button {
 				text-decoration: none;
-				color: $textColorLight;
 				font-weight: 100;
 
 				i {
 					padding: 7px;
 					border-radius: 5px;
 					margin: 5px;
+
+					color: $textColorDark;
 					background: $colorSpec2;
 
 					&:hover {
@@ -1657,6 +1658,7 @@ input {
 
 		.visit-stats {
 			display: grid;
+
 			.visit-stat {
 				font-size: 14px;
 
@@ -1673,30 +1675,38 @@ input {
 			margin-left: 0 !important;
 		}
 	}
-	.Visiters{
+
+	.Visiters {
 		.log_header {
 			justify-items: center;
+
 			p {
-				span{
+				span {
 					display: none;
 				}
 			}
 		}
-		.visitor{
+
+		.visitor {
 			font-size: 14px;
-			a{
+
+			a {
 				justify-self: center !important;
 			}
+
 			i {
 				font-size: .9em !important;
 			}
-			.visitor_action{
+
+			.visitor_action {
 				flex-direction: column-reverse;
-				
+
 			}
 		}
 	}
+
 	.visitor_grid {
+		justify-content: center;
 		section {
 			.visitor_action {
 				flex-direction: row !important;

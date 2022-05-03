@@ -214,17 +214,10 @@ header {
             background: $lightBG;
             border: 1px solid #e5e5e5;
 
-            .visitor_email_button {
-                color: $textColorDark;
-
-                i {
-                    background: $colorSpec2;
-                }
-            }
-
             i {
                 color: $textColorLight;
             }
+            
         }
 
         .visitor_action {
