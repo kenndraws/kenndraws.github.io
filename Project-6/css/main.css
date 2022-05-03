@@ -285,7 +285,7 @@ header .header-title .dropdown {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #eceef0;
+  background-color: #e9eef1;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -332,7 +332,6 @@ main > .Home {
   background-image: url("./../img/background.PNG");
   background-size: 100vw auto;
   background-repeat: no-repeat;
-  background-position: 0 60px;
   width: 100vw;
   min-height: calc(100vh);
   display: -webkit-box;
@@ -390,6 +389,7 @@ main > .Home .bottom-banner button :after {
 }
 
 .welcome-title {
+  position: relative;
   color: white;
   text-align: center;
   opacity: 1;
@@ -402,14 +402,22 @@ main > .Home .bottom-banner button :after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
   -webkit-animation: slideRight 500ms ease-in-out both;
           animation: slideRight 500ms ease-in-out both;
+  padding: 35px;
+  padding-left: 75px;
+  border-radius: 15px;
+  background: #181818;
 }
 
 .welcome-title p {
@@ -417,20 +425,36 @@ main > .Home .bottom-banner button :after {
 }
 
 .welcome-title .Learn {
-  background: #2178f6;
-  border-radius: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 15px;
-  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  background: #2178f6;
   color: white;
+  letter-spacing: .09em;
+  border-radius: 5px;
+  border-radius: 25px;
   text-decoration: none;
   margin: 10px 0;
 }
 
-.welcome-title .Learn:hover {
-  cursor: pointer;
+.welcome-title .Learn :after {
+  outline: none;
+}
+
+.welcome-title .description i {
+  color: #2178f6;
+  font-size: 1.5em;
+}
+
+.welcome-title img {
+  position: absolute;
+  height: 100px;
+  left: -50px;
+  border-radius: 50%;
+  padding: 15px;
+  background: #181818;
 }
 
 .about {
@@ -440,13 +464,15 @@ main > .Home .bottom-banner button :after {
   margin: 0;
   margin-left: auto;
   padding: 50px 0;
-  -webkit-animation: slideLeft 500ms 500ms ease-in-out both;
-          animation: slideLeft 500ms 500ms ease-in-out both;
+  -webkit-animation: slideUp 500ms 500ms ease-in-out both;
+          animation: slideUp 500ms 500ms ease-in-out both;
 }
 
 .about > .title {
+  font-family: Rubik, sans-serif;
   font-weight: 600;
   margin: 0;
+  color: #2178f6;
 }
 
 .solar-info {
@@ -487,26 +513,10 @@ main > .Home .bottom-banner button :after {
 }
 
 .solar-info-card > .amount {
+  font-family: Rubik, sans-serif;
   font-size: 30px;
   margin-bottom: 15px;
   font-weight: 600;
-}
-
-.carousel {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  gap: 16.66%;
-  width: 100vw;
-  padding: 0 50px;
-  overflow: scroll;
 }
 
 .media-info {
@@ -592,6 +602,7 @@ main > .Home .bottom-banner button :after {
 }
 
 .media-info .text section h2 {
+  font-family: Rubik, sans-serif;
   font-weight: 600;
   margin: 5px 0;
 }
@@ -935,7 +946,7 @@ main > .Home .bottom-banner button :after {
 
 .user-sign .container #myform .formButtons :first-child {
   background: #deebfe;
-  color: black;
+  color: #333;
 }
 
 .user-sign .container #myform label.desc {
@@ -1103,6 +1114,68 @@ input:invalid ~ div.errorMsg {
   grid-auto-rows: min-content;
 }
 
+.Visits .visit-stats {
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.Visits .visit-stats .visit-stat {
+  background: #deebfe;
+  border-radius: 10px;
+  padding: 5px 50px;
+  min-width: 150px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Visits .visit-stats .visit-stat .visit-stat-header {
+  margin-bottom: 0;
+}
+
+.Visits .visit-stats .visit-stat .visit-stat-num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.Visits .visit-stats .visit-stat .visit-stat-num span {
+  font-weight: bold;
+  font-size: 2em;
+  color: #2178f6;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-right: 15px;
+  border-right: 2px solid #2178f6;
+}
+
+.Visits .visit-stats .stat-2 {
+  background: #eddefe;
+}
+
+.Visits .visit-stats .stat-2 .visit-stat-num span {
+  color: #b321f6;
+  border-right: 2px solid #b321f6;
+}
+
+.Visits .visit-stats .stat-3 {
+  background: #fee7de;
+}
+
+.Visits .visit-stats .stat-3 .visit-stat-num span {
+  color: #ff3a17;
+  border-right: 2px solid #ff3a17;
+}
+
 .Visits .log_info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1113,19 +1186,11 @@ input:invalid ~ div.errorMsg {
   font-weight: 200;
 }
 
-.Visits .log_info .total_users {
-  font-size: 20px;
-}
-
-.Visits .log_info span {
-  margin: 0 15px;
-}
-
-.Visits .log_info section {
+.Visits .log_info .log_buttons {
   margin-left: auto;
 }
 
-.Visits .log_info section > * {
+.Visits .log_info .log_buttons > * {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1140,19 +1205,19 @@ input:invalid ~ div.errorMsg {
   padding: 10px 20px;
 }
 
-.Visits .log_info section > * :after {
+.Visits .log_info .log_buttons > * :after {
   outline: none;
 }
 
-.Visits .log_info section > *:hover {
+.Visits .log_info .log_buttons > *:hover {
   cursor: pointer;
 }
 
-.Visits .log_info section .selected_display_style {
+.Visits .log_info .log_buttons .selected_display_style {
   background: #2178f6;
 }
 
-.Visits .log_info section :last-child {
+.Visits .log_info .log_buttons :last-child {
   background: #2178f6;
 }
 
@@ -1218,9 +1283,29 @@ input:invalid ~ div.errorMsg {
 .Visits .Visiters .log_header {
   color: white;
   background: none;
+  display: -ms-grid;
+  display: grid;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 2fr 1fr 1fr .5fr;
+      grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
+  background: none;
+  padding: 5px 10px;
+  gap: 0 15px;
 }
 
-.Visits .Visiters > section {
+.Visits .Visiters .log_header i {
+  margin-right: 10px;
+}
+
+.Visits .Visiters .log_header .visitor_action {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.Visits .Visiters > .visitor {
   display: -ms-grid;
   display: grid;
   justify-items: start;
@@ -1235,36 +1320,36 @@ input:invalid ~ div.errorMsg {
   gap: 0 15px;
 }
 
-.Visits .Visiters > section .visitor_email_button {
+.Visits .Visiters > .visitor .visitor_email_button {
   text-decoration: none;
   color: white;
   font-weight: 100;
 }
 
-.Visits .Visiters > section .visitor_email_button i {
+.Visits .Visiters > .visitor .visitor_email_button i {
   padding: 7px 10px;
   border-radius: 5px;
   margin: 5px;
   background: #deebfe;
 }
 
-.Visits .Visiters > section .visitor_email_button i:hover {
+.Visits .Visiters > .visitor .visitor_email_button i:hover {
   cursor: pointer;
 }
 
 @media (min-width: 1200px) {
-  .Visits .Visiters > section .visitor_email_button i {
+  .Visits .Visiters > .visitor .visitor_email_button i {
     display: none;
   }
 }
 
 @media (max-width: 1200px) {
-  .Visits .Visiters > section .visitor_email_button span {
+  .Visits .Visiters > .visitor .visitor_email_button span {
     display: none;
   }
 }
 
-.Visits .Visiters > section .visitor-name-icon {
+.Visits .Visiters > .visitor .visitor-name-icon {
   display: inline-block;
   font-size: 13px;
   -webkit-box-sizing: border-box;
@@ -1277,7 +1362,7 @@ input:invalid ~ div.errorMsg {
   width: fit-content;
 }
 
-.Visits .Visiters > section .visitor_action {
+.Visits .Visiters > .visitor .visitor_action {
   margin: 0;
   background: none;
   justify-self: center;
@@ -1288,8 +1373,8 @@ input:invalid ~ div.errorMsg {
   gap: 0;
 }
 
-.Visits .Visiters > section .visitor_action input,
-.Visits .Visiters > section .visitor_action i {
+.Visits .Visiters > .visitor .visitor_action input,
+.Visits .Visiters > .visitor .visitor_action i {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1304,21 +1389,21 @@ input:invalid ~ div.errorMsg {
   font-size: 16px;
 }
 
-.Visits .Visiters > section .visitor_action input :after,
-.Visits .Visiters > section .visitor_action i :after {
+.Visits .Visiters > .visitor .visitor_action input :after,
+.Visits .Visiters > .visitor .visitor_action i :after {
   outline: none;
 }
 
-.Visits .Visiters > section .visitor_action input:hover,
-.Visits .Visiters > section .visitor_action i:hover {
+.Visits .Visiters > .visitor .visitor_action input:hover,
+.Visits .Visiters > .visitor .visitor_action i:hover {
   cursor: pointer;
 }
 
-.Visits .Visiters > section .visitor_action :nth-child(2) {
-  background: #181818;
+.Visits .Visiters > .visitor .visitor_action :nth-child(2) {
+  background: none;
 }
 
-.Visits .Visiters > section p {
+.Visits .Visiters > .visitor p {
   margin: 0;
 }
 
@@ -1373,7 +1458,7 @@ input:invalid ~ div.errorMsg {
     font-size: 30px;
   }
   .welcome-title .description {
-    font-size: 12px;
+    font-size: 14px;
   }
   .info {
     width: 100%;
@@ -1517,7 +1602,7 @@ input:invalid ~ div.errorMsg {
     font-size: 30px;
   }
   .welcome-title .description {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -1526,7 +1611,7 @@ input:invalid ~ div.errorMsg {
     font-size: 25px;
   }
   .welcome-title .description {
-    font-size: 12px;
+    font-size: 14px;
   }
   .text p {
     display: none;
@@ -1642,7 +1727,7 @@ input:invalid ~ div.errorMsg {
     font-size: 50px;
   }
   .about > .description {
-    font-size: 12px;
+    font-size: 14px;
   }
   .solar-info {
     -webkit-box-orient: vertical;

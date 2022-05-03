@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    initValidation("#myform");   //in validation.js, should set up submit event handler
-    //main();
+    //initValidation("#myform");   //in validation.js, should set up submit event handler
+    main();
 });
 function displayMobileMenu() {
     //Get Menu and Menu-Button for Slide Effect

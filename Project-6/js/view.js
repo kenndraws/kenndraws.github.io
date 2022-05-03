@@ -18,7 +18,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 1000)
+    }, 000)
 
     renderTable(".Visiters", people);
 }
@@ -85,18 +85,18 @@ function renderTable(containerId, visitors) {
     $(containerId).empty();
     //Table Header
     $(containerId).append(`<section class="log_header">
-        <p>Name</p>
-        <p>Address</p>
-        <p>Phone</p>
-        <p>Email</p>
+        <p><i class="fa-solid fa-bars-staggered"></i>Name</p>
+        <p><i class="fa-regular fa-chess-rook"></i>Address</p>
+        <p><i class="fa-solid fa-phone"></i>Phone</p>
+        <p><i class="fa-regular fa-envelope"></i>Email</p>
         <p style="display: none">ID</p>
-        <p class="visitor_action">Actions</p>
+        <p class="visitor_action"><i class="fa-solid fa-location-crosshairs"></i>Actions</p>
     </section>`);
 
     //Render List
     for (const id in visitors) {
         const name = visitors[id].fullName.toString()
-        const row = `<section id="id-${visitors[id].id}">
+        const row = `<section id="id-${visitors[id].id} " class="visitor">
             <p>
                 <span class="visitor-name-icon" style="background: ${getHSL()}">${name[0]}</span> 
                 ${name}
@@ -117,7 +117,7 @@ function renderTable(containerId, visitors) {
     }
 
     //Show Visiter Length
-    $(".Visits .log_info span").text(visitors.length);
+    $(".stat-1 .visit-stat-num span").text(visitors.length);
 }
 
 function switchTheme() {

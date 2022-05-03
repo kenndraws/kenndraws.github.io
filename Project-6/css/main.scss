@@ -45,13 +45,15 @@
 $fontFamily: Arial,
 Helvetica,
 sans-serif;
+$font2: Rubik, sans-serif;
 $lightBG: white;
-$lightComp: rgb(236, 238, 240);
+$lightComp: #e9eef1;
 $lightText: #212121;
 
 //$colorSpec: rgb(35, 156, 255);
 $colorSpec: #2178f6;
 $colorSpec2: #deebfe;
+$colorSpec3: rgb(250, 2, 116);
 
 $darkBG: black;
 $darkComp: #181818;
@@ -60,7 +62,7 @@ $darkComp2: #141414;
 $colorError: rgb(236, 19, 19);
 $colorGood: rgb(44, 216, 22);
 
-$textColorDark: black;
+$textColorDark: #333;
 $textColorLight: white;
 
 $transparentColor: rgba(0, 0, 0, 0);
@@ -313,7 +315,6 @@ main {
 		background-image: url('./../img/background.PNG');
 		background-size: 100vw auto;
 		background-repeat: no-repeat;
-		background-position: 0 60px;
 
 		width: 100vw;
 		min-height: calc(100vh);
@@ -351,6 +352,7 @@ main {
 }
 
 .welcome-title {
+	position: relative;
 	color: $textColorLight;
 	text-align: center;
 	opacity: 1;
@@ -358,27 +360,45 @@ main {
 	font-weight: 200;
 	display: flex;
 	flex-direction: column;
-	align-items: end;
+	align-items: center;
 	justify-content: center;
+	width: fit-content;
+	margin-left: auto;
 	animation: slideRight $speed ease-in-out both;
+
+	padding: 35px;
+	padding-left: 75px;
+	border-radius: 15px;
+
+	background: $darkComp;
 
 	p {
 		margin: 10px 0;
 	}
 
 	.Learn {
-		background: $colorSpec;
+		@include button;
+
 		border-radius: 25px;
-		width: fit-content;
-		padding: 15px;
-		font-size: 16px;
-		color: $textColorLight;
 		text-decoration: none;
 		margin: 10px 0;
+	}
 
-		&:hover {
-			cursor: pointer;
+	.description {
+		i {
+			color: $colorSpec;
+			font-size: 1.5em;
 		}
+	}
+
+	img {
+		position: absolute;
+		height: 100px;
+		left: -50px;
+		border-radius: 50%;
+		padding: 15px;
+		
+		background: $darkComp;
 	}
 }
 
@@ -389,11 +409,13 @@ main {
 	margin: 0;
 	margin-left: auto;
 	padding: 50px 0;
-	animation: slideLeft $speed $speed ease-in-out both;
+	animation: slideUp $speed $speed ease-in-out both;
 
 	>.title {
+		font-family: $font2;
 		font-weight: 600;
 		margin: 0;
+		color: $colorSpec;
 	}
 }
 
@@ -426,23 +448,11 @@ main {
 	}
 
 	>.amount {
+		font-family: $font2;
 		font-size: 30px;
 		margin-bottom: 15px;
 		font-weight: 600;
 	}
-}
-
-.carousel {
-	box-sizing: border-box;
-	display: flex;
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
-	gap: 16.66%;
-	width: 100vw;
-	padding: 0 50px;
-	overflow: scroll;
 }
 
 .media-info {
@@ -495,6 +505,7 @@ main {
 
 		section {
 			h2 {
+				font-family: $font2;
 				font-weight: 600;
 				margin: 5px 0;
 
@@ -796,7 +807,7 @@ main {
 
 				:first-child {
 					background: $colorSpec2;
-					color: black;
+					color: $textColorDark;
 				}
 			}
 
@@ -949,20 +960,68 @@ input {
 	min-height: calc(100vh - 106px);
 	grid-auto-rows: min-content;
 
+	.visit-stats {
+		color: $textColorDark;
+		display: flex;
+		gap: 15px;
+
+		.visit-stat {
+			background: $colorSpec2;
+			border-radius: 10px;
+			padding: 5px 50px;
+			min-width: 150px;
+			width: fit-content;
+
+			.visit-stat-header {
+				margin-bottom: 0;
+			}
+
+			.visit-stat-num {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				margin: 10px 0;
+
+				span {
+					font-weight: bold;
+					font-size: 2em;
+					color: $colorSpec;
+					height: fit-content;
+					padding-right: 15px;
+					border-right: 2px solid $colorSpec;
+				}
+			}
+		}
+
+		.stat-2 {
+			background: #eddefe;
+
+			.visit-stat-num {
+				span {
+					color: #b321f6;
+					border-right: 2px solid #b321f6;
+				}
+			}
+		}
+
+		.stat-3 {
+			background: #fee7de;
+
+			.visit-stat-num {
+				span {
+					color: #ff3a17;
+					border-right: 2px solid #ff3a17;
+				}
+			}
+		}
+	}
+
 	.log_info {
 		display: flex;
 		align-items: center;
 		font-weight: 200;
 
-		.total_users {
-			font-size: 20px;
-		}
-
-		span {
-			margin: 0 15px;
-		}
-
-		section {
+		.log_buttons {
 			margin-left: auto;
 
 			>* {
@@ -1037,13 +1096,27 @@ input {
 	.Visiters {
 		display: grid;
 		gap: 5px;
-
 		.log_header {
 			color: $textColorLight;
 			background: none;
+
+			display: grid;
+			justify-items: start;
+			align-items: center;
+			grid-template-columns: 1fr 2fr 1fr 1fr .5fr;
+			background: none;
+			padding: 5px 10px;
+			gap: 0 15px;
+			
+			i{
+				margin-right: 10px;
+			}
+			.visitor_action{
+				justify-self: center;
+			}
 		}
 
-		>section {
+		>.visitor {
 			display: grid;
 			justify-items: start;
 			align-items: center;
@@ -1112,7 +1185,7 @@ input {
 				}
 
 				:nth-child(2) {
-					background: $darkComp;
+					background: none;
 				}
 			}
 
@@ -1197,7 +1270,7 @@ input {
 		}
 
 		.description {
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 
@@ -1388,7 +1461,7 @@ input {
 		}
 
 		.description {
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 }
@@ -1400,7 +1473,7 @@ input {
 		}
 
 		.description {
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 
@@ -1527,7 +1600,7 @@ input {
 		}
 
 		>.description {
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 

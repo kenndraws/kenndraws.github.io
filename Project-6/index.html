@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lightMode.css" class="lightModeCSS">
-    <link rel="stylesheet" href="css/Menu.css">
 
     <link rel="icon" href="img/logoBlack.png">
 
@@ -21,7 +20,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway:wght@200;300;500&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Raleway:wght@200;300;500&family=Rubik:wght@700&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/8de1927029.js" crossorigin="anonymous"></script>
 
@@ -35,7 +35,7 @@
             <section class="dropdown-toggle">
                 <img src="img/logo.png" alt="icon" class="dark_mode_logo" />
                 <img src="img/logoBlack.png" alt="icon" class="light_mode_logo" />
-                <p id="title">AIP</p>
+                <p id="title">AIP &nbsp;<i class="fa-solid fa-angle-down"></i></p>
             </section>
             <ul class="dropdown">
                 <li>
@@ -50,10 +50,10 @@
             </ul>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle" checked />
+            <input type="radio" name="option" id="Home" class="toggle"  />
             <label for="Home"><span>Home</span></label>
 
-            <input type="radio" name="option" id="Visits" class="toggle" />
+            <input type="radio" name="option" id="Visits" class="toggle" checked/>
             <label for="Visits"><span>Visits</span></label>
 
             <section id="nav">
@@ -168,11 +168,12 @@
         <section class="Home" style="display:none">
             <section class="welcome-title paused">
                 <p class="welcome">Astronomy Info Project</p>
-                <p class="description">Learn about our Solar System</p>
+                <p class="description">Learn about our Solar System &nbsp;<i class="fa-solid fa-rocket"></i></p>
                 <a class="Learn" href="mailto:kenneth.gonzalez@uvu.com">Contact Us</a>
+                <img src="./img/logo-color-c.PNG" alt="">
             </section>
             <section class="about paused ">
-                <p class="title">Our Solar System</p>
+                <p class="title">OUR SOLAR SYSTEM</p>
                 <p class="description">Our solar system consists of our star, the Sun,
                     and everything bound to it by gravity
                     - the planets Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune;
@@ -244,9 +245,21 @@
         </section>
         <section class="Visits" style="display:none">
             <section class="log_info">
-                <p class="total_users">Total Visits: </p>
-                <span>0</span>
-                <section>
+                <section class="visit-stats">
+                    <section class="visit-stat stat-1">
+                        <p class="visit-stat-header">Total Visits</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                    </section>
+                    <section class="visit-stat stat-2">
+                        <p class="visit-stat-header">Total Edits</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                    </section>
+                    <section class="visit-stat stat-3">
+                        <p class="visit-stat-header">Total Deletes</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                    </section>
+                </section>
+                <section class="log_buttons">
                     <i class="fa-solid fa-grip-lines display_style selected_display_style"></i>
                     <i class="fa-solid fa-grip display_style "></i>
                     <i class="fa-solid fa-filter hidden"></i>

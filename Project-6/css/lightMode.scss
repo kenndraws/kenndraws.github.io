@@ -2,12 +2,13 @@ $fontFamily: Arial,
 Helvetica,
 sans-serif;
 $lightBG: white;
-$lightComp: rgb(236, 238, 240);
+$lightComp: rgb(231, 231, 238);
 $lightText: #212121;
 
 //$colorSpec: rgb(35, 156, 255);
 $colorSpec: #2178f6;
 $colorSpec2: #deebfe;
+$colorSpec3: rgb(250,2,116);
 
 $darkBG: black;
 $darkComp: #0e0e0e;
@@ -15,13 +16,13 @@ $darkComp: #0e0e0e;
 $colorError: rgb(236, 19, 19);
 $colorGood: rgb(44, 216, 22);
 
-$textColorDark: black;
+$textColorDark: #333;
 $textColorLight: white;
 
 $transparentColor: rgba(0, 0, 0, 0);
 
 body {
-    background: $lightComp;
+    background: #f5f5f5;
 
     .dark_mode_logo {
         display: none;
@@ -69,6 +70,11 @@ header {
 .welcome-title {
     color: $textColorDark;
     font-weight: 300;
+    
+	background: white;
+    img{
+		background: $lightBG;
+    }
 }
 
 .about {
@@ -151,10 +157,11 @@ header {
 
 
 .Visits {
+    //background: white;
     color: $textColorDark;
 
     .log_info {
-        section {
+        .log_buttons {
             >* {
                 color: $textColorDark;
                 background: $lightComp;
@@ -181,15 +188,21 @@ header {
     .Visiters {
         .log_header {
             color: $textColorDark;
+            border: none;
+			background: none;
+
+            i{
+                color: $textColorDark;
+            }
         }
 
         .visitor-name-icon {
             color: $textColorLight;
         }
 
-        >section {
+        >.visitor {
             background: $lightBG;
-            //border-bottom: 1px solid #e5e5e5;
+            border: 1px solid #e5e5e5;
 
             .visitor_email_button {
                 color: $textColorDark;
@@ -206,8 +219,7 @@ header {
 
         .visitor_action {
             :nth-child(2) {
-                color: $textColorDark;
-                background: $lightBG !important;
+                color: $textColorDark !important;
             }
         }
     }
