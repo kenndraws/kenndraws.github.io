@@ -53,7 +53,6 @@ let displayed = true;
 let numDeleted = 0; //stat
 let numEdited = 0; //stat
 let userIDStart = 100; //Used for no clashing id's
-let isGrid = false;
 
 class Visitor {
     constructor(id, firstName, lastName, address, city, state, zip, email, cell, find, comments) {
