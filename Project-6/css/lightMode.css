@@ -10,6 +10,10 @@ body .light_mode_logo {
   display: inline-block;
 }
 
+main > .Home .bottom-banner button a {
+  color: white;
+}
+
 header {
   background: white;
   color: #333;

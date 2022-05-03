@@ -6,7 +6,6 @@ function main() {
 
         displayClickedMenu();
         displayStyleButtons();
-        visit_actions();
 
         if (!dataLoaded) {
             getAPOD();
@@ -18,7 +17,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 000)
+    }, 1000)
 
     renderTable(".Visiters", people);
 }
@@ -96,7 +95,7 @@ function renderTable(containerId, visitors) {
     //Render List
     for (const id in visitors) {
         const name = visitors[id].fullName.toString()
-        const row = `<section id="id-${visitors[id].id} " class="visitor">
+        const row = `<section id="id-${visitors[id].id}" class="visitor">
             <p>
                 <span class="visitor-name-icon" style="background: ${getHSL()}">${name[0]}</span> 
                 ${name}
@@ -118,6 +117,8 @@ function renderTable(containerId, visitors) {
 
     //Show Visiter Length
     $(".stat-1 .visit-stat-num span").text(visitors.length);
+    //Add Event Listeners
+    visit_actions();
 }
 
 function switchTheme() {

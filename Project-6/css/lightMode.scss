@@ -32,7 +32,17 @@ body {
         display: inline-block;
     }
 }
-
+main {
+	>.Home {
+		.bottom-banner {
+			button {
+				a{
+					color: $textColorLight;
+				}
+			}
+		}
+	}
+}
 header {
     background: $lightBG;
     color: $textColorDark;

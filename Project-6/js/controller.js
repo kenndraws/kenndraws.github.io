@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    //initValidation("#myform");   //in validation.js, should set up submit event handler
-    main();
+    initValidation("#myform");   //in validation.js, should set up submit event handler
+    //main();
 });
 function displayMobileMenu() {
     //Get Menu and Menu-Button for Slide Effect
@@ -80,15 +80,15 @@ function submitForm($form, event) {
         });
 
         modelAddVisitor(new Visitor(
-            people.length + 1,
+            userIDStart++,
             formProps[0],
             formProps[1],
             formProps[2],
             formProps[3],
             formProps[4],
             formProps[5],
-            formProps[7],
             formProps[6],
+            formProps[7],
             finds,
         ));
 
@@ -132,30 +132,57 @@ function changeVisitorStyle() {
 function visit_actions() {
     $(".visit-edit").click(function () {
         const parentID = $(this).parent().parent().attr("id")
-        console.log("Edit ", parentID);
+        editVisitor(parseInt(parentID.split('-')[1]))
     });
     $(".visit-delete").click(function () {
-        const parentID = $(this).parent().parent().attr("id")
-        console.log("Delete ", parentID);
+        const parentID = $(this).parent().parent().attr("id");
+        deleteVisitor(parseInt(parentID.split('-')[1]))
     });
 }
 function addVisitor() {
     //called on 'click' of 'New Visitor' button 
-    //calls view 'clearForm' to clear form contents
     //calls view 'showForm'
 
     $("#formCancel").show(); //At least one user has been logged then we can show
     showForm();
 
 }
-
+function cancelSubmit() {
+    $("#myform").each(function () {
+        this.reset();
+    });
+    $("#myform").submit(function (event) {
+        submitForm($("#myform"), event); //reset submit
+    });
+    main();
+}
 function deleteVisitor(id) {
     //called on 'click' of 'delete' icon in visitor list 
     //calls model.js modelDeleteVisitor
     //calls view 'renderTable' 
-    //calls view 'showTable'
-}
 
+    var isDelete = confirm("Do you want to delete this user?");
+    console.log("Delete ", id, isDelete);
+    if (isDelete) {
+        modelDeleteVisitor(id); //Delete User
+        renderTable(".Visiters", people); //Render Table
+        numDeleted++; //Increment number of deleted stat
+        $(".stat-3 .visit-stat-num span").text(numDeleted); //Update State Display
+    }
+}
+function editVisitor(id) {
+    //called on 'click' of 'edit' icon in visitor list 
+
+    var isEdit = confirm("Do you want to edit this user?");
+    console.log("Edit ", id, isEdit);
+
+    if (isEdit) {
+        //modelUpdateVisitor(id); //Edit User
+        renderTable(".Visiters", people); //Render Table
+        numEdited++; //Increment number of deleted stat
+        $(".stat-2 .visit-stat-num span").text(numEdited); //Update State Display
+    }
+}
 $(function () { // Dropdown toggle
     $('.dropdown-toggle').click(function () {
         $(this).next('.dropdown').slideToggle();
@@ -163,7 +190,6 @@ $(function () { // Dropdown toggle
 
     $(document).click(function (e) {
         var target = e.target;
-        if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle'))
-        { $('.dropdown').delay(200).slideUp(); }
+        if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) { $('.dropdown').delay(200).slideUp(); }
     });
 });

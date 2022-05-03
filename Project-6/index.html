@@ -50,10 +50,10 @@
             </ul>
         </section>
         <nav id="Menu">
-            <input type="radio" name="option" id="Home" class="toggle"  />
+            <input type="radio" name="option" id="Home" class="toggle" checked/>
             <label for="Home"><span>Home</span></label>
 
-            <input type="radio" name="option" id="Visits" class="toggle" checked/>
+            <input type="radio" name="option" id="Visits" class="toggle" />
             <label for="Visits"><span>Visits</span></label>
 
             <section id="nav">
@@ -158,7 +158,7 @@
 
                     </section>
                     <section class="formButtons">
-                        <button id="formCancel" onClick="main()" type="button" style="display:none">Cancel</button>
+                        <button id="formCancel" onClick="cancelSubmit()" type="button" style="display:none">Cancel</button>
                         <button id="formSubmit" type="submit">Save</button>
                     </section>
                 </form>
@@ -232,7 +232,7 @@
             </section>
             <section class="bottom-banner">
                 <h1>Wanna know how I built this? <br /><span>Check out my Space API</span></h1>
-                <button>View Now</button>
+                <button><a href="https://github.com/kenndraws/kenndraws.github.io" target="_blank">View Now</a></button>
             </section>
         </section>
         <section class="Planets" style="display:none">
@@ -248,15 +248,15 @@
                 <section class="visit-stats">
                     <section class="visit-stat stat-1">
                         <p class="visit-stat-header">Total Visits</p>
-                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0% <i class="fa-solid fa-arrows-up-down"></i></p>
                     </section>
                     <section class="visit-stat stat-2">
                         <p class="visit-stat-header">Total Edits</p>
-                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0% <i class="fa-solid fa-arrows-up-down"></i></p>
                     </section>
                     <section class="visit-stat stat-3">
                         <p class="visit-stat-header">Total Deletes</p>
-                        <p class="visit-stat-num"><span>0</span>Impressions 0%</p>
+                        <p class="visit-stat-num"><span>0</span>Impressions 0% <i class="fa-solid fa-arrows-up-down"></i></p>
                     </section>
                 </section>
                 <section class="log_buttons">

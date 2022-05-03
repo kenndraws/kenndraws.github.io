@@ -346,6 +346,11 @@ main {
 				font-size: 0.5em;
 				height: fit-content;
 				justify-self: end;
+
+				a{
+					text-decoration: none;
+					color: $textColorLight;
+				}
 			}
 		}
 	}
@@ -963,6 +968,7 @@ input {
 	.visit-stats {
 		color: $textColorDark;
 		display: flex;
+		flex-wrap: wrap;
 		gap: 15px;
 
 		.visit-stat {
@@ -973,6 +979,7 @@ input {
 			width: fit-content;
 
 			.visit-stat-header {
+				font-weight: bold;
 				margin-bottom: 0;
 			}
 
@@ -983,12 +990,15 @@ input {
 				margin: 10px 0;
 
 				span {
-					font-weight: bold;
+					font-family: $font2;
 					font-size: 2em;
 					color: $colorSpec;
 					height: fit-content;
 					padding-right: 15px;
 					border-right: 2px solid $colorSpec;
+				}
+				i{
+					
 				}
 			}
 		}

@@ -388,6 +388,11 @@ main > .Home .bottom-banner button :after {
   outline: none;
 }
 
+main > .Home .bottom-banner button a {
+  text-decoration: none;
+  color: white;
+}
+
 .welcome-title {
   position: relative;
   color: white;
@@ -1119,6 +1124,8 @@ input:invalid ~ div.errorMsg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -1133,6 +1140,7 @@ input:invalid ~ div.errorMsg {
 }
 
 .Visits .visit-stats .visit-stat .visit-stat-header {
+  font-weight: bold;
   margin-bottom: 0;
 }
 
@@ -1148,7 +1156,7 @@ input:invalid ~ div.errorMsg {
 }
 
 .Visits .visit-stats .visit-stat .visit-stat-num span {
-  font-weight: bold;
+  font-family: Rubik, sans-serif;
   font-size: 2em;
   color: #2178f6;
   height: -webkit-fit-content;
