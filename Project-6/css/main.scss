@@ -1059,10 +1059,11 @@ input {
 	}
 
 	.visitor_grid {
-		//grid-template-columns: repeat(5, 1fr);
 		display: flex !important;
 		flex-wrap: wrap;
-
+		.log_header {
+			display: none !important;
+		}
 		section {
 			grid-template-columns: auto !important;
 			grid-auto-rows: max-content;

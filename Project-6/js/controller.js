@@ -121,13 +121,8 @@ function displayStyleButtons() {
 function changeVisitorStyle() {
     if (!$(".Visiters").attr("class").includes("visitor_grid")) {
         $(".Visiters").addClass("visitor_grid");
-        $(".log_header").hide();
-
     }
-    else {
-        $(".Visiters").removeClass("visitor_grid");
-        $(".log_header").show();
-    }
+    else $(".Visiters").removeClass("visitor_grid");
 }
 function visit_actions() {
     $(".visit-edit").click(function () {

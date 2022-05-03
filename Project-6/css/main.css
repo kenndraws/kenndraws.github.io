@@ -1240,6 +1240,10 @@ input:invalid ~ div.errorMsg {
       flex-wrap: wrap;
 }
 
+.Visits .visitor_grid .log_header {
+  display: none !important;
+}
+
 .Visits .visitor_grid section {
   -ms-grid-columns: auto !important;
       grid-template-columns: auto !important;
