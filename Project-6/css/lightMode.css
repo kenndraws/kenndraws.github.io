@@ -166,6 +166,10 @@ header .header-title .dropdown {
   color: white;
 }
 
+.Visits .Visiters > .visitor .visitor_email_button span {
+  color: #333;
+}
+
 .Visits .Visiters .visitor_action :nth-child(2) {
   color: #333 !important;
 }

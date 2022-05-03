@@ -31,14 +31,14 @@ function initValidation(formName) {
 
 function validateForm() {
 
-    validateState("#state", "");
+    validateState("#state", "invalid");
 
     /*note, to validate the group, 
     just passing in id of one of them ("#newspaper"), 
     we will use groupName to check status of group.  
     Just call setElementValidity on the '#newspaper' element to show the error message*/
-
-    validateCheckboxGroup("#newspaper", "find-page", "");
+    
+    validateCheckboxGroup("#newspaper", "find-page", "invalid");
 
 }
 function validateState(id, msg) {
@@ -49,12 +49,10 @@ function validateState(id, msg) {
 
     setElementValidity(id, valid, msg);
 }
-
 function validateCheckboxGroup(fieldName, groupName, message) {
     let valid = $(`input[name="${groupName}"]:checked`).length > 0;
-    setElementValidity(fieldName, valid, message);
 
-    return valid;
+    setElementValidity(fieldName, valid, message);
 }
 
 function setElementValidity(fieldName, valid, message) {

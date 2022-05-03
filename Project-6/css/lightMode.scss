@@ -217,7 +217,11 @@ header {
             i {
                 color: $textColorLight;
             }
-            
+            .visitor_email_button {
+				span {
+					color: $textColorDark;
+				}
+			}
         }
 
         .visitor_action {

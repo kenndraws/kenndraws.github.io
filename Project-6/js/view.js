@@ -17,7 +17,7 @@ function main() {
         document.querySelectorAll(".paused").forEach(element => {
             element.classList.remove('paused');
         });
-    }, 000)
+    }, 1000)
 
     renderTable(".Visiters", people);
 }

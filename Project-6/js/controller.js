@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    //initValidation("#myform");   //in validation.js, should set up submit event handler
-    main();
+    initValidation("#myform");   //in validation.js, should set up submit event handler
+    //main(); //Was used for testing
 });
 function displayMobileMenu() {
     //Get Menu and Menu-Button for Slide Effect
@@ -156,7 +156,7 @@ function deleteVisitor(id) {
     //calls model.js modelDeleteVisitor
     //calls view 'renderTable' 
 
-    var isDelete = confirm("Do you want to delete this user?");
+    var isDelete = confirm(`Do you want to delete user ${id}?`);
     console.log("Delete ", id, isDelete);
     if (isDelete) {
         modelDeleteVisitor(id); //Delete User
@@ -168,7 +168,7 @@ function deleteVisitor(id) {
 function editVisitor(id) {
     //called on 'click' of 'edit' icon in visitor list 
 
-    var isEdit = confirm("Do you want to edit this user?");
+    var isEdit = confirm(`Do you want to edit user ${id}?`);
     console.log("Edit ", id, isEdit);
 
     if (isEdit) {

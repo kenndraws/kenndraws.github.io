@@ -1356,6 +1356,10 @@ input:invalid ~ div.errorMsg {
   }
 }
 
+.Visits .Visiters > .visitor .visitor_email_button span {
+  color: white;
+}
+
 @media (max-width: 1200px) {
   .Visits .Visiters > .visitor .visitor_email_button span {
     display: none;
